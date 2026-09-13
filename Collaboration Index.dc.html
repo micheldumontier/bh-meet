@@ -135,8 +135,48 @@
   body { margin: 0; }
   a { color: var(--color-accent); }
   a:hover { color: var(--color-accent-700); }
+
+  /* The detail pane pins beside a people list many screens tall. Sticky alone
+     is not enough: an element taller than the viewport stays pinned, so the
+     bottom of a long introduction cannot be reached until you have scrolled
+     past every card. Give the pane its own scrollport instead. */
+  .detail-pane {
+    position: sticky;
+    top: var(--space-4);
+    max-height: calc(100vh - var(--space-6));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-right: var(--space-2);
+  }
+  /* Below the grid's two-column threshold the pane sits under the list, where
+     pinning it and clipping it to the viewport would only get in the way. */
+  @media (max-width: 800px) {
+    .detail-pane {
+      position: static;
+      max-height: none;
+      overflow: visible;
+      padding-right: 0;
+    }
+  }
+
+  .ico { width: 13px; height: 13px; vertical-align: -2px; }
 </style>
+
 </helmet>
+
+<!-- One JSON-LD mark, referenced wherever structured data is offered. It lives
+     in the body, not the helmet: the helmet only relocates head-type tags, so a
+     sprite placed there is dropped and every <use> resolves to nothing. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-jsonld" viewBox="0 0 16 16">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6.3 2.4C4.7 2.4 5.3 6.4 3.3 8c2 1.6 1.4 5.6 3 5.6"/>
+      <path d="M9.7 2.4c1.6 0 1 4 3 5.6-2 1.6-1.4 5.6-3 5.6"/>
+    </g>
+    <circle cx="8" cy="8" r="1.5" fill="currentColor"/>
+  </symbol>
+</svg>
+
 <div style="max-width:1280px;margin:0 auto;padding:var(--space-6) var(--space-6) var(--space-8)">
 
   <header style="margin-bottom:var(--space-6)">
@@ -238,7 +278,7 @@
           </div>
         </section>
 
-        <aside style="position:sticky;top:var(--space-4)">
+        <aside class="detail-pane">
           <sc-if value="{{ hasDetail }}" hint-placeholder-val="{{ false }}">
             <div>
               <div style="height:2px;background:var(--color-text);margin-bottom:var(--space-2)"></div>
@@ -299,6 +339,10 @@
               </div>
 
               <button class="{{ detailStarCls }}" onClick="{{ onStarDetail }}">{{ detailStarLabel }}</button>
+
+              <p style="margin-top:var(--space-3);font-size:12px" class="text-muted">
+                <a href="{{ detailJsonld }}" rel="noopener" target="_blank"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-jsonld"/></svg> This person as JSON-LD</a>
+              </p>
             </div>
           </sc-if>
           <sc-if value="{{ noDetail }}" hint-placeholder-val="{{ true }}">
@@ -357,9 +401,9 @@
     <div>{{ footerNote }}</div>
     <div style="margin-top:6px">
       Machine-readable:
-      <a href="people.jsonld">people</a> ·
-      <a href="topics.jsonld">topics</a> ·
-      <a href="dataset.jsonld">dataset</a>
+      <a href="people.jsonld"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-jsonld"/></svg> people</a> ·
+      <a href="topics.jsonld"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-jsonld"/></svg> topics</a> ·
+      <a href="dataset.jsonld"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-jsonld"/></svg> dataset</a>
       (JSON-LD, schema.org + SKOS) ·
       data <a href="https://creativecommons.org/publicdomain/zero/1.0/" rel="license noopener" target="_blank">CC0 1.0</a> ·
       <a href="https://github.com/micheldumontier/bh-meet" rel="noopener" target="_blank">source and citation</a>
@@ -571,6 +615,8 @@ class Component extends DCLogic {
       countLabel: items.length + ' of ' + all.length + ' people' + (active.length ? ' · ' + active.join(' + ') : '') + (langs.length ? ' · ' + langs.join(' + ') : ''),
       items, isEmpty: all.length > 0 && items.length === 0,
       hasDetail: !!sel, noDetail: !sel,
+      // The person's IRI in people.jsonld — the same identifier the RDF uses.
+      detailJsonld: sel ? 'people.jsonld#' + sel.id : '',
       detailHasPhoto: !!(sel && this.photoOf(sel)),
       detailPhoto: sel ? this.photoOf(sel) : '',
       detailTitle: sel ? sel.n : '',
