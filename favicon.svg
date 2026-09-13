@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="BH26 Collaboration Index">
+  <title>BH26 Collaboration Index</title>
+  <!-- Three people, connected: the index's graph view reduced to what still
+       reads at 16px. Broadsheet palette — near-black ground, teal, magenta.
+       Nodes are kept small and far apart so the edges survive downscaling. -->
+  <rect width="64" height="64" fill="#201e1d"/>
+  <g stroke="#f3f2f2" stroke-width="6" stroke-linecap="round" opacity="0.85">
+    <line x1="16" y1="21" x2="48" y2="16"/>
+    <line x1="16" y1="21" x2="32" y2="49"/>
+    <line x1="48" y1="16" x2="32" y2="49"/>
+  </g>
+  <circle cx="16" cy="21" r="8" fill="#0088b0"/>
+  <circle cx="48" cy="16" r="8" fill="#0088b0"/>
+  <circle cx="32" cy="49" r="8" fill="#d6006c"/>
+</svg>

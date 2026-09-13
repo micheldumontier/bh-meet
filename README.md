@@ -122,9 +122,8 @@ see [LICENSE-DATA](LICENSE-DATA).
 ## Source deck
 
 Decks live in `data/` and are git-ignored — each is 100+ MB, over GitHub's
-100 MB per-file limit. Keep the latest export there to regenerate.
-
-Source deck: https://docs.google.com/presentation/d/1UWasNu6Wa_zCRhuWErF0cu2-uHpxwVBOU_6bNarQe1c/edit
+100 MB per-file limit. Keep the latest export there to regenerate. Ask the
+event organisers for the current export.
 
 ## Publishing
 
