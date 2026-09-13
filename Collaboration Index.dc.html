@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -155,6 +155,18 @@
 
   .ico { width: 13px; height: 13px; vertical-align: -2px; }
 
+  /* Was <h6>. The outline jumped h1 -> h2 -> h6, which reads as a broken
+     hierarchy; these are h3 now and borrow h6's type exactly. */
+  .label { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; }
+
+  /* The card title is the card's keyboard handle: a real button that looks
+     like the text it replaced. */
+  .card-title-btn {
+    display: block; width: 100%;
+    background: none; border: 0; padding: 0;
+    font: inherit; color: inherit; text-align: left; cursor: pointer;
+  }
+
   /* Only meaningful when the pane sits below the list, i.e. on phones. */
   .to-list { display: none; }
 
@@ -305,7 +317,7 @@
       <div style="display:grid;gap:var(--space-8);grid-template-columns:repeat(auto-fit,minmax(min(330px,100%),1fr));align-items:start">
         <section>
           <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);align-items:baseline;margin-bottom:var(--space-3)">
-            <h6 style="margin:0">{{ countLabel }}</h6>
+            <h3 class="label" style="margin:0">{{ countLabel }}</h3>
             <sc-if value="{{ hasMine }}" hint-placeholder-val="{{ true }}">
               <button class="{{ mineCls }} chip" style="cursor:pointer;font:inherit;font-size:11px;padding:3px 10px;border-radius:1.5px" onClick="{{ onToggleMine }}">{{ mineLabel }}</button>
             </sc-if>
@@ -319,14 +331,14 @@
                 <div style="display:flex;gap:var(--space-3);align-items:flex-start">
                   <sc-if value="{{ it.hasPhoto }}" hint-placeholder-val="{{ false }}">
                     <div class="halftone" style="width:56px;height:56px;flex:none;border-radius:var(--radius-md)">
-                      <img src="{{ it.photo }}" alt="{{ it.title }}" style="width:56px;height:56px;object-fit:cover">
+                      <img src="{{ it.photo }}" alt="" loading="lazy" decoding="async" width="56" height="56" style="width:56px;height:56px;object-fit:cover">
                     </div>
                   </sc-if>
                   <sc-if value="{{ it.noPhoto }}" hint-placeholder-val="{{ true }}">
                     <div style="width:56px;height:56px;flex:none;display:grid;place-items:center;background:var(--color-neutral-200);border-radius:var(--radius-md);font-family:var(--font-heading);font-weight:600;font-size:18px;color:var(--color-neutral-700)">{{ it.initials }}</div>
                   </sc-if>
                   <div style="flex:1">
-                    <div class="card-title">{{ it.title }}</div>
+                    <button type="button" class="card-title card-title-btn" onClick="{{ it.onTitle }}">{{ it.title }}</button>
                     <div class="card-kicker" style="margin-top:3px">{{ it.kicker }}</div>
                   </div>
                   <button class="{{ it.starCls }}" style="font-size:11px;padding:3px 10px;cursor:pointer;font-family:inherit" onClick="{{ it.onStar }}">{{ it.starLabel }}</button>
@@ -375,30 +387,30 @@
 
               <sc-if value="{{ hasInterests }}" hint-placeholder-val="{{ true }}">
                 <div style="margin-bottom:var(--space-4)">
-                  <h6>Background and interests</h6>
+                  <h3 class="label">Background and interests</h3>
                   <p style="font-size:15px">{{ detailInterests }}</p>
                 </div>
               </sc-if>
               <sc-if value="{{ hasSkills }}" hint-placeholder-val="{{ true }}">
                 <div style="margin-bottom:var(--space-4)">
-                  <h6>Brings</h6>
+                  <h3 class="label">Brings</h3>
                   <p style="font-size:15px">{{ detailSkills }}</p>
                 </div>
               </sc-if>
               <sc-if value="{{ hasCoding }}" hint-placeholder-val="{{ true }}">
                 <div style="margin-bottom:var(--space-4)">
-                  <h6>Codes in</h6>
+                  <h3 class="label">Codes in</h3>
                   <p style="font-size:15px">{{ detailCoding }}</p>
                 </div>
               </sc-if>
               <sc-if value="{{ hasMessage }}" hint-placeholder-val="{{ false }}">
                 <div style="margin-bottom:var(--space-6)">
-                  <h6>Off the record</h6>
+                  <h3 class="label">Off the record</h3>
                   <p style="font-size:15px;font-style:italic">{{ detailMessage }}</p>
                 </div>
               </sc-if>
 
-              <h6>Closest overlap</h6>
+              <h3 class="label">Closest overlap</h3>
               <div style="display:flex;flex-direction:column;gap:var(--space-2);margin-bottom:var(--space-6)">
                 <sc-for list="{{ detailMatches }}" as="m" hint-placeholder-count="5">
                   <button style="display:flex;gap:var(--space-3);align-items:baseline;background:none;border:0;border-bottom:1px solid var(--color-divider);padding:0 0 8px;text-align:left;cursor:pointer;font:inherit;color:inherit" onClick="{{ m.onClick }}">
@@ -422,7 +434,7 @@
 
           <div style="margin-top:var(--space-8)">
             <div style="height:2px;background:var(--color-text);margin-bottom:var(--space-2)"></div>
-            <h6>{{ planLabel }}</h6>
+            <h3 class="label">{{ planLabel }}</h3>
             <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:var(--space-3)">
               <sc-for list="{{ plan }}" as="p" hint-placeholder-count="0">
                 <div style="display:flex;gap:var(--space-2);align-items:baseline;font-size:14px">
@@ -448,7 +460,7 @@
       <h2>The pitch session is tomorrow</h2>
       <p style="font-size:17px">Project pitches happen on day 1. When the pitch deck exists, each project lands here with its own card: the pitch, the roles it is still missing, and the people whose introductions already match it.</p>
       <p style="font-size:17px">Until then, the useful move is the other direction — find someone whose work overlaps yours and turn that into a pitch.</p>
-      <h6 style="margin-top:var(--space-6)">Topics with the most people behind them</h6>
+      <h3 class="label" style="margin-top:var(--space-6)">Topics with the most people behind them</h3>
       <ol style="font-size:15px;padding-left:1.4em">
         <sc-for list="{{ topTopics }}" as="t" hint-placeholder-count="6">
           <li style="margin-bottom:4px">
@@ -483,6 +495,8 @@
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;defaultView&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;people&quot;,&quot;projects&quot;,&quot;graph&quot;],&quot;default&quot;:&quot;people&quot;,&quot;tsType&quot;:&quot;'people' | 'projects' | 'graph'&quot;,&quot;section&quot;:&quot;Behaviour&quot;},&quot;showSerendipity&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behaviour&quot;}}">
+const fold = (s) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+
 class Component extends DCLogic {
   state = { tab: null, q: '', tags: [], langs: [], sel: null, short: [], copied: false, onlyShort: false };
 
@@ -503,6 +517,19 @@ class Component extends DCLogic {
       else short = JSON.parse(localStorage.getItem('bh26-shortlist') || '[]');
     } catch (e) { short = []; }
     if (short.length) this.setState({ short });
+
+    // ?person=<slug> makes a person linkable: "go and find this one" is the
+    // thing people actually want to send each other.
+    const fromUrl = () => {
+      try {
+        const id = new URLSearchParams(location.search).get('person');
+        return id && this.find(id) ? id : null;
+      } catch (e) { return null; }
+    };
+    const initial = fromUrl();
+    if (initial) this.setState({ tab: 'people', sel: initial });
+    window.addEventListener('popstate', () => this.setState({ sel: fromUrl() }));
+
     if (!this.people().length) setTimeout(() => this.forceUpdate(), 300);
     // photos.json is written by the fetch-photos GitHub Action; absent before its first run
     fetch('photos.json').then(r => r.ok ? r.json() : null)
@@ -532,6 +559,7 @@ class Component extends DCLogic {
     const unseen = pool.filter(p => p.id !== this.state.sel);
     const pick = unseen[Math.floor(Math.random() * unseen.length)];
     this.setState({ tab: 'people', sel: pick.id, q: '', tags: [], langs: [] });
+    this.pushPerson(pick.id);
     this.revealDetail();
   };
 
@@ -556,8 +584,19 @@ class Component extends DCLogic {
     window.scrollTo({ top: this.listScrollY || 0, behavior: 'auto' });
   };
 
+  // pushState, not replaceState: Back should step back through the people you
+  // looked at, which is how anyone expects a browser to behave.
+  pushPerson = (id) => {
+    if (typeof history === 'undefined' || !history.pushState) return;
+    try {
+      if (new URLSearchParams(location.search).get('person') === id) return;
+      history.pushState(null, '', '?person=' + encodeURIComponent(id) + location.hash);
+    } catch (e) {}
+  };
+
   select = (id, tab) => {
     this.setState(tab ? { tab, sel: id } : { sel: id });
+    this.pushPerson(id);
     this.revealDetail();
   };
 
@@ -636,7 +675,9 @@ class Component extends DCLogic {
   renderVals() {
     const all = this.people();
     const tab = this.state.tab || this.props.defaultView || 'people';
-    const q = this.state.q.trim().toLowerCase();
+    // Fold accents both sides, so "nuria" finds Núria and "raul" finds Raúl.
+    // Without this an ASCII spelling of any accented name matches nothing.
+    const q = fold(this.state.q.trim());
     const active = this.state.tags, langs = this.state.langs;
 
     const counts = {};
@@ -655,7 +696,7 @@ class Component extends DCLogic {
       onClick: () => this.toggleLang(l)
     }));
 
-    const hay = p => [p.n, p.a, p.c, p.i, p.s, p.m].concat(p.t, p.co || []).join(' ').toLowerCase();
+    const hay = p => fold([p.n, p.a, p.c, p.i, p.s, p.m].concat(p.t, p.co || []).join(' '));
     const onlyShort = this.state.onlyShort && this.state.short.length > 0;
     const filtered = all.filter(p => (!q || hay(p).includes(q))
       && active.every(t => p.t.includes(t))
@@ -676,6 +717,7 @@ class Component extends DCLogic {
       starCls: this.state.short.includes(p.id) ? 'tag tag-accent-2' : 'tag tag-outline',
       starLabel: this.state.short.includes(p.id) ? 'On my list' : 'Add',
       onClick: () => this.select(p.id),
+      onTitle: (e) => { if (e && e.stopPropagation) e.stopPropagation(); this.select(p.id); },
       onStar: (e) => { e.stopPropagation(); this.toggleShort(p.id); }
     }));
 
@@ -684,7 +726,13 @@ class Component extends DCLogic {
     if (sel) {
       detailMatches = all.filter(p => p.id !== sel.id).map(p => {
         const st = this.shared(sel.t, p.t), sl = this.shared(sel.co || [], p.co || []);
-        return { p, st, sl, score: st.length * 2 + sl.length };
+        // Sharing "Structural biology" (3 people) says far more than sharing
+        // "Databases" (34). Weight each overlap by how unusual it is, otherwise
+        // the popular topics drown out the pairings worth crossing a room for.
+        const rare = (freq, k) => Math.log(all.length / ((freq[k] || 0) + 1)) + 1;
+        const score = st.reduce((a, t) => a + rare(counts, t), 0) * 2
+          + sl.reduce((a, l) => a + rare(lcounts, l), 0);
+        return { p, st, sl, score };
       }).filter(x => x.st.length > 0).sort((a, b) => b.score - a.score).slice(0, 6).map(x => ({
         title: x.p.n,
         sub: x.p.a + ' — ' + x.st.join(', ') + (x.sl.length ? ' · ' + x.sl.slice(0, 3).join('/') : ''),

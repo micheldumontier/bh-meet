@@ -17,6 +17,11 @@ Then open http://localhost:8000/. Opening `index.html` straight from the
 filesystem will not work — the page fetches `photos.json`, and `file://`
 requests are blocked by CORS.
 
+Any person is linkable: `?person=<slug>`, for example
+[`?person=chang-sun`](https://micheldumontier.github.io/bh-meet/?person=chang-sun).
+Selecting someone pushes a history entry, so Back steps through the people you
+looked at. `#plan=<ids>` restores a shared shortlist.
+
 ## Layout
 
     index.html                  the app (a copy of Collaboration Index.dc.html)
@@ -26,6 +31,7 @@ requests are blocked by CORS.
     photos/                     portraits, 480x480 JPEG
     _ds/                        Broadsheet design system (stylesheet + bundle)
     scripts/extract-deck.py     pulls people and portraits out of the deck
+    scripts/build-jsonld.mjs    generates the JSON-LD from data.js
     data/                       source deck and raw extract (both git-ignored)
 
 `Collaboration Index v1 (sample data).dc.html` is an earlier draft built on
