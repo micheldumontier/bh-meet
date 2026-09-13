@@ -2,7 +2,7 @@
 
 A browsable index of BioHackathon 2026 participants — search people by topic,
 language and skill, see who overlaps with you, and build a shortlist of people
-to find at the event.
+to find at the event. 110 introductions, 84 with portraits.
 
 Live site: https://micheldumontier.github.io/bh-meet/
 
@@ -23,10 +23,10 @@ requests are blocked by CORS.
     support.js                  runtime the page loads
     data.js                     the participants
     photos.json                 id -> portrait path, read by the app
-    photos/                     portraits
+    photos/                     portraits, 480x480 JPEG
     _ds/                        Broadsheet design system (stylesheet + bundle)
-    scripts/                    data and photo extraction
-    data/                       source decks (git-ignored, see below)
+    scripts/extract-deck.py     pulls people and portraits out of the deck
+    data/                       source deck and raw extract (both git-ignored)
 
 `Collaboration Index v1 (sample data).dc.html` is an earlier draft built on
 invented data, kept for reference.
@@ -43,22 +43,52 @@ invented data, kept for reference.
 | `i` `s` `m` | interests, skills, personal message |
 | `t` | topic tags, used by the graph and the filters |
 
-The app reads nothing else. `photos.json` is a separate `id -> path` map so
+The app reads nothing else. `photos.json` is a separate `id -> path` map, so
 portraits can be regenerated without touching `data.js`.
 
-## Source decks
+Ids are name slugs, **not** slide numbers. The deck is reordered and renumbered
+between exports — a person on slide 20 in one export is on slide 26 in the
+next — so anything keyed on slide position silently attaches the wrong face to
+the wrong person.
 
-Participant data comes from the BH26 self-introduction deck. The exported
-`.pptx` lives in `data/` and is **git-ignored** — it is ~128 MB, over GitHub's
-100 MB per-file limit. Keep a local copy there to regenerate the data.
+## Regenerating from the deck
+
+Put the exported deck at `data/BH26-people.pptx`, then:
+
+    python3 scripts/extract-deck.py
+
+That writes `photos/`, `photos.json`, and `data/people.json` — the raw text of
+every slide, one record per person. It needs [ImageMagick][im] (`magick`) for
+the portraits; pass `--no-photos` to skip them.
+
+Every participant slide follows the same template, so the script reads each
+field from a known slot rather than guessing: the title placeholder is the
+name, the wide strip along the top is the affiliation, the left body holds
+"Research background and interests" and "Skills", the right box holds "Coding"
+and "Message", and the portrait is the picture in the top-left square. Slides
+that abandon the template are still captured under `raw`.
+
+**`data.js` is curated by hand from `data/people.json`, not generated.** The
+slide text is long, inconsistent and occasionally holds things that should not
+be republished — one slide carried a host's Basic Auth credentials. That is why
+`data/people.json` is git-ignored along with the deck: both are local working
+files. The script never writes `data.js`.
+
+[im]: https://imagemagick.org
+
+## Source deck
+
+The deck lives in `data/` and is git-ignored — it is ~128 MB, over GitHub's
+100 MB per-file limit. Keep a local copy there to regenerate.
 
 Source deck: https://docs.google.com/presentation/d/1UWasNu6Wa_zCRhuWErF0cu2-uHpxwVBOU_6bNarQe1c/edit
 
 ## Publishing
 
 GitHub Pages, Settings → Pages → Source: "Deploy from a branch", branch `main`,
-folder `/`. `.nojekyll` is present so the `_ds/` folder is not skipped — Jekyll
-ignores underscore-prefixed directories otherwise.
+folder `/`. `.nojekyll` is present so the `_ds/` folder is served — Jekyll skips
+underscore-prefixed directories otherwise. Every path in the page is relative,
+so the site works from the `/bh-meet/` subpath a project site is served under.
 
 ## License
 

@@ -1,5 +1,9 @@
 .DS_Store
 
-# Source decks are large binaries kept out of the repo (GitHub caps files at 100 MB).
+# Source decks are large binaries kept out of the repo (GitHub caps files at
+# 100 MB), and people.json is the raw slide text extracted from them: it holds
+# personal detail and the odd credential that belongs nowhere public. Both are
+# regenerable with scripts/extract-deck.py.
 data/*.pptx
 data/*.pdf
+data/people.json
