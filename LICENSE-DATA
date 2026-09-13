@@ -1,0 +1,24 @@
+# Data license — CC0 1.0 Universal
+
+The participant data in this repository — `data.js`, `people.jsonld`,
+`topics.jsonld`, `dataset.jsonld`, `photos.json` and the images in `photos/` —
+is released under the Creative Commons CC0 1.0 Universal Public Domain
+Dedication.
+
+    https://creativecommons.org/publicdomain/zero/1.0/
+    Full legal code: https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+The source code — everything in `scripts/`, `index.html`, `support.js` and the
+design system in `_ds/` — remains under the MIT License. See LICENSE.
+
+## What CC0 does not cover
+
+The data describes identifiable people and includes their photographs. CC0
+waives copyright and related rights; it explicitly does **not** waive, and
+cannot waive, personality rights, rights of publicity or privacy, or any
+obligations under data protection law such as the GDPR.
+
+The content originates from self-introduction slides that participants wrote
+for the BioHackathon 2026 event deck. Reusing it beyond the purpose of that
+event is your responsibility, not theirs. If you are a participant and want
+your entry amended or removed, open an issue on the repository.

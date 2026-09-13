@@ -1,0 +1,16 @@
+{
+ "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+ "@type": "SoftwareSourceCode",
+ "name": "BH26 Collaboration Index",
+ "description": "Static site indexing BioHackathon 2026 self-introductions, with extraction from the event slide deck and FAIR JSON-LD serialisations.",
+ "codeRepository": "https://github.com/micheldumontier/bh-meet",
+ "url": "https://micheldumontier.github.io/bh-meet/",
+ "license": "https://spdx.org/licenses/MIT",
+ "programmingLanguage": ["JavaScript", "Python"],
+ "runtimePlatform": ["Node.js", "Python 3"],
+ "softwareRequirements": ["ImageMagick"],
+ "author": [
+  {"@type": "Person", "familyName": "Dumontier", "givenName": "Michel", "affiliation": {"@type": "Organization", "name": "Maastricht University"}}
+ ],
+ "keywords": ["BioHackathon", "bioinformatics", "FAIR data", "JSON-LD", "static site"]
+}

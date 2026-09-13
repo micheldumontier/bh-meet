@@ -1,0 +1,4462 @@
+{
+ "@context": {
+  "@vocab": "https://schema.org/",
+  "schema": "https://schema.org/",
+  "skos": "http://www.w3.org/2004/02/skos/core#",
+  "dcterms": "http://purl.org/dc/terms/",
+  "prov": "http://www.w3.org/ns/prov#",
+  "knowsAbout": {
+   "@id": "schema:knowsAbout",
+   "@type": "@id"
+  },
+  "image": {
+   "@id": "schema:image",
+   "@type": "@id"
+  },
+  "sameAs": {
+   "@id": "schema:sameAs",
+   "@type": "@id"
+  },
+  "isPartOf": {
+   "@id": "schema:isPartOf",
+   "@type": "@id"
+  },
+  "wasDerivedFrom": {
+   "@id": "prov:wasDerivedFrom",
+   "@type": "@id"
+  }
+ },
+ "@graph": [
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld",
+   "@type": "Dataset",
+   "name": "BH26 Collaboration Index — participants",
+   "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+   "dateModified": "2026-09-13",
+   "wasDerivedFrom": "https://docs.google.com/presentation/d/1UWasNu6Wa_zCRhuWErF0cu2-uHpxwVBOU_6bNarQe1c/edit",
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset"
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#haruma-abe",
+   "@type": "Person",
+   "name": "Haruma Abe",
+   "identifier": "haruma-abe",
+   "description": "Master's student researching the relationship between racehorse injuries and pedigree, here to learn more from the life-science field and pick up techniques to apply to it.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Tokyo City University",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#population-genetics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#machine-learning",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "R"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/haruma-abe.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Statistical analysis"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Likes football and horse racing."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#anggi",
+   "@type": "Person",
+   "name": "Anggi (Angganararas Lungidningtyas)",
+   "identifier": "anggi",
+   "description": "Bioinformatics lead at BB Binomika, part of BGSI, Indonesia's national whole genome sequencing programme under the Ministry of Health. Recently finished a population-stratified pharmacogenomics analysis of four anti-epileptic drug variants across the full BGSI cohort, and is mapping carrier frequencies for ten ACMG SF actionable gene loci in the same cohort. Also benchmarked MGI against Illumina on 23 dually sequenced samples.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Biomedical and Genome Science Initiative (BGSI)",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q252",
+      "@type": "Country",
+      "name": "Indonesia",
+      "identifier": "ID"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#population-genetics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#genomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#variants",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#clinical",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "AWS"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "GCP"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/anggi.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Population genomics and pharmacogenomics; maintaining internal operations and the platform for external researchers and hospitals"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "First BioHackathon. Happy to talk BGSI, population genomics, or just compare notes on pipeline headaches. Likes cats, sim building games and RPGs."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#yui-asano",
+   "@type": "Person",
+   "name": "Yui Asano",
+   "identifier": "yui-asano",
+   "description": "Visual and UI/UX design. Designed this year's BioHackathon poster.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Swallow Design Studio Inc.",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#visualisation"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/yui-asano.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Visual and UI/UX design"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Studied so many citrus family trees for the poster — now a citrus expert."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#evan-bolton",
+   "@type": "Person",
+   "name": "Evan Bolton",
+   "identifier": "evan-bolton",
+   "description": "PubChem and PubChemRDF since 2004. Connecting scientific information between chemical substances, biological targets and diseases. Exploring local LLMs to improve information quality, generate queries from natural language, and work more efficiently.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "NCBI",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q30",
+      "@type": "Country",
+      "name": "USA",
+      "identifier": "US"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#knowledge-graphs",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rdf-sparql",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#llm-ai",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#fair-standards",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Perl"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "C++"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "SPARQL"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "SQL"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/evan-bolton.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "PubChem, NCBI resources, data integration, standards, RDF, cheminformatics, glycoinformatics, literature and patent informatics, machine readability, linked data, knowledge graphs"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Come see me and let's chat about your use cases, data needs and wants. How can I help you?"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#hidemasa-bono",
+   "@type": "Person",
+   "name": "Hidemasa Bono",
+   "identifier": "hidemasa-bono",
+   "description": "Professor of bioinformatics and genome informatics at Hiroshima University and specially appointed professor at DBCLS. Initiator of TogoTV, RefEx and FANTOM, PI for the BioDX centre of innovation (COI-NEXT), and deputy director of the HU Genome Editing Innovation Center. Works on data-driven genome breeding, the data analysis environment for genome editing, and gene function analysis.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Hiroshima University",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#genomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#plants-agriculture",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#visualisation",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Shell"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Perl"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/hidemasa-bono.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Pathway analysis environment development — Quest for Pathways with eXpression (QPX); genome sequencing and analysis"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Let's decode genomes. Let's democratise the pathway database."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#orion-buske",
+   "@type": "Person",
+   "name": "Orion Buske",
+   "identifier": "orion-buske",
+   "description": "Running a startup building medical genetics software. AI in medical genetics workflows, especially family history and phenotype data. Rare disease diagnosis: ZebraSeek and the Undiagnosed Hackathon. Standards: GA4GH, HPO, Phenopacket. Patient matchmaking — Matchmaker Exchange, PhenomeCentral, semantic similarity between patients.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "PhenoTips",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q16",
+      "@type": "Country",
+      "name": "Canada",
+      "identifier": "CA"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rare-disease",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#clinical",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#fair-standards",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#llm-ai",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#visualisation",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "JavaScript"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Shell"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Cursor"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/orion-buske.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Entrepreneurship and startups; somewhat rusty full-stack development; loves data analysis and visualization"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Highly food-motivated. Loves hiking, canoe camping, foraging mushrooms. Hoping to find matsutake — 松茸を探しています!"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#jiandong-chen",
+   "@type": "Person",
+   "name": "Jiandong Chen",
+   "identifier": "jiandong-chen",
+   "description": "Single-cell RNA-seq analysis (2020–2024), cap analysis of mRNA (2023–2024), and since 2025 developing workflows for combined long-read WGS and methylation analysis, and methods for analysing the structure of variable number tandem repeat regions.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Kyushu University",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#genomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#variants",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#workflows",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Rust"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Claude"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/jiandong-chen.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Genome analysis"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "From 温州 — though the oranges produced there taste different."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#hirokazu-chiba",
+   "@type": "Person",
+   "name": "Hirokazu Chiba",
+   "identifier": "hirokazu-chiba",
+   "description": "Comparative genomics across model organisms and ~1,000 bacteria/archaea. Semantic web and graph DBs, Orthology Ontology, SPARQL tooling (spang, formatter), PG format for property graphs, RAG systems over biomedical databases.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "DBCLS",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#knowledge-graphs",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rdf-sparql",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#ontologies",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#genomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#llm-ai",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Perl"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "JavaScript"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "C"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/hirokazu-chiba.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "RDF, SPARQL, JavaScript, Python, LLMs"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Prefectures I have lived in: Ibaraki, Tokyo, Aichi, Chiba, Ibaraki again."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#hassan-sibroe-abdulla-daanaa",
+   "@type": "Person",
+   "name": "Hassan Sibroe Abdulla Daanaa",
+   "identifier": "hassan-sibroe-abdulla-daanaa",
+   "description": "Evolutionary genomics — molecular evolution and population genomics. PhD from the Invertebrate Genetics lab at NIG/SOKENDAI, investigating the relationships among protein structural flexibility, architecture and sequence evolution using recent advances in AI. Now a postdoc in the Human Population Genetics lab at NIG.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "National Institute of Genetics (NIG)",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#population-genetics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#genomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#structural-biology",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/hassan-sibroe-abdulla-daanaa.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Molecular evolution; protein structure (IDR) and function; Python-based pipeline development"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Likes learning how to learn, and the philosophy of science. Supports Arsenal FC, plays football and will discuss tactics."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#michel-dumontier",
+   "@type": "Person",
+   "name": "Michel Dumontier",
+   "identifier": "michel-dumontier",
+   "description": "Biochemist by training, data scientist by practice. FAIR data, open science, reproducibility. Ontologies (SIO, SULO, OntoExplorer, RustDL), RDF linked data (Bio2RDF), mapping (ShExMap), metadata (HCLS dataset description, KG metadata). Neurosymbolic AI: biomedical data embedding from molecule to patient, prediction and explainable AI, drug discovery and personalized medicine. Plans: federated agentic research systems — how can researchers with AI meaningfully collaborate? — and temporal knowledge graphs extending SULO with provable temporal transforms.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Maastricht University",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q55",
+      "@type": "Country",
+      "name": "Netherlands",
+      "identifier": "NL"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#ontologies",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#knowledge-graphs",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#fair-standards",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#llm-ai",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#machine-learning",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "agentic coding"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/michel-dumontier.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Ontologies, linked data, data standards, neurosymbolic AI"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Temper unbridled enthusiasm with focused effort to give shape to the life you imagine. AI coding: BH-MEET."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#danil-ezhov",
+   "@type": "Person",
+   "name": "Danil Ezhov",
+   "identifier": "danil-ezhov",
+   "description": "ML/DL engineer-researcher working on physics-informed neural networks and LLM multi-agent systems; previously a cheminformatics and DL/ML researcher at Syntelly, a Reaxys-like chemical platform. Current projects: PINN-PELINE, an RL agent that builds optimal optimiser chains for training PINNs, and FEDOT.MAS, which generates an optimal multi-agent configuration for a given task.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "NSS Lab, ITMO University",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q159",
+      "@type": "Country",
+      "name": "Russia",
+      "identifier": "RU"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#machine-learning",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#llm-ai",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#genomics",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Bash"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "C++"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Claude"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/danil-ezhov.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "LLM agents (tool use, structured output, agent loops), RAG; PyTorch, JAX, PEFT fine-tuning, NER; RDKit and genomics data"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Did Shotokan karate as a kid (4th kyu). First time abroad, and a second bioinformatics hackathon."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#nuria-fabrega",
+   "@type": "Person",
+   "name": "Núria Fàbrega",
+   "identifier": "nuria-fabrega",
+   "description": "BSc in chemistry, MSc in bioinformatics, now a second-year PhD student developing methods to identify compatible public transcriptomics experiments for data reuse through their metadata. Interested in everything that improves reuse: LLMs and knowledge graphs for metadata quality, and extraction and standardisation of entities from free text.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "University of Edinburgh",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q145",
+      "@type": "Country",
+      "name": "UK",
+      "identifier": "GB"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#llm-ai",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#knowledge-graphs",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#text-mining",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#fair-standards",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Bash"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Claude"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/nuria-fabrega.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Biomedical NLP and LLM-based information extraction; transcriptomics and omics metadata; LLM-assisted data curation and evaluation. Co-developed and taught a tutorial on agentic AI and MCPs for biomedical research."
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "First BioHackathon, and in Japan. Obsessed with Obsidian and knowledge organisation tools. Loves learning languages and finds Japanese — especially kanji — really fun; a long-standing wish is a research stay in Japan."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#takatomo-fujisawa",
+   "@type": "Person",
+   "name": "Takatomo Fujisawa",
+   "identifier": "takatomo-fujisawa",
+   "description": "Oversees development and operation of all DDBJ databases and services — assembled sequences, SRA/GEA, BioProject/BioSample, MetaboBank, JGA. Applying AI/LLM to database repositories; advancing the RDF Portal with dynamic ID relationships and tools such as Bio-MCP-blast.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "DDBJ (unofficial), BSI, NIG",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#llm-ai",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rdf-sparql",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#genomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#fair-standards",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Perl"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Ruby"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "SPARQL"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/takatomo-fujisawa.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Repository development, database integration, genome annotation, curation"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "A lightning strike directly hit our institute and caused a power outage; the recovery work last week was quite tough. My photo was taken this summer when I climbed Mt. Rishiri in Hokkaido, wearing a BioHackathon tenugui."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#kazumichi-fujiwara",
+   "@type": "Person",
+   "name": "Kazumichi Fujiwara",
+   "identifier": "kazumichi-fujiwara",
+   "description": "PhD in information science from Hokkaido (2022), then the Mouse Genomics Resource Lab at NIG (2023–2026) and the Human Population Genomics Lab there since September 2026. Evolutionary and population genomics: population structure, admixture and demographic history; hybridisation, introgression and natural selection; genome evolution and comparative genomics — from wild house mice to flowering cherries.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "National Institute of Genetics (NIG)",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#population-genetics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#genomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#variants",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#biodiversity",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "R"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Shell"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/kazumichi-fujiwara.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Genome analysis and bioinformatics; population genomics and phylogenomics; whole-genome sequencing and variant analysis; genome assembly and comparative genomics"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "A research journey from mice to cherry trees to humans next. For fun, analyses their own genome — about 30× WGS of themselves. First BioHackathon, still figuring things out."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#toyofumi-fujiwara",
+   "@type": "Person",
+   "name": "Toyofumi Fujiwara",
+   "identifier": "toyofumi-fujiwara",
+   "description": "AI-based diagnostic support tools — DiseaseSearch, PanelSearch, CaseSharing. Enhancing interoperability between Japanese and international disease resources: NanbyoData, NANDO, Mondo Japanese.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "DBCLS",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rare-disease",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#llm-ai",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#ontologies",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#clinical",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#fair-standards"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/toyofumi-fujiwara.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Rare disease data curation and interoperability; biomedical informatics and knowledge representation"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "We will be developing a diagnostic support tool using LLMs, so if you are interested, look for this doll — ZebraSeek-kun."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#naohisa-goto",
+   "@type": "Person",
+   "name": "Naohisa Goto",
+   "identifier": "naohisa-goto",
+   "description": "Lecturer in the NGS Core Facility, Bioinformatics Center, Research Institute for Microbial Diseases. Computer system administration, BioRuby since 2001, development of the Ruby language since 2011, genome/metagenome sequence analysis, gene expression analysis.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "The University of Osaka",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#genomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#cloud-hpc",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#workflows",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#microbiology",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Ruby"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "C"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "C++"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "R"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Perl"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "PHP"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/naohisa-goto.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Programming, bioinformatics data analysis, server/network management. Interested in RDF and CWL."
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "I like travelling by train."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#susumu-goto",
+   "@type": "Person",
+   "name": "Susumu Goto",
+   "identifier": "susumu-goto",
+   "description": "KEGG and LinkDB at Kyoto University until 2017; since then database integration via knowledge graphs, jPOST proteome database, and NLP/LLM for biological literature mining.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "DBCLS",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#knowledge-graphs",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#proteomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#text-mining",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#llm-ai",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Perl"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "R"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/susumu-goto.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Database integration; proteome data, pathway and reaction data"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Mainly in charge of management rather than coding now, but would like to discuss database integration. Member of the male choir Tokyo Lietertafel 1925."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#robert-hoehndorf",
+   "@type": "Person",
+   "name": "Robert Hoehndorf",
+   "identifier": "robert-hoehndorf",
+   "description": "Neuro-symbolic AI and protein function prediction. Phenotype-based variant prioritisation and phenotype ontologies. Causality and causal knowledge graphs. Tools: AberOWL2, mOWL, PhysioMap.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "KAUST",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q851",
+      "@type": "Country",
+      "name": "Saudi Arabia",
+      "identifier": "SA"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#ontologies",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#knowledge-graphs",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#llm-ai",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rare-disease",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#variants",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Groovy"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "C"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "C++"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Aider"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/robert-hoehndorf.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "OWL/DL reasoning, ontology embeddings, LLM agents for curation and annotation; knowledge graphs and SPARQL endpoints for biology; large-scale genome annotation. Plans: causal knowledge graphs, agents that reason, and the Flora Phenotype Ontology for plant traits."
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "I developed an interest in birding in recent years. I observed a shoebill stork last month. Please join me for a birding expedition around the hackathon venue."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#masae-hosoda",
+   "@type": "Person",
+   "name": "Masae Hosoda",
+   "identifier": "masae-hosoda",
+   "description": "Multiple glycan structure alignment (MCAW tool), glycan-glycan binding molecules, Human Glycome Atlas. Linking Japanese intractable and rare disease information with glycan-related data. GlyCosmos: glycan motifs and MCP adoption.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "DBCLS",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#glycomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rare-disease",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rdf-sparql",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Java"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Ruby"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/masae-hosoda.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Glycoinformatics. Learning SPARQL and RDF."
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "I will join the BioHackathon from September 17, as I will be attending a glycoscience conference beforehand."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#tzung-chien-hsieh",
+   "@type": "Person",
+   "name": "Tzung-Chien Hsieh",
+   "identifier": "tzung-chien-hsieh",
+   "description": "Computational phenotyping of rare genetic disorders. GestaltMatcher — a deep learning framework for diagnosing rare disorders through facial image analysis — and the GestaltMatcher Database, the global reference for facial phenotypic variability in rare disease, with around 13,000 patients. Extending to brain MRI and fetal ultrasound imaging.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "University Hospital Bonn",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q183",
+      "@type": "Country",
+      "name": "Germany",
+      "identifier": "DE"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rare-disease",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#machine-learning",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#clinical",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#genomics",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Ruby"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/tzung-chien-hsieh.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Facial image analysis and computer vision; exome and genomic data analysis; multimodal data integration"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "I am visiting Japan while my wife is taking care of our two-year-old daughter alone. So I have to fill two empty suitcases before I fly back to Germany. Looking for recommendations."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#shuya-ikeda",
+   "@type": "Person",
+   "name": "Shuya Ikeda",
+   "identifier": "shuya-ikeda",
+   "description": "TogoID — ID conversion service for life-science databases. BioSample curation. Improving metadata quality using LLMs.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "DBCLS",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#llm-ai",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rdf-sparql",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#fair-standards",
+    {
+     "@type": "ComputerLanguage",
+     "name": "awk"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/shuya-ikeda.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Database integration (RDF, SPARQL); LLMs"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "I like spiders. I recently started bird watching."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#manabu-ishii",
+   "@type": "Person",
+   "name": "Manabu Ishii",
+   "identifier": "manabu-ishii",
+   "description": "20th-century software engineer. This BioHackathon: togoimputation.org imputation server development, and a Trusted Research Environment if possible.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Genome Analytics Japan",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#llm-ai",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#clinical",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#workflows",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Z80"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "C"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "C++"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Perl"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Java"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "JavaScript"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "CWL"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/manabu-ishii.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "I'm interested in coding with LLM and TDD"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Visited Edinburgh Castle, a 40-year-old dream — エジンベア from ドラクエ3. Yesterday: Matsuyama Castle."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#priscilla-joanne",
+   "@type": "Person",
+   "name": "Priscilla Joanne",
+   "identifier": "priscilla-joanne",
+   "description": "Master's student in computational biology, in the Goto lab at DBCLS. Generating question-answer datasets using knowledge graphs from the RDF portal.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "University of Tokyo",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#knowledge-graphs",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#llm-ai",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rdf-sparql",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "SPARQL"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/priscilla-joanne.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "I'm still new in the field, but in this BioHackathon I want to find practical advice, solidify my Master's topic, and listen to new things about research."
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "If you like specialty coffee and would like to explore the flavors of Indonesian coffee, contact me — my family runs a coffee business in Indonesia."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#mayumi-kamada",
+   "@type": "Person",
+   "name": "Mayumi Kamada",
+   "identifier": "mayumi-kamada",
+   "description": "Genome assembly of Bacillus subtilis natto; clinical genome analysis, especially cancer; the MGeND disease variant database; molecular dynamics on K and Fugaku. Now at Kitasato University School of Frontier Engineering and, since 2025, cross-appointed at the Institute for Protein Research, Osaka University, on a data platform for drug discovery. Interests: standardisation and integration of clinical genome data, and classification and interpretation of variants.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Kitasato University",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#variants",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#clinical",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#machine-learning",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#structural-biology",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "R"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Ruby"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "JavaScript"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/mayumi-kamada.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Machine learning models and three-dimensional structural analysis to predict the disease relevance of genomic variants; databases for genomic medicine"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "The happiest thing is drinking a highball."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#alex-kanitz",
+   "@type": "Person",
+   "name": "Alex Kanitz",
+   "identifier": "alex-kanitz",
+   "description": "Open standards-based data analytics platforms with data and compute federation, AI support, tokenization — BioHackCloud, ELIXIR On Cloud, UniVerse Platform. Previously bioinformatics tool and workflow development, and before that RNA biology.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "University of Basel / Pacific Analytics Consulting",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q39",
+      "@type": "Country",
+      "name": "Switzerland",
+      "identifier": "CH"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#workflows",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#cloud-hpc",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#fair-standards",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#web-dev"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/alex-kanitz.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Web dev, GA4GH APIs, workflows, a bit of RO-Crate, a bit of DevOps"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Since January 2025 I get up very early, because I started a job in one country while still living in another. Thanks to Manabu-san, last week I helped carry my first 神輿."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#deepa-kasaragod",
+   "@type": "Person",
+   "name": "Deepa Kasaragod",
+   "identifier": "deepa-kasaragod",
+   "description": "Master's in photonics, PhD in biomedical optics (optical coherence tomography), now assistant professor in neurobiology.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Hiroshima University",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#visualisation",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#machine-learning",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "R"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Claude"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/deepa-kasaragod.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Open-source tool development; microscopy hardware and software; recently started working on omics data"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "A wannabe drummer. First time at BioHackathon."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#toshiaki-katayama",
+   "@type": "Person",
+   "name": "Toshiaki Katayama",
+   "identifier": "toshiaki-katayama",
+   "description": "Design & develop open source tools for knowledge graphs and genome graphs. TogoPackage and TogoMCP give AI agents access to local data and public life-science databases. Wants Japan to come together to design its new national bioscience database center.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "DBCLS / BSI, NIG",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#knowledge-graphs",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rdf-sparql",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#llm-ai",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#genomics",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Ruby"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "JavaScript"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "SPARQL"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/toshiaki-katayama.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Facilitates discussions, coding, and drinking :)"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Started learning the tenor saxophone this year. Tasted sake from 670+ breweries across Japan — brought 20+ bottles of Ehime local sake."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#yosuke-kawai",
+   "@type": "Person",
+   "name": "Yosuke Kawai",
+   "identifier": "yosuke-kawai",
+   "description": "Molecular evolution, population genetics, human evolution, medical genomics, MGeND. Projects: pangenome graph focusing on structural variation — published the Japan-Saudi Pangenome with Robert, Maxat and Toshiaki — and an immunogenetics database; hosting IHIW19.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "National Institute of Global Health Medicine",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#pangenome",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#population-genetics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#variants",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#genomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#cloud-hpc",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "R"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/yosuke-kawai.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Genomic data analysis in the background of population genetics; large-scale analysis of genomic data on cluster computers"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "I have two cats."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#shin-kawano",
+   "@type": "Person",
+   "name": "Shin Kawano",
+   "identifier": "shin-kawano",
+   "description": "Wet molecular biology on acetic acid bacteria at Hokkaido, bioinformatics and glycoinformatics (KEGG GLYCAN) at Kyoto, metabolomics at Takanashi Milk, and now proteomics at DBCLS and Kitasato — the jPOST project, metaproteomics and non-canonical proteomics, AI-driven proteomics and metadata curation.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Kitasato University / DBCLS",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#proteomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#glycomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#llm-ai",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#metabolomics",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Ruby"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "R"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/shin-kawano.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Bioinformatics, proteomics, biological databases, mass spectrometry"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "I have an energetic Bichon Frise 🐶"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#shuichi-kawashima",
+   "@type": "Person",
+   "name": "Shuichi Kawashima",
+   "identifier": "shuichi-kawashima",
+   "description": "KEGG, MAGEST, AAindex; Togo* products; RDF portal; TogoMedium and the Growth Medium Ontology. Integration of microorganism-related information.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "DBCLS",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rdf-sparql",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#ontologies",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#microbiology",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#fair-standards",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Ruby"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/shuichi-kawashima.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Data integration, RDF/OWL/SPARQL, data models, web services, triple stores, Ruby, Togo* tools"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Since the Covid19 pandemic, I've spent more time cooking. Octopus eggs."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#akira-kinjo",
+   "@type": "Person",
+   "name": "Akira Kinjo",
+   "identifier": "akira-kinjo",
+   "description": "Biophysics and bioinformatics. Main developer at Protein Data Bank Japan (2006–2018), maths teacher at Universiti Brunei Darussalam (2018–2024), one-man company since 2024. Now on TogoMCP (a product of BH25 in Mie), an MIE file ablation study and its possible standardisation, and LLMs against life-science databases generally — including when an MCP server beats a skill.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Anima Machina G.K.",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#structural-biology",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#llm-ai",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rdf-sparql",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Claude"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/akira-kinjo.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "PDB and protein structures; databases (Postgres, RDF/SPARQL)"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Back at BioHackathon after seven or eight years away. The bike died on Awaji-shima on the way to BH26, and was resurrected the next day."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#yuko-kitano",
+   "@type": "Person",
+   "name": "Yuko Kitano",
+   "identifier": "yuko-kitano",
+   "description": "Bioinformatics engineer and tool developer. Manages a WGS pipeline of about 5,000 human samples a year as a daily Nextflow job. Built an LLM ACMG variant interpreter at MedHackathon Asia in Singapore, now live in the cloud, and a VCF annotation and filtering tool for pre-review analysis — both deployed and ready to try.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "BITS Co., Ltd.",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#genomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#workflows",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#variants",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#clinical",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#llm-ai",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/yuko-kitano.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Traceability systems for human genome data; Nextflow workflows across ~5,000 individuals a year; pedigree visualisation tools built with AI assistance"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Loves their cats, and misses them."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#ruka-kobayashi",
+   "@type": "Person",
+   "name": "Ruka Kobayashi",
+   "identifier": "ruka-kobayashi",
+   "description": "Web application development and prompt engineering. Built an LLM tool for nursing discharge summaries that uses structured XML output to auto-fill template fields. New to bioinformatics and currently learning it, hoping to explore it hands-on with teammates from the life sciences.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Trinet Corporation",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#llm-ai",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#web-dev",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#clinical",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/ruka-kobayashi.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Web application development, prompt engineering"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "First time at this hackathon, looking forward to working with everyone and absorbing as much as possible."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#julia-koblitz",
+   "@type": "Person",
+   "name": "Julia Koblitz",
+   "identifier": "julia-koblitz",
+   "description": "Head of Data Integration at DSMZ Digital Diversity.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Leibniz Institute DSMZ",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q183",
+      "@type": "Country",
+      "name": "Germany",
+      "identifier": "DE"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#web-dev",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rdf-sparql",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#microbiology",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#visualisation",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "PHP"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "JavaScript"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "SQL"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "MongoDB"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/julia-koblitz.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Database and web development, data integration (e.g. via RDF), UI/UX and graphic design, artificial intelligence"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "I co-founded a startup that provides open source software for institutes to manage their research. I am still collecting Goshuin."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#amane-kurata",
+   "@type": "Person",
+   "name": "Amane Kurata",
+   "identifier": "amane-kurata",
+   "description": "Undergraduate developing a machine-learning pipeline for evaluating the safety of genome editing, with a particular focus on allergenicity.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Hiroshima University",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#machine-learning",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#genomics",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/amane-kurata.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Machine-learning pipelines for genome-editing safety"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "First time at an event like this. Limited experience in the field so far, and out to make the most of it."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#shuto-machida",
+   "@type": "Person",
+   "name": "Shuto Machida",
+   "identifier": "shuto-machida",
+   "description": "Developing haplotype phasing algorithms for the human genome; applying combinatorial optimization to genomic problems. Member of the JoGo project, building high-resolution haplotype reference panels from long-read sequencing data.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Kyushu University",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#variants",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#genomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#pangenome",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#machine-learning",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#plants-agriculture",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Shell"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/shuto-machida.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Combinatorial optimization, mathematical thinking, exploring IGV and VCF files, applying machine learning to research, interested in quantum computing applications. BioHackathon idea: an AI-assisted genomic atlas of Japanese citrus — what makes mikan, iyokan, orange and hassaku different?"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "3rd-year PhD student from Okinawa, MSc in mathematics (representation theory). Excited to finally explore Mie."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#taichi-matsubara",
+   "@type": "Person",
+   "name": "Taichi Matsubara",
+   "identifier": "taichi-matsubara",
+   "description": "Quantum machine learning for genomics: predicting transcription factor binding from DNA. QTFPred is a quantum–classical learning method for base-resolution TF binding prediction and cooperative motif analysis (Briefings in Bioinformatics 26(6), bbaf604, 2025). Current interests are chromatin accessibility and variant effects, learning from limited data, and interpreting regulatory motifs.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "BlueMeme Inc. / Medical Institute of Bioregulation, Kyushu University",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#machine-learning",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#genomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#variants",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Claude"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/taichi-matsubara.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Genomic sequence modelling, deep learning, quantum machine learning and quantum computation, transcription factor and gene regulation"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "PhD in science, March 2026. Hobbies are choir and travel."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#miguel-mazumder",
+   "@type": "Person",
+   "name": "Miguel Mazumder",
+   "identifier": "miguel-mazumder",
+   "description": "Human Glycome Atlas TOHSA — secure full-stack service for biodata with access control, data privacy and interoperability. NIH Common Fund Data Ecosystem: integration of n-triples/XML biomedical data with Neo4j and Cypher. Machine learning workflows and MATLAB image analysis pipelines. Interested in RDF data modeling, SPARQL, glycan data integration and ontology mapping.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "GaLSIC, Soka University",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#glycomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#knowledge-graphs",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#machine-learning",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rdf-sparql",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#web-dev",
+    {
+     "@type": "ComputerLanguage",
+     "name": "MATLAB"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Rust"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Shell"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/miguel-mazumder.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Image processing and analysis, machine learning, Docker, NGS data analysis, knowledge graphs, computer vision"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "I can fall asleep anywhere. This is my first biohackathon and I am relatively new to semantic web technologies, so I hope to learn a lot here."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#gos-micklem",
+   "@type": "Person",
+   "name": "Gos Micklem",
+   "identifier": "gos-micklem",
+   "description": "PI of the InterMine project — HumanMine and FlyMine. Moving the back end from Postgres to QLever; wants BlueGenes to work on any SPARQL endpoint, e.g. the RDF portal. This time: infer the schema of a QLever endpoint into the InterMine model, and MetaStanza to InterMine.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "DBCLS / University of Cambridge",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q145",
+      "@type": "Country",
+      "name": "UK",
+      "identifier": "GB"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rdf-sparql",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#web-dev",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#visualisation",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#knowledge-graphs",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Perl"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "C"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/gos-micklem.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Large-scale data integration and tools and interfaces for flexible, efficient querying and data visualisation"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "I metabolise caffeine very slowly and alcohol quite quickly."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#mari-t-minowa",
+   "@type": "Person",
+   "name": "Mari T. Minowa",
+   "identifier": "mari-t-minowa",
+   "description": "Evolution of colicins, expression of human blood factors, promoter analysis of dopamine receptor genes, glycosyl transferases. Launch and operation of the NBDC human database from the ethical and personal-information viewpoint.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "DBCLS",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#clinical",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#glycomics",
+    {
+     "@type": "ComputerLanguage",
+     "name": "???"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/mari-t-minowa.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Knowledge to take charge of various aspects around the research (public relations, contracts, help desk)"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "I'm still caught up in the Kawagoe festival. Love butterflies and grow many plants. Love dinos."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#hiroyuki-mishima",
+   "@type": "Person",
+   "name": "Hiroyuki Mishima",
+   "identifier": "hiroyuki-mishima",
+   "description": "Assistant professor in rare disease bioinformatics; formerly dentist and post-doc in cleft palate and rare disease genetics. This hackathon: next-generation phenotyping by integrating facial analysis (GestaltMatcher) and HPO-based analysis (PubCaseFinder) to fight the diagnostic odyssey.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Nagasaki University",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rare-disease",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#clinical",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#workflows",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#cloud-hpc",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Ruby"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "JavaScript"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "R"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/hiroyuki-mishima.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Full-stack bioinformatics from server room construction to building diagnostic workflows"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#nobutaka-mitsuhashi",
+   "@type": "Person",
+   "name": "Nobutaka Mitsuhashi",
+   "identifier": "nobutaka-mitsuhashi",
+   "description": "BodyParts3D; NBDC Human Database and its security guidelines; TogoVar — Japanese genetic variation, allele frequencies, clinical significance, pathogenicity prediction, literature integration, GWAS Catalog, structural variants from JoGo, LD from BioBank Japan.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "DBCLS",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#variants",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#genomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rdf-sparql",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#web-dev",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#cloud-hpc",
+    {
+     "@type": "ComputerLanguage",
+     "name": "JavaScript"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Bash"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "CWL"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/nobutaka-mitsuhashi.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Data integration through web application development using RDF middleware (SPARQList, Stanza); system administration of DBCLS computational infrastructure"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "I started using a dietary log app. I realized I was eating too much fat and salt, and not getting enough protein and vitamins. Data visualization is very useful."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#rajat-kumar-mondal",
+   "@type": "Person",
+   "name": "Rajat Kumar Mondal",
+   "identifier": "rajat-kumar-mondal",
+   "description": "Biological database and tool development against antimicrobial resistance and infectious disease — seven papers and a patent as a master's student, then two years in industry as a senior bioinformatics scientist across digital health, consumer genomics, AI and policy management. Joined Kinoshita's lab at the Glycan and Life Systems Integration Center in July 2026, structuring human data from GlyCosmos for HGA-TOHSA and downstream machine learning. Starts a PhD next year.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Soka University, GaLSIC",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#glycomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#microbiology",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#machine-learning",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#web-dev",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "SQL"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "PHP"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "JavaScript"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/rajat-kumar-mondal.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Bio-data challenges, open-source development with collaborators, intuitive UI/UX"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "First-generation graduate, first time in Japan and first time at BioHackathon. Wants to collaboratively develop a unified data resource against AMR and infectious disease. New to the semantic web and finds it super complex. Big fan of tempura and rice crackers."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#yuki-moriya",
+   "@type": "Person",
+   "name": "Yuki Moriya",
+   "identifier": "yuki-moriya",
+   "description": "Web tools for the semantic web — SPARQL support, Endpoint browser, SPARQList. Data visualization: Protein browser, Haplotype explorer. Data integration: TogoDX/human, Togo*, DIVE. jPOST, LLMs.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "DBCLS / BSI, NIG",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rdf-sparql",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#visualisation",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#variants",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#proteomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#web-dev",
+    {
+     "@type": "ComputerLanguage",
+     "name": "JavaScript"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "SPARQL"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Perl"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/yuki-moriya.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "SPARQL, SPARQList and TogoStanza"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "The organizers prepared local sake from Ehime (35 litres) for this BH, with financial support from the local government."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#hina-motoyoshi",
+   "@type": "Person",
+   "name": "Hina Motoyoshi",
+   "identifier": "hina-motoyoshi",
+   "description": "MSc in life science from Rikkyo on the intracellular localisation of chloroplast proteins. Platform engineer at OPTiM from 2023, joined Trinet in December 2025, and now works with DBCLS on operational improvements. Lately interested in AI guidelines, guardrails and coding frameworks.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Trinet Corporation",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#cloud-hpc",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#web-dev",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#llm-ai",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Terraform"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Docker"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/hina-motoyoshi.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Infrastructure as code, cloud-native platform engineering, web application development — Python, Terraform, Docker, Kubernetes, Helm, AWS"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "First time here and excited to build with everyone. Escape games are the hobby, and local mandarin orange juice is the goal."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#hiroki-muroda",
+   "@type": "Person",
+   "name": "Hiroki Muroda",
+   "identifier": "hiroki-muroda",
+   "description": "Secure platforms for clinical and genomic data: processing and quality control of clinical data, and secure data management and transfer inside trusted research environments.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Trinet Corporation",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#clinical",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#genomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#cloud-hpc",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#web-dev",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "JavaScript"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "SQL"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Shell"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/hiroki-muroda.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Data processing and quality control; web system design and implementation"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "First time at the international BioHackathon. Enjoys eating, drinking and watching movies, and looking forward to getting to know everyone."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#masao-nagasaki-contact-nagasaki-csml-org",
+   "@type": "Person",
+   "name": "Masao Nagasaki",
+   "identifier": "masao-nagasaki-contact-nagasaki-csml-org",
+   "description": "Professor, Division of Biomedical Information Analysis. Bioinformatics, medical informatics, genome biology, large-scale data analysis. Interests: ACTG-haplotype centric human data analysis, tool development and annotation; collaboration on haplotype-based analysis; haplotype-based semi-automatic annotation with database MCP; graph genome and T2T.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Kyushu University, Medical Institute of Bioregulation",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#variants",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#pangenome",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#genomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#cloud-hpc",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#llm-ai",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Java"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Perl"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Shell"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "R"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "SQL"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "PHP"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/masao-nagasaki-contact-nagasaki-csml-org.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Haplotype analysis, tool development, annotation, large-scale data analysis"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Welcome: post-doctoral fellow position available."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#takeru-nakazato",
+   "@type": "Person",
+   "name": "Takeru Nakazato",
+   "identifier": "takeru-nakazato",
+   "description": "NBRC provides bacteria and fungi as a bioresource center. POMIC — a catalog of microorganisms that utilize CO2. Interested in linking data across microbial culture collections and databases.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "NITE Biological Resource Center (NBRC)",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#microbiology",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#biodiversity",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#fair-standards",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Perl"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/takeru-nakazato.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Databases; NGS analysis and gene expression analysis"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Biodiversity information standards (TDWG) member — GBIF, BOLD, Catalogue of Life. I brought a net to catch insects."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#claude-nanjo",
+   "@type": "Person",
+   "name": "Claude Nanjo",
+   "identifier": "claude-nanjo",
+   "description": "Medical informatician focusing on clinical knowledge representation and applications of AI in medicine. Many years in health IT interoperability; HL7 CIMI and LHS co-chair. Currently focused on structured knowledge in agentic AI to improve clinical accuracy — agentic RAG using knowledge graphs, and fetching relevant patient data deterministically.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "University of Utah",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q30",
+      "@type": "Country",
+      "name": "USA",
+      "identifier": "US"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#clinical",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#knowledge-graphs",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#llm-ai",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#fair-standards",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#ontologies",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Java"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Kotlin"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Rust"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/claude-nanjo.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "I would be very interested in how you leverage structured knowledge and deterministic workflows in your agentic AI."
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "I am learning my 11th (human) language."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#russell-neches",
+   "@type": "Person",
+   "name": "Russell Neches",
+   "identifier": "russell-neches",
+   "description": "",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Kyoto University",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#microbiology",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#biodiversity",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "C"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/russell-neches.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Open source, open data, open science, open hardware — open all the things! Goal for the year: justify spending on fancy pens and inks. This is my second Biohackathon. I am on my fourth attempt to pass the driver license practical test."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#kozo-nishida",
+   "@type": "Person",
+   "name": "Kozo Nishida",
+   "identifier": "kozo-nishida",
+   "description": "Cytoscape automation and access to pathway databases — KEGGscape, py4cytoscape, pywikipathways, transomics2cytoscape. Bioconductor Community Advisory Board and Carpentries-style Bioconductor workshops in Japanese. HUPO PSI mzTab-M working group — a data standard for sharing quantitative mass spectrometry metabolomics results.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "RIKEN BDR, Kobe",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#metabolomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#visualisation",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#fair-standards",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#workflows",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "R"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/kozo-nishida.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Omics data analysis, network biology, Python/R packaging and GitHub, open community-driven teaching and software development"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "I am not a researcher. I am a Research Software Engineer. If you are interested in an RSE career, check out the RSEAA community."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#pitiporn-noisagul",
+   "@type": "Person",
+   "name": "Pitiporn Noisagul (Sam)",
+   "identifier": "pitiporn-noisagul",
+   "description": "From microbiology to bioinformatics and systems biology. Genome study of cancer, pathogens and plants. Recently learned human pangenome graph analysis and is calling structural variants from the graph for diagnosis and prognosis. Microbiome analysis — 16S rRNA and shotgun metagenomics.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "CMUTEAM, Chiang Mai University",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q869",
+      "@type": "Country",
+      "name": "Thailand",
+      "identifier": "TH"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#pangenome",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#microbiology",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#genomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#variants",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#metabolomics",
+    {
+     "@type": "ComputerLanguage",
+     "name": "R"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Groovy"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/pitiporn-noisagul.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Genomics, metagenomics, metabolomics and transcriptomics"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "I recently learned to fall asleep with the TV on or a podcast playing. Many thanks to DBCLS and the other Japanese teams for helping organize MedHackathon Asia 2025 in Thailand."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#ryo-nozu",
+   "@type": "Person",
+   "name": "Ryo Nozu",
+   "identifier": "ryo-nozu",
+   "description": "Comparative genomics and gene regulation in non-model organisms. Developing a pathway analysis platform and extending pathway knowledge beyond model species; recent work on pangenome analysis of a small set of rice varieties.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Hiroshima University",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#genomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#pangenome",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#plants-agriculture",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#biodiversity",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Shell"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/ryo-nozu.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Genome assembly, gene annotation and comparative genomics; connecting biological questions with sequencing data analysis"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Some of the animals worked with are much bigger than they are — past projects have included whale sharks and manta rays."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#naoya-oec",
+   "@type": "Person",
+   "name": "Naoya Oec",
+   "identifier": "naoya-oec",
+   "description": "Develops metabolic pathway visualisation apps that run on Jupyter, along with other data visualisation and exploration tools.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Dogrun inc",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#visualisation",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#metabolomics",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/naoya-oec.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Data visualisation, brewing coffee, and 3D modelling in collaboration with AI agents"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Building visual, exploratory tools for pathway data."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#soichi-ogishima",
+   "@type": "Person",
+   "name": "Soichi Ogishima",
+   "identifier": "soichi-ogishima",
+   "description": "Integration of genome, exposome and clinical data for the Tohoku Medical Megabank, a prospective genome cohort of 150,000 people — phenotyping, and ML/AI for disease risk prediction. Standardisation across ISO/TC215/SC1, GA4GH, HL7 and the IMIA health informatics working group, and designing a learning health system in genomic medicine through consensus building and policy recommendation.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "ToMMo, Tohoku University",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#clinical",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#genomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#machine-learning",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#fair-standards",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Perl"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "R"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/soichi-ogishima.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Population cohort data integration and analysis; phenotyping; ML/AI for disease risk prediction"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Craft beer lover — Ise Kadoya is one of the most renowned craft beer breweries in Japan. Veteran of BH18, BH23 and BH24."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#tazro-ohta-and-macoto-ohta",
+   "@type": "Person",
+   "name": "Tazro Ohta",
+   "identifier": "tazro-ohta-and-macoto-ohta",
+   "description": "Omics database with Shinya and Zaonan (Kumamoto), LLM-assisted data curation with Shuya (DBCLS), Workflow-as-a-Service and workflow security risk assessment with Sator, Asian Biobank Assemble with friends across Asia, helping MedHackathon Asia and planning the 2027 edition, and federated GWAS with AI agents.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Chiba University",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#workflows",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#llm-ai",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#cloud-hpc",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#fair-standards",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Claude Code"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "GPT Astra"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/tazro-ohta-and-macoto-ohta.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Maco makes small troubles; Taz solves small troubles."
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "This week Taz will: discuss anything with you, ask things of the agents, play with Maco, check the agents' progress, repeat. The slide is now shared with Macoto, aged five."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#yoko-okabeppu",
+   "@type": "Person",
+   "name": "Yoko Okabeppu",
+   "identifier": "yoko-okabeppu",
+   "description": "RDF for geological data at a deep sea research institute; RDF engineer in bioinformatics since 2011, primarily microbial databases. Founded her own company in 2019. Microbial culture media database; data management of microbial pathway data.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "OKBP inc.",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rdf-sparql",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#microbiology",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Ruby"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Java"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "vibe coding"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/yoko-okabeppu.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "SPARQL and SQL query tuning; designing RDF models"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "I bought a seafront flat last month and use an RTSP web camera plus wind, wave, tide and weather data to predict the best times for snorkelling — 30 minutes of vibe coding. Next step: I want to catch fish with a spear."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#teppei-okazaki",
+   "@type": "Person",
+   "name": "Teppei Okazaki",
+   "identifier": "teppei-okazaki",
+   "description": "Master's student in computer science, implementing a rare-disease database for a RAG system, and previously built a chatbot with a startup. Interested in AI-related systems and products, and in prompt engineering.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Tokyo City University",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#llm-ai",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rare-disease",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rdf-sparql",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "C"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "C#"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/teppei-okazaki.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Python (LangChain, LangGraph, a little Flet for UI), prompt engineering, SPARQL (newbie)"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Used to play video games professionally."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#satoshi-onoda",
+   "@type": "Person",
+   "name": "Satoshi Onoda",
+   "identifier": "satoshi-onoda",
+   "description": "Usually develops commercial websites for clients. Joined the TogoMedium project in 2019 as a frontend developer. (Un)official photographer at BH25.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "YOHAK LLC",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#web-dev",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#visualisation",
+    {
+     "@type": "ComputerLanguage",
+     "name": "TypeScript"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "HTML/CSS"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "design languages"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/satoshi-onoda.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "UI / UX / motion programming / photography"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Last year an Apple Watch literally saved my life — it found AFib. 15 September is my 42nd birthday."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#risa-otsuka",
+   "@type": "Person",
+   "name": "Risa Otsuka",
+   "identifier": "risa-otsuka",
+   "description": "Software engineer at NBRC maintaining DBRP, a database about microorganisms, and other project databases. Adding and updating features — wants ideas.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "NITE-NBRC",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#web-dev",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rdf-sparql",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#microbiology",
+    {
+     "@type": "ComputerLanguage",
+     "name": "JavaScript"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Java"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "SQL"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "SPARQL"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/risa-otsuka.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Programming; designing web application architecture; RDF (SPARQL)"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "I love playing violin and viola in chamber orchestra. I learn Korean. I collect stickers related to the areas where I have attended biohackathons. I would like to hear your stories."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#daniel-puthawala",
+   "@type": "Person",
+   "name": "Daniel Puthawala",
+   "identifier": "daniel-puthawala",
+   "description": "GA4GH product co-lead within the Genomic Knowledge Workstream. Cat-VRS, used to represent and reason about sets of genomic variants; bioinformatics tool and software development mostly in cancer research and variant analysis — the VICC variant normalizer, VICC MetaKB, CIViC and DGIdb. The PhD was in sentence processing, mixing formal theory, experimental psychology and computational modelling.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Nationwide Children's Hospital",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q30",
+      "@type": "Country",
+      "name": "USA",
+      "identifier": "US"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#variants",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#fair-standards",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#knowledge-graphs",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#clinical",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "LaTeX"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/daniel-puthawala.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Balancing formal rigour and practical engineering; graphical design for science communication and outreach; negotiation and building consensus"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Spent a year at Tsukuba-Dai and a couple more in southern Ibaraki before starting graduate school in the US. Loves playing and designing board games and TTRPGs."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#nuria-queralt-rosinach",
+   "@type": "Person",
+   "name": "Núria Queralt Rosinach",
+   "identifier": "nuria-queralt-rosinach",
+   "description": "PhD in chemistry then MSc bioinformatics. DisGeNET-RDF for genotype to phenotype integration; BioKnowledge reviewer for KG creation. Interests: building RDF graphs on the fly with DBCLS services, RDF-based patient to clinical trial matching, representing structural and epigenetic variants in RDF, rare disease diagnosis with genAI, and bringing science closer to citizens with an RDF-based app.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "LUMC",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q55",
+      "@type": "Country",
+      "name": "Netherlands",
+      "identifier": "NL"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rdf-sparql",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rare-disease",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#clinical",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#knowledge-graphs",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#fair-standards",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Shell"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "SPARQL"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/nuria-queralt-rosinach.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "RDF, multimodal data modelling, ShEx, OWL ontologies, FAIR ML, fast learner, chatty person"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "My first BH was in 2015 — my 10th anniversary. I ran my first half marathon this April. Started learning Italian, German and Dutch. I like dragonflies, ladybugs and butterflies."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#mkkm-chipo-ruhwode",
+   "@type": "Person",
+   "name": "Mkkm Chipo Ruhwode",
+   "identifier": "mkkm-chipo-ruhwode",
+   "description": "Graduated at the University of Zimbabwe in 2023 with an undergraduate degree in Statistics; research student at Kyoto University in 2025; now a first-year Master’s student in bioinformatics at Kitasato University. Interests: bioinformatics, breast cancer research, and the application of computer science to medical data.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Kitasato University, Faculty of Frontier Engineering",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#machine-learning",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#clinical",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#genomics"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/mkkm-chipo-ruhwode.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Statistics. Interested in coding. Since it is my first time here, I am looking forward to gaining practical skills in integrating biological datasets that I can apply to my breast cancer research."
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "I am an easy going person, I enjoy interacting with people. I knit very well if I am not lazy about it."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#rutharra",
+   "@type": "Person",
+   "name": "Rutharra (Ruth)",
+   "identifier": "rutharra",
+   "description": "Master of genome analytics and a BSc in genomics and bioinformatics from Monash. Variant scientist at NCCS Singapore and biocurator for the VWD VCEP at ClinGen, working on research and clinical variant analysis.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "National Cancer Centre",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q334",
+      "@type": "Country",
+      "name": "Singapore",
+      "identifier": "SG"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#variants",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#clinical",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#fair-standards"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/rutharra.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Variant analysis end to end — prioritisation, curation, reporting; data integration, database use, platform and tool improvement; ACMG guidelines. Not a coder, but has tried R and Python."
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "First time visiting Japan. Loves travelling, animals and learning new languages."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#keiko-sakuma",
+   "@type": "Person",
+   "name": "Keiko Sakuma",
+   "identifier": "keiko-sakuma",
+   "description": "Research support staff; TogoTV support.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "DBCLS",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/keiko-sakuma.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "I'm at the help desk with Mari, Saori and Masae. If you have any questions or problems, please contact the help desk."
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "No changes from BH25, but get older :) I like 🍵🧘🎾"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#apiwat-sangphukieo",
+   "@type": "Person",
+   "name": "Apiwat Sangphukieo",
+   "identifier": "apiwat-sangphukieo",
+   "description": "Bioinformatician across functional genomics of bacterial genomes, protein structure modelling, untargeted metabolomics pipelines, NGS data processing and GWAS. Interested in blood-based early cancer detection and host-pathogen interaction. Now developing a standard omics platform as a national core facility — genome depository, imputation server, polygenic risk score prediction.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Chiang Mai University",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q869",
+      "@type": "Country",
+      "name": "Thailand",
+      "identifier": "TH"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#genomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#metabolomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#clinical",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#cloud-hpc",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#machine-learning",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Unix"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/apiwat-sangphukieo.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Problem solving, coding, omics data from hospitals"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "I just adopted 2 Chibas. Then my life changed."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#daisuke-satoh",
+   "@type": "Person",
+   "name": "Daisuke Satoh",
+   "identifier": "daisuke-satoh",
+   "description": "Software engineering and web application backends: TogoVar, TogoDX, YummyData (UmakaData) and the RDF Portal, plus Namahage, a VCF validator.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Kamonohashi Inc.",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#variants",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rdf-sparql",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#web-dev",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Ruby"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Rust"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "awk"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Shell"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/daisuke-satoh.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Developing tools; faster processing of large data"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Arriving Monday noon. Third visit to Mie; last time, in 2023, took in the seven shrines of Ise Jingu."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#nattawet-sriwichai",
+   "@type": "Person",
+   "name": "Nattawet Sriwichai (Golf)",
+   "identifier": "nattawet-sriwichai",
+   "description": "Transcriptional regulatory networks of protein coding and miRNA genes in cassava, the MeTRN database, large-scale cassava transcriptomics, microbiome analysis of microbial fuel cells. Now HPC systems administrator at the Faculty of Medicine, CMU, and research omics data catalog.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Chiang Mai University",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q869",
+      "@type": "Country",
+      "name": "Thailand",
+      "identifier": "TH"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#plants-agriculture",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#cloud-hpc",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#web-dev",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#microbiology",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    {
+     "@type": "ComputerLanguage",
+     "name": "R"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Shell"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "SQL"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "PHP"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/nattawet-sriwichai.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Omics data analysis, systems biology, network biology, web development"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Cat lover. Exploring with passion, guiding with kindness."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#chang-sun",
+   "@type": "Person",
+   "name": "Chang Sun",
+   "identifier": "chang-sun",
+   "description": "Assistant professor with expertise in AI for healthcare, privacy-preserving health data analysis (federated learning), and personal health knowledge graphs. Current work: longitudinal patient records, causal treatment-effect models for rare disease treatment, and using disease ontologies and knowledge graphs to enhance generative AI — LLMs, GANs, diffusion models — for health and life sciences, across rare disease (leukaemia), CVD and diabetes.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Maastricht University",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q55",
+      "@type": "Country",
+      "name": "Netherlands",
+      "identifier": "NL"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#clinical",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#knowledge-graphs",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#llm-ai",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rare-disease",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#machine-learning",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Claude"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/chang-sun.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Synthetic data generation, privacy-preserving data analysis, health data management, digital consent, personal KG, health ontologies (SNOMED, ORDO, HPO)"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#francis-tablizo",
+   "@type": "Person",
+   "name": "Francis Tablizo",
+   "identifier": "francis-tablizo",
+   "description": "Molecular biology, omics and bioinformatics, clinical genomics, biodiversity and conservation, marine natural products, analysis workflow automation, and machine and deep learning.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Philippine Genome Center, University of the Philippines System",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q928",
+      "@type": "Country",
+      "name": "Philippines",
+      "identifier": "PH"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#genomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#workflows",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#clinical",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#biodiversity",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#machine-learning",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "R"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Shell"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/francis-tablizo.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Design and implementation of data analysis workflows; data visualisation and interpretation"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "First BioHackathon, from the Philippines. Not a social media user at all — no Facebook, X or Instagram. Likes watching anime."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#shin-ichiro-tago",
+   "@type": "Person",
+   "name": "Shin-ichiro Tago",
+   "identifier": "shin-ichiro-tago",
+   "description": "Now: unlocking the full potential of LLMs as orchestrator. Past: genome explainable AI, knowledge platforms, stream data processing, multiprocessors, graph theory.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Fujitsu Limited",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#llm-ai",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#knowledge-graphs",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#genomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#machine-learning",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Prompt"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "C"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Java"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "SPARQL"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "JavaScript"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Shell"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/shin-ichiro-tago.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Chatting with LLMs, system architecture, coding, a little bit about genomics"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "I'm hosting board game nights, so if you're interested please let me know."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#tomohiro-taguchi",
+   "@type": "Person",
+   "name": "Tomohiro Taguchi",
+   "identifier": "tomohiro-taguchi",
+   "description": "Studies RuBisCO evolution using bioinformatics, focusing on comparative sequence and phylogenetic analysis of photosynthesis-related genes.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Hiroshima University",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#genomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#plants-agriculture",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/tomohiro-taguchi.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Biological database searches, sequence analysis, phylogenetic analysis, Python data processing"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Looking forward to meeting everyone and to the chance to learn from them."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#shoichiro-takahashi",
+   "@type": "Person",
+   "name": "Shoichiro Takahashi",
+   "identifier": "shoichiro-takahashi",
+   "description": "Working on a utilization system for rare disease. TRE/SDE, data sharing and federated analysis.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Trinet Corporation",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rare-disease",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#clinical",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#cloud-hpc",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Go"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "C++"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/shoichiro-takahashi.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Coding; system design"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "3rd Dan, Kodokan Judo. I teach judo to children in my town. I have a cauliflower ear and my earphones do not fit."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#yushi-takahashi",
+   "@type": "Person",
+   "name": "Yushi Takahashi",
+   "identifier": "yushi-takahashi",
+   "description": "PhD in glycoinformatics from Soka University, working on glycan-related repository development — GlyComb for glycoconjugate data, GlycoPOST for glycomics MS raw data, and UniCarb-DR for identification results. At Niigata, MS raw data repositories across several omics fields: jPOST for the proteome, GlycoPOST for the glycome and MB-POST for the metabolome.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Medical AI Center, Niigata University School of Medicine",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#glycomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#proteomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#metabolomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#fair-standards",
+    {
+     "@type": "ComputerLanguage",
+     "name": "TypeScript"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Scala"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "SQL"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Claude"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/yushi-takahashi.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Database and data repository development; glycoinformatics; software development"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "First time at the international BioHackathon. An enthusiast of functional programming languages — Haskell, Scala, F#."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#terue-takatsuki",
+   "@type": "Person",
+   "name": "Terue Takatsuki",
+   "identifier": "terue-takatsuki",
+   "description": "RIKEN BRC (2009–2017) on the BioResource phenotype database, then DBCLS (2019–2026) on the NANDO/NanbyoData rare-disease ontology and data integration, the Life Science Dictionary, and Japanese localisation of ontologies and biomedical terminology including MP and MONDO.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Independent",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q30",
+      "@type": "Country",
+      "name": "USA",
+      "identifier": "US"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rare-disease",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#ontologies",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#fair-standards",
+    {
+     "@type": "ComputerLanguage",
+     "name": "SPARQL"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Shell"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/terue-takatsuki.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Data curation and quality control; connecting biological data, terminology and databases"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Finally got a visa and moved to the US, and is joining BioHackathon as a participant this year. Still finding a way in the new life there, and glad to be back in Japan for a while. First thing in Matsuyama was mikan juice tasting — Setoka was the favourite."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#satoshi-tanaka",
+   "@type": "Person",
+   "name": "Satoshi Tanaka",
+   "identifier": "satoshi-tanaka",
+   "description": "Mass++ for mass spectrometry data analysis and visualization; jPOST proteome database; GlycoWorkbench glycan analysis tool.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Trans-IT Co., Ltd.",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#proteomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#glycomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#visualisation",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Java"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "JavaScript"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "PHP"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "C"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "C++"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/satoshi-tanaka.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Software development; data science"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "When I was in elementary school, I lived near the Biohackathon venue."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#haruka-tanimoto",
+   "@type": "Person",
+   "name": "Haruka Tanimoto",
+   "identifier": "haruka-tanimoto",
+   "description": "Originally plant physiology and energy metabolism, now plant genome analysis at a bioinformatics startup across a broad range of data analysis projects.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Hiroshima University",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#plants-agriculture",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#genomics",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Shell"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/haruka-tanimoto.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Biological interpretation and evaluation of pathway diagrams, particularly from a plant physiology perspective; new member of the QPX project"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Taking a first step from being a user of bioinformatics tools toward becoming a contributor, and hoping to learn how others develop tools and contribute to the community."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#yasuhiro-tanizawa",
+   "@type": "Person",
+   "name": "Yasuhiro Tanizawa",
+   "identifier": "yasuhiro-tanizawa",
+   "description": "MarpolBase, the Marchantia (liverwort) genome database for a new-generation model plant, and the move from genome database to knowledge base. Genome submission to DDBJ: DFAST for annotation and submission, GGS for unannotated genomes, MARKit for taxonomic marker genes, and an AI agent for submission — file conversion, validation and metadata curation.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "CSRS, RIKEN / DDBJ, NIG",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#genomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#plants-agriculture",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#llm-ai",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#fair-standards",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "JavaScript"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Rust"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/yasuhiro-tanizawa.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Genome annotation and databases; DDBJ/INSDC, GFF, data submission"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "2023 Shizuoka Masters bodybuilding champion."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#nishad-thalhath",
+   "@type": "Person",
+   "name": "Nishad Thalhath",
+   "identifier": "nishad-thalhath",
+   "description": "Familiar with semantic web technologies, with some experience in social informatics and related fields. Maintains bffo.org, the Bio File Formats and Ontology, and wants to improve its coverage during the hackathon — anomalies and missing formats welcome.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "RIKEN IMS",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#ontologies",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#fair-standards",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rdf-sparql"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/nishad-thalhath.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Semantic web technologies; file format ontologies"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Here to learn: says the life-science and bioinformatics background is thin and the programming skills archaic, and expects not to follow most of what is discussed."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#felix-vaura",
+   "@type": "Person",
+   "name": "Felix Vaura",
+   "identifier": "felix-vaura",
+   "description": "BA in mathematics (2015), MD PhD (2023). Uses statistical genetics to tackle human disease, with a main interest in large-scale pharmacogenomic discovery.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "University of Tokyo / University of Helsinki",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#population-genetics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#clinical",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#genomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#variants",
+    {
+     "@type": "ComputerLanguage",
+     "name": "R"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Claude"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/felix-vaura.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Hands-on with large medical datasets — FinnGen 500k, UK Biobank 500k, BioBank Japan 270k; medication data harmonisation"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Training for a first marathon. Reads and writes fiction. 日本語OK, puhun suomea."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#vijay-venkatesh",
+   "@type": "Person",
+   "name": "Vijay Venkatesh",
+   "identifier": "vijay-venkatesh",
+   "description": "Main developer for identifiers.org and the DocBot project. Built DocBot, an EMBL-wide documentation assistant, and has worked in LLMs and RAG for a while; background in Java, Python, ML and a bit of Android development.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "European Bioinformatics Institute",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q145",
+      "@type": "Country",
+      "name": "UK",
+      "identifier": "GB"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#llm-ai",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#web-dev",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#fair-standards",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Java"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/vijay-venkatesh.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Full-stack web development; RAG and agentic AI development"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Originally from a quieter part of India (Kerala), living and working in Cambridge for three years. Travelling across Japan with their wife for a couple of weeks after the hackathon — recommendations dearly welcome."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#ran-wei",
+   "@type": "Person",
+   "name": "Ran WEI",
+   "identifier": "ran-wei",
+   "description": "Rare variant analysis using large-scale short-read sequencing data, with a focus on autism-related genetic variation. Cohort-scale genome assembly and pangenome construction for population genomics research. Gut microbiome research focusing on associations with host phenotypes and human genetic variation.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "JIHS",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#variants",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#pangenome",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#genomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#microbiology",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#population-genetics",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "R"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "C++"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Claude"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/ran-wei.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Rare variant analysis; genome assembly; pangenome graph construction and analysis; short-read and long-read sequencing data analysis; gut microbiome and metagenomic analysis; population-scale genomic data analysis"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "My son said he will be very happy to be left alone for a week. No gift is needed, just go."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#issaku-yamada",
+   "@type": "Person",
+   "name": "Issaku Yamada",
+   "identifier": "issaku-yamada",
+   "description": "Organic chemistry until 2006, then glycoscience: databases (GlyTouCan, GlyCosmos, GlycoNAVI), ontologies (GlycoRDF, GlycoCoO), structure representation (WURCS), drawing tools (GlycanBuilder), format converters and structure search.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "The Noguchi Institute",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#glycomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#ontologies",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rdf-sparql",
+    {
+     "@type": "ComputerLanguage",
+     "name": "ChatGPT"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Claude Code"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/issaku-yamada.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Organic chemistry, glycoinformatics"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "The flying rabbit is my mascot. But I like cats and dogs."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#atsuko-yamaguchi",
+   "@type": "Person",
+   "name": "Atsuko Yamaguchi",
+   "identifier": "atsuko-yamaguchi",
+   "description": "Graph algorithms for using knowledge graphs; originally mathematics, then theoretical computer science, then bioinformatics. At DBCLS 2007-2020, now visiting professor. Interests: knowledge graphs, large language models, rare diseases, relations between genes and MRI images for lissencephaly, and sports data analysis.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Tokyo City University",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#knowledge-graphs",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rdf-sparql",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#llm-ai",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rare-disease",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Java"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "C++"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "SPARQL"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "SQL"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/atsuko-yamaguchi.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Semantic web technologies; improvement of algorithms; statistical analysis"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "I love fishing. I go fishing at least twice a year and have never come back empty-handed."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#yasunori-yamamoto",
+   "@type": "Person",
+   "name": "Yasunori Yamamoto",
+   "identifier": "yasunori-yamamoto",
+   "description": "Services related to literature — Allie, inMeXes. Semantic web / AI: TogoMCP, Umaka-YummyData, Umaka Viewer, JSON2LD Mapper, RDF-doctor, TogoPics. Plans: making RDF data more reliable and connectable; extracting accession numbers from literature.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "DBCLS",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rdf-sparql",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#llm-ai",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#text-mining",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#fair-standards",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#ontologies",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Perl"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Java"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "SPARQL"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "JavaScript"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "C#"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/yasunori-yamamoto.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Anything related to LLM, RDF, OWL, ShEx, SPARQL, and MCP. Current interest is data quality and MCP for DBs."
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "I love onsen / spa. Taking a long walk. Walking with a dog."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#naoya-yoshikuwa",
+   "@type": "Person",
+   "name": "Naoya Yoshikuwa",
+   "identifier": "naoya-yoshikuwa",
+   "description": "Drug efficacy prediction for cancer using ML until 2024; now a master's student in the Goto lab at DBCLS researching AI agents (LLM) for rare disease.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "University of Tokyo",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#llm-ai",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rare-disease",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#machine-learning",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/naoya-yoshikuwa.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Programming for data science, ML and LLM, but not so proficient"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "I like running, so I want to run around the hotel during this event at least once."
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#akiyasu-c-yoshizawa",
+   "@type": "Person",
+   "name": "Akiyasu C. Yoshizawa",
+   "identifier": "akiyasu-c-yoshizawa",
+   "description": "Once an experimental biophysicist in membrane biology, then bioinformatics — comparative genomics of eukaryotic intracellular transport, and assembling in-house sequence databases. Now one of the developers of jPOST, a proteome raw data repository, and MB-POST, a metabolome repository in the Shin-MassBank project, mainly developing analysis and statistical methods and preparing metadata.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Niigata University",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#proteomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#metabolomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#genomics",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Perl"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/akiyasu-c-yoshizawa.jpg",
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Bioinformatics and sequence analysis, mass spectrometry for proteomics, metadata construction, biological databases"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "It has been an incredibly long time since the last BioHackathon."
+    }
+   ]
+  }
+ ]
+}

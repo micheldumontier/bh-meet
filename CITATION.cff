@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+title: BH26 Collaboration Index
+abstract: >-
+  Self-introductions of BioHackathon 2026 participants in Matsuyama, indexed by
+  research topic, programming language and skill. Curated by hand from the event
+  self-introduction slide deck and published as a static site with JSON-LD
+  serialisations. Data is CC0-1.0; the accompanying source code is MIT.
+type: dataset
+authors:
+  - family-names: Dumontier
+    given-names: Michel
+    affiliation: Maastricht University
+repository-code: https://github.com/micheldumontier/bh-meet
+url: https://micheldumontier.github.io/bh-meet/
+license: CC0-1.0
+date-released: '2026-09-13'
+keywords:
+  - BioHackathon
+  - bioinformatics
+  - FAIR data
+  - participant directory
+  - JSON-LD

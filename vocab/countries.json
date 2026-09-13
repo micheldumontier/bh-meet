@@ -1,0 +1,71 @@
+{
+ "_source": "Resolved against Wikidata (property P297, ISO 3166-1 alpha-2) via query.wikidata.org. Regenerate rather than edit by hand.",
+ "_retrieved": "2026-09-13",
+ "countries": {
+  "Canada": {
+   "iso3166_1_alpha2": "CA",
+   "wikidata": "Q16",
+   "resolvedFrom": "Canada"
+  },
+  "Germany": {
+   "iso3166_1_alpha2": "DE",
+   "wikidata": "Q183",
+   "resolvedFrom": "Germany"
+  },
+  "Indonesia": {
+   "iso3166_1_alpha2": "ID",
+   "wikidata": "Q252",
+   "resolvedFrom": "Indonesia"
+  },
+  "Japan": {
+   "iso3166_1_alpha2": "JP",
+   "wikidata": "Q17",
+   "resolvedFrom": "Japan"
+  },
+  "Netherlands": {
+   "iso3166_1_alpha2": "NL",
+   "wikidata": "Q55",
+   "resolvedFrom": "Netherlands"
+  },
+  "Philippines": {
+   "iso3166_1_alpha2": "PH",
+   "wikidata": "Q928",
+   "resolvedFrom": "Philippines"
+  },
+  "Russia": {
+   "iso3166_1_alpha2": "RU",
+   "wikidata": "Q159",
+   "resolvedFrom": "Russia"
+  },
+  "Saudi Arabia": {
+   "iso3166_1_alpha2": "SA",
+   "wikidata": "Q851",
+   "resolvedFrom": "Saudi Arabia"
+  },
+  "Singapore": {
+   "iso3166_1_alpha2": "SG",
+   "wikidata": "Q334",
+   "resolvedFrom": "Singapore"
+  },
+  "Switzerland": {
+   "iso3166_1_alpha2": "CH",
+   "wikidata": "Q39",
+   "resolvedFrom": "Switzerland"
+  },
+  "Thailand": {
+   "iso3166_1_alpha2": "TH",
+   "wikidata": "Q869",
+   "resolvedFrom": "Thailand"
+  },
+  "UK": {
+   "iso3166_1_alpha2": "GB",
+   "wikidata": "Q145",
+   "resolvedFrom": "United Kingdom"
+  },
+  "USA": {
+   "iso3166_1_alpha2": "US",
+   "wikidata": "Q30",
+   "resolvedFrom": "United States of America"
+  }
+ }
+}

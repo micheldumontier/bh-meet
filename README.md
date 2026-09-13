@@ -87,6 +87,38 @@ files. The script never writes `data.js`.
 
 [im]: https://imagemagick.org
 
+## FAIR serialisations
+
+`data.js` is the single source of truth; everything below is generated from it
+by `node scripts/build-jsonld.mjs`. Do not edit the JSON-LD by hand.
+
+| File | What it is |
+| --- | --- |
+| `people.jsonld` | one `schema.org/Person` per participant, with `knowsAbout` linking to topic concepts and `ComputerLanguage` nodes |
+| `topics.jsonld` | the 25 topic tags as a SKOS `ConceptScheme` |
+| `dataset.jsonld` | `schema.org/Dataset` + DCAT descriptor: license, version, provenance, distributions |
+
+The dataset descriptor is also inlined into `index.html` as `application/ld+json`
+so crawlers index it. Together the three files are about 3,000 triples and parse
+cleanly with rdflib.
+
+**Identifiers.** People are `people.jsonld#<slug>`, topics
+`topics.jsonld#<slug>`. Hash IRIs into a retrievable document, because static
+hosting cannot redirect `/id/<slug>` anywhere useful. They are globally unique
+and dereference today, but their persistence is only as good as this repository
+staying where it is — there is no w3id namespace or DOI behind them yet.
+
+**Alignments.** Countries carry their Wikidata IRI and ISO 3166-1 alpha-2 code,
+resolved from Wikidata property P297 (`vocab/countries.json`; regenerate rather
+than hand-edit). Topics are a local vocabulary and are **not** yet mapped to
+EDAM. Affiliations are plain strings, not ROR IDs. Every person node has room
+for an ORCID via an optional `o` field on the `data.js` record — no slide in the
+deck carries one, so all 87 are currently empty, and none are guessed from names.
+
+**Licensing.** Data is CC0-1.0, code is MIT. CC0 does not waive privacy or
+publicity rights over what remains personal data about identifiable people —
+see [LICENSE-DATA](LICENSE-DATA).
+
 ## Source deck
 
 Decks live in `data/` and are git-ignored — each is 100+ MB, over GitHub's
@@ -103,4 +135,5 @@ so the site works from the `/bh-meet/` subpath a project site is served under.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+Code MIT — see [LICENSE](LICENSE). Data CC0 1.0 — see [LICENSE-DATA](LICENSE-DATA).
+Cite via [CITATION.cff](CITATION.cff).
