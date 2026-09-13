@@ -358,6 +358,10 @@
               <h2 style="margin-bottom:2px">{{ detailTitle }}</h2>
               <div class="card-kicker" style="margin-bottom:var(--space-3)">{{ detailKicker }}</div>
 
+              <div style="margin-bottom:var(--space-4)">
+                <button class="{{ detailStarCls }}" onClick="{{ onStarDetail }}">{{ detailStarLabel }}</button>
+              </div>
+
               <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:var(--space-4)">
                 <sc-for list="{{ detailTags }}" as="tg" hint-placeholder-count="4">
                   <span class="{{ tg.cls }}">{{ tg.label }}</span>
@@ -402,9 +406,7 @@
                 </sc-for>
               </div>
 
-              <button class="{{ detailStarCls }}" onClick="{{ onStarDetail }}">{{ detailStarLabel }}</button>
-
-              <p style="margin-top:var(--space-3);font-size:12px" class="text-muted">
+              <p style="font-size:12px" class="text-muted">
                 <a href="{{ detailJsonld }}" rel="noopener" target="_blank"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-jsonld"/></svg> This person as JSON-LD</a>
               </p>
             </div>
