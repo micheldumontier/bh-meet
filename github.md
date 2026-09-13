@@ -7,7 +7,10 @@ date: 2026-09-13T00:00:00Z
 ### Updated in this project
 - Added a README and an MIT license; committed the project to GitHub.
 - Processed `data/BH26-people.pptx` (90 slides) with the new `scripts/extract-deck.py`:
-  110 people and 84 portraits, up from 74 people and none.
+  86 people and 84 portraits, up from 74 people and none.
+- The deck is the roster. 24 people carried over from the older read of the
+  Google deck have no slide in this export and were dropped; 36 people in the
+  export were new.
 - Ids are now stable name slugs, not slide numbers. The pptx and the old
   `data.js` disagreed on numbering from slide 16 onward, so slide-keyed photos
   would have attached the wrong face to the wrong person.
@@ -28,8 +31,10 @@ date: 2026-09-13T00:00:00Z
 
 ## Notes
 Source deck (link-shared copy): https://docs.google.com/presentation/d/1UWasNu6Wa_zCRhuWErF0cu2-uHpxwVBOU_6bNarQe1c/edit
-The pptx export in `data/` has 90 slides; the live Google deck has 117. 24 people
-in `data.js` come only from the older read of that deck and have no portrait.
+The pptx export in `data/` has 90 slides; the live Google deck has 117, but the
+export is the more recent download and is treated as authoritative for who is
+attending. The 24 people only in the older read were dropped (their curated text
+is recoverable from commit 747b203 if the deck turns out to be incomplete).
 Slide 84 is the template, slide 85 a section divider, slides 81-82 carry no image.
 `data.js` is curated by hand from `data/people.json`; the script never writes it.
 The project pitch deck does not exist yet; the pitch session is day 1.

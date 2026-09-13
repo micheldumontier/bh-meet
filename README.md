@@ -2,7 +2,7 @@
 
 A browsable index of BioHackathon 2026 participants — search people by topic,
 language and skill, see who overlaps with you, and build a shortlist of people
-to find at the event. 110 introductions, 84 with portraits.
+to find at the event. 86 introductions, 84 with portraits.
 
 Live site: https://micheldumontier.github.io/bh-meet/
 
@@ -45,6 +45,11 @@ invented data, kept for reference.
 
 The app reads nothing else. `photos.json` is a separate `id -> path` map, so
 portraits can be regenerated without touching `data.js`.
+
+The deck defines the roster: a person appears here only if they have a slide in
+the current export. An earlier read of the Google deck contributed 24 people who
+are absent from it, and they were dropped rather than carried forward — the
+export is the more recent download.
 
 Ids are name slugs, **not** slide numbers. The deck is reordered and renumbered
 between exports — a person on slide 20 in one export is on slide 26 in the
