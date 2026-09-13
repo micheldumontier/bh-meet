@@ -1,0 +1,49 @@
+name: Fetch participant photos
+
+# Pulls each person's portrait out of the BH26 self-introduction deck and
+# commits it to photos/, plus a photos.json manifest the app reads.
+#
+# Setup (one time):
+#   1. Enable the Google Slides API in any Google Cloud project.
+#   2. Create an API key, restricted to the Slides API.
+#   3. Repo Settings > Secrets and variables > Actions > New secret:
+#        GOOGLE_API_KEY = <the key>
+#   4. The deck must be shared "Anyone with the link can view" — an API key
+#      cannot read a private file. If you would rather keep it restricted,
+#      swap the key for a service account and share the deck with its email.
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 21 * * *'   # 06:00 JST daily
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Download portraits
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          DECK_ID: 1UWasNu6Wa_zCRhuWErF0cu2-uHpxwVBOU_6bNarQe1c
+        run: node scripts/fetch-photos.mjs
+
+      - name: Commit changes
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add photos photos.json
+          if git diff --cached --quiet; then
+            echo "No photo changes."
+          else
+            git commit -m "Update participant photos from the introduction deck"
+            git push
+          fi

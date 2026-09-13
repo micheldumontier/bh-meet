@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="app">
+<link rel="stylesheet" href="_ds/broadsheet-4a69f9fc-4fa4-48eb-9071-6d3938a6cd9f/styles.css">
+<script src="_ds/broadsheet-4a69f9fc-4fa4-48eb-9071-6d3938a6cd9f/_ds_bundle.js"></script>
+<script src="data.js"></script>
+<style>
+  body { margin: 0; }
+  a { color: var(--color-accent); }
+  a:hover { color: var(--color-accent-700); }
+</style>
+</helmet>
+<div style="max-width:1280px;margin:0 auto;padding:var(--space-6) var(--space-6) var(--space-8)">
+
+  <header style="margin-bottom:var(--space-6)">
+    <div style="height:3px;background:var(--color-text)"></div>
+    <div style="display:flex;flex-wrap:wrap;gap:var(--space-3);align-items:baseline;padding:6px 0">
+      <span style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase">BioHackathon 2026</span>
+      <span style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase">Matsuyama · Five days</span>
+      <span style="margin-left:auto;font-size:11px;letter-spacing:0.06em;color:var(--color-accent-700)">{{ datelineRight }}</span>
+    </div>
+    <div style="height:1px;background:var(--color-text)"></div>
+
+    <h1 style="font-size:clamp(36px,5.4vw,60px);margin:var(--space-4) 0 var(--space-2);max-width:20ch">Who else is in the room?</h1>
+    <p style="max-width:60ch;font-size:17px" class="text-muted">Everyone's self-introduction slide, indexed by what they actually work on. Day 0 is for finding people. Pitches land tomorrow.</p>
+  </header>
+
+  <nav style="display:flex;flex-wrap:wrap;gap:var(--space-4);align-items:baseline;margin-bottom:var(--space-4)">
+    <div>
+      <button class="{{ tabPeopleCls }}" style="font-size:18px;padding:0" onClick="{{ goPeople }}">People</button>
+      <sc-if value="{{ onPeople }}" hint-placeholder-val="{{ true }}"><div style="height:3px;background:var(--color-accent-2)"></div></sc-if>
+    </div>
+    <div>
+      <button class="{{ tabProjectsCls }}" style="font-size:18px;padding:0" onClick="{{ goProjects }}">Projects</button>
+      <sc-if value="{{ onProjects }}" hint-placeholder-val="{{ false }}"><div style="height:3px;background:var(--color-accent-2)"></div></sc-if>
+    </div>
+    <div>
+      <button class="{{ tabGraphCls }}" style="font-size:18px;padding:0" onClick="{{ goGraph }}">Graph</button>
+      <sc-if value="{{ onGraph }}" hint-placeholder-val="{{ false }}"><div style="height:3px;background:var(--color-accent-2)"></div></sc-if>
+    </div>
+    <sc-if value="{{ serendipityOn }}" hint-placeholder-val="{{ true }}">
+      <button class="btn btn-ghost" style="margin-left:auto" onClick="{{ onShuffle }}">Introduce me to someone</button>
+    </sc-if>
+  </nav>
+
+  <sc-if value="{{ onPeople }}" hint-placeholder-val="{{ true }}">
+    <div>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--space-3);align-items:flex-end;margin-bottom:var(--space-3)">
+        <div class="field" style="flex:1 1 280px">
+          <label for="bh-q">Search names, institutes, tools, organisms, languages</label>
+          <input id="bh-q" class="input" type="search" placeholder="e.g. SPARQL, glycan, Rust, Thailand" value="{{ q }}" onChange="{{ onQuery }}">
+        </div>
+        <sc-if value="{{ hasFilters }}" hint-placeholder-val="{{ false }}">
+          <button class="btn btn-secondary" onClick="{{ onClear }}">Clear filters</button>
+        </sc-if>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:var(--space-2)">
+        <sc-for list="{{ topicChips }}" as="t" hint-placeholder-count="12">
+          <button class="{{ t.cls }}" style="cursor:pointer;font:inherit;font-size:11px;padding:3px 10px;border-radius:1.5px" onClick="{{ t.onClick }}">{{ t.label }}</button>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:var(--space-6);align-items:baseline">
+        <span style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;margin-right:6px" class="text-muted">Speaks</span>
+        <sc-for list="{{ langChips }}" as="l" hint-placeholder-count="8">
+          <button class="{{ l.cls }}" style="cursor:pointer;font:inherit;font-size:11px;padding:3px 10px;border-radius:1.5px" onClick="{{ l.onClick }}">{{ l.label }}</button>
+        </sc-for>
+      </div>
+
+      <div style="display:grid;gap:var(--space-8);grid-template-columns:repeat(auto-fit,minmax(330px,1fr));align-items:start">
+        <section>
+          <h6 style="margin-bottom:var(--space-3)">{{ countLabel }}</h6>
+          <div style="display:flex;flex-direction:column;gap:var(--space-2)">
+            <sc-for list="{{ items }}" as="it" hint-placeholder-count="8">
+              <article class="card" style="cursor:pointer" onClick="{{ it.onClick }}">
+                <sc-if value="{{ it.selected }}" hint-placeholder-val="{{ false }}">
+                  <div style="height:3px;width:44px;background:var(--color-accent-2)"></div>
+                </sc-if>
+                <div style="display:flex;gap:var(--space-3);align-items:flex-start">
+                  <sc-if value="{{ it.hasPhoto }}" hint-placeholder-val="{{ false }}">
+                    <div class="halftone" style="width:56px;height:56px;flex:none;border-radius:var(--radius-md)">
+                      <img src="{{ it.photo }}" alt="{{ it.title }}" style="width:56px;height:56px;object-fit:cover">
+                    </div>
+                  </sc-if>
+                  <sc-if value="{{ it.noPhoto }}" hint-placeholder-val="{{ true }}">
+                    <div style="width:56px;height:56px;flex:none;display:grid;place-items:center;background:var(--color-neutral-200);border-radius:var(--radius-md);font-family:var(--font-heading);font-weight:600;font-size:18px;color:var(--color-neutral-700)">{{ it.initials }}</div>
+                  </sc-if>
+                  <div style="flex:1">
+                    <div class="card-title">{{ it.title }}</div>
+                    <div class="card-kicker" style="margin-top:3px">{{ it.kicker }}</div>
+                  </div>
+                  <button class="{{ it.starCls }}" style="font-size:11px;padding:3px 10px;cursor:pointer;font-family:inherit" onClick="{{ it.onStar }}">{{ it.starLabel }}</button>
+                </div>
+                <p class="card-body">{{ it.body }}</p>
+                <div style="display:flex;flex-wrap:wrap;gap:5px">
+                  <sc-for list="{{ it.tags }}" as="tg" hint-placeholder-count="3">
+                    <span class="{{ tg.cls }}">{{ tg.label }}</span>
+                  </sc-for>
+                </div>
+                <div class="card-meta">{{ it.meta }}</div>
+              </article>
+            </sc-for>
+            <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
+              <p class="text-muted">Nobody matches all of that. Drop a topic.</p>
+            </sc-if>
+          </div>
+        </section>
+
+        <aside style="position:sticky;top:var(--space-4)">
+          <sc-if value="{{ hasDetail }}" hint-placeholder-val="{{ false }}">
+            <div>
+              <div style="height:2px;background:var(--color-text);margin-bottom:var(--space-2)"></div>
+              <sc-if value="{{ detailHasPhoto }}" hint-placeholder-val="{{ false }}">
+                <figure class="cmyk" style="width:180px;aspect-ratio:4/5;margin-bottom:var(--space-3)">
+                  <img src="{{ detailPhoto }}" alt="{{ detailTitle }}">
+                  <img src="{{ detailPhoto }}" class="sep-c" alt="" aria-hidden="true">
+                  <img src="{{ detailPhoto }}" class="sep-m" alt="" aria-hidden="true">
+                  <img src="{{ detailPhoto }}" class="sep-y" alt="" aria-hidden="true">
+                  <img src="{{ detailPhoto }}" class="sep-k" alt="" aria-hidden="true">
+                </figure>
+              </sc-if>
+              <h2 style="margin-bottom:2px">{{ detailTitle }}</h2>
+              <div class="card-kicker" style="margin-bottom:var(--space-3)">{{ detailKicker }}</div>
+
+              <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:var(--space-4)">
+                <sc-for list="{{ detailTags }}" as="tg" hint-placeholder-count="4">
+                  <span class="{{ tg.cls }}">{{ tg.label }}</span>
+                </sc-for>
+              </div>
+
+              <sc-if value="{{ hasInterests }}" hint-placeholder-val="{{ true }}">
+                <div style="margin-bottom:var(--space-4)">
+                  <h6>Background and interests</h6>
+                  <p style="font-size:15px">{{ detailInterests }}</p>
+                </div>
+              </sc-if>
+              <sc-if value="{{ hasSkills }}" hint-placeholder-val="{{ true }}">
+                <div style="margin-bottom:var(--space-4)">
+                  <h6>Brings</h6>
+                  <p style="font-size:15px">{{ detailSkills }}</p>
+                </div>
+              </sc-if>
+              <sc-if value="{{ hasCoding }}" hint-placeholder-val="{{ true }}">
+                <div style="margin-bottom:var(--space-4)">
+                  <h6>Codes in</h6>
+                  <p style="font-size:15px">{{ detailCoding }}</p>
+                </div>
+              </sc-if>
+              <sc-if value="{{ hasMessage }}" hint-placeholder-val="{{ false }}">
+                <div style="margin-bottom:var(--space-6)">
+                  <h6>Off the record</h6>
+                  <p style="font-size:15px;font-style:italic">{{ detailMessage }}</p>
+                </div>
+              </sc-if>
+
+              <h6>Closest overlap</h6>
+              <div style="display:flex;flex-direction:column;gap:var(--space-2);margin-bottom:var(--space-6)">
+                <sc-for list="{{ detailMatches }}" as="m" hint-placeholder-count="5">
+                  <button style="display:flex;gap:var(--space-3);align-items:baseline;background:none;border:0;border-bottom:1px solid var(--color-divider);padding:0 0 8px;text-align:left;cursor:pointer;font:inherit;color:inherit" onClick="{{ m.onClick }}">
+                    <span style="flex:1">
+                      <span style="font-family:var(--font-heading);font-weight:600">{{ m.title }}</span>
+                      <span class="text-muted" style="display:block;font-size:12px">{{ m.sub }}</span>
+                    </span>
+                    <span style="font-size:12px;color:var(--color-accent-700);white-space:nowrap">{{ m.score }}</span>
+                  </button>
+                </sc-for>
+              </div>
+
+              <button class="{{ detailStarCls }}" onClick="{{ onStarDetail }}">{{ detailStarLabel }}</button>
+            </div>
+          </sc-if>
+          <sc-if value="{{ noDetail }}" hint-placeholder-val="{{ true }}">
+            <p class="text-muted" style="max-width:40ch">Pick a card to read the whole introduction, and to see who else works on the same things.</p>
+          </sc-if>
+
+          <div style="margin-top:var(--space-8)">
+            <div style="height:2px;background:var(--color-text);margin-bottom:var(--space-2)"></div>
+            <h6>{{ planLabel }}</h6>
+            <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:var(--space-3)">
+              <sc-for list="{{ plan }}" as="p" hint-placeholder-count="0">
+                <div style="display:flex;gap:var(--space-2);align-items:baseline;font-size:14px">
+                  <button style="flex:1;text-align:left;background:none;border:0;padding:0;cursor:pointer;font:inherit;color:inherit" onClick="{{ p.onClick }}">{{ p.title }}</button>
+                  <button class="btn btn-ghost" style="font-size:12px" onClick="{{ p.onRemove }}">Remove</button>
+                </div>
+              </sc-for>
+            </div>
+            <sc-if value="{{ planEmpty }}" hint-placeholder-val="{{ true }}">
+              <p class="text-muted" style="font-size:13px">Star the people you mean to actually talk to. Kept in this browser.</p>
+            </sc-if>
+            <sc-if value="{{ planFull }}" hint-placeholder-val="{{ false }}">
+              <button class="btn btn-secondary" onClick="{{ onCopyPlan }}">{{ copyLabel }}</button>
+            </sc-if>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ onProjects }}" hint-placeholder-val="{{ false }}">
+    <div style="max-width:64ch">
+      <h2>The pitch session is tomorrow</h2>
+      <p style="font-size:17px">Project pitches happen on day 1. When the pitch deck exists, each project lands here with its own card: the pitch, the roles it is still missing, and the people whose introductions already match it.</p>
+      <p style="font-size:17px">Until then, the useful move is the other direction — find someone whose work overlaps yours and turn that into a pitch.</p>
+      <h6 style="margin-top:var(--space-6)">Topics with the most people behind them</h6>
+      <ol style="font-size:15px;padding-left:1.4em">
+        <sc-for list="{{ topTopics }}" as="t" hint-placeholder-count="6">
+          <li style="margin-bottom:4px">
+            <button style="background:none;border:0;padding:0;cursor:pointer;font:inherit;color:var(--color-accent-700)" onClick="{{ t.onClick }}">{{ t.label }}</button>
+            <span class="text-muted"> — {{ t.count }} people</span>
+          </li>
+        </sc-for>
+      </ol>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ onGraph }}" hint-placeholder-val="{{ false }}">
+    <div>
+      <p class="text-muted" style="max-width:58ch;margin-bottom:var(--space-4)">Each small mark is a person, pulled toward the topics they wrote on their slide. People sitting between two topics are the ones worth a conversation. Click a topic to filter the list; click a person to open them.</p>
+      {{ graph }}
+      <p class="text-muted" style="font-size:12px;margin-top:var(--space-2)">Once pitches exist, stated interest in a project will draw as a second, heavier kind of edge.</p>
+    </div>
+  </sc-if>
+
+  <footer style="margin-top:var(--space-8);padding-top:var(--space-3);border-top:1px solid var(--color-divider);font-size:12px" class="text-muted">
+    {{ footerNote }}
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;defaultView&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;people&quot;,&quot;projects&quot;,&quot;graph&quot;],&quot;default&quot;:&quot;people&quot;,&quot;tsType&quot;:&quot;'people' | 'projects' | 'graph'&quot;,&quot;section&quot;:&quot;Behaviour&quot;},&quot;showSerendipity&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behaviour&quot;}}">
+class Component extends DCLogic {
+  state = { tab: null, q: '', tags: [], langs: [], sel: null, short: [], copied: false };
+
+  photoOf(p) {
+    const m = this.state.photos || (typeof window !== 'undefined' && window.BH_PHOTOS) || {};
+    return p.img || m[p.id] || '';
+  }
+  initialsOf(name) { return name.split(/\s+/).filter(w => /[A-Za-z]/.test(w[0] || '')).slice(0, 2).map(w => w[0].toUpperCase()).join(''); }
+
+  people() { return (typeof window !== 'undefined' && window.BH_PEOPLE) || []; }
+  src() { return (typeof window !== 'undefined' && window.BH_SOURCE) || {}; }
+
+  componentDidMount() {
+    let short = [];
+    try {
+      const m = (location.hash || '').match(/plan=([^&]+)/);
+      if (m) short = decodeURIComponent(m[1]).split(',').filter(Boolean);
+      else short = JSON.parse(localStorage.getItem('bh26-shortlist') || '[]');
+    } catch (e) { short = []; }
+    if (short.length) this.setState({ short });
+    if (!this.people().length) setTimeout(() => this.forceUpdate(), 300);
+    // photos.json is written by the fetch-photos GitHub Action; absent before its first run
+    fetch('photos.json').then(r => r.ok ? r.json() : null)
+      .then(m => m && this.setState({ photos: m })).catch(() => {});
+  }
+
+  find(id) { return this.people().find(p => p.id === id); }
+
+  toggleShort = (id) => this.setState(s => {
+    const short = s.short.includes(id) ? s.short.filter(x => x !== id) : s.short.concat(id);
+    try { localStorage.setItem('bh26-shortlist', JSON.stringify(short)); } catch (e) {}
+    return { short, copied: false };
+  });
+
+  toggleTag = (t) => this.setState(s => ({ tags: s.tags.includes(t) ? s.tags.filter(x => x !== t) : s.tags.concat(t) }));
+  toggleLang = (l) => this.setState(s => ({ langs: s.langs.includes(l) ? s.langs.filter(x => x !== l) : s.langs.concat(l) }));
+
+  pickTopic = (t) => this.setState({ tab: 'people', tags: [t], langs: [], q: '' });
+
+  shuffle = () => {
+    const pool = this.people();
+    if (!pool.length) return;
+    const unseen = pool.filter(p => p.id !== this.state.sel);
+    const pick = unseen[Math.floor(Math.random() * unseen.length)];
+    this.setState({ tab: 'people', sel: pick.id, q: '', tags: [], langs: [] });
+  };
+
+  copyPlan = () => {
+    const frag = '#plan=' + encodeURIComponent(this.state.short.join(','));
+    try { history.replaceState(null, '', frag); } catch (e) {}
+    if (navigator.clipboard) navigator.clipboard.writeText(location.origin + location.pathname + frag).catch(() => {});
+    this.setState({ copied: true });
+  };
+
+  shared(a, b) { return a.filter(x => b.includes(x)); }
+  hash(s) { let h = 0; for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0; return h; }
+
+  buildGraph(people, topics, active) {
+    const W = 1200, H = 660, cx = W / 2, cy = H / 2;
+    // An ellipse, not a circle: it fills the wide column and, more importantly,
+    // spreads the crowded top and bottom arcs horizontally so their labels clear.
+    const RX = 430, RY = 235;
+    const pos = {};
+    topics.forEach((t, i) => {
+      const a = (i / topics.length) * Math.PI * 2 - Math.PI / 2;
+      pos[t] = { x: cx + Math.cos(a) * RX, y: cy + Math.sin(a) * RY, a, i };
+    });
+    const el = React.createElement;
+    const edges = [], nodes = [], labels = [];
+
+    topics.forEach(t => {
+      const p = pos[t], on = active.includes(t);
+      const cos = Math.cos(p.a), sin = Math.sin(p.a);
+      // Near-vertical labels get pushed further out and sit above/below their dot,
+      // otherwise neighbours on the top and bottom arcs overlap.
+      const vertical = Math.abs(cos) < 0.32;
+      // Alternate rows on the top and bottom arcs so neighbours never share a baseline.
+      const row = p.i % 2 ? 34 : 14;
+      const gap = vertical ? row : 14;
+      const lx = p.x + cos * gap, ly = p.y + sin * (vertical ? gap : gap * 0.6);
+      labels.push(el('text', {
+        key: 'lt' + t, x: lx, y: ly, fill: on ? 'var(--color-accent-2-700)' : 'var(--color-text)',
+        fontSize: 13, fontFamily: 'var(--font-heading)', fontWeight: 600,
+        textAnchor: vertical ? 'middle' : (cos > 0 ? 'start' : 'end'),
+        dominantBaseline: vertical ? (sin > 0 ? 'hanging' : 'auto') : 'middle',
+        style: { cursor: 'pointer' }, onClick: () => this.pickTopic(t)
+      }, t));
+      labels.push(el('circle', { key: 'ct' + t, cx: p.x, cy: p.y, r: on ? 6 : 4, fill: on ? 'var(--color-accent-2)' : 'var(--color-accent)', style: { cursor: 'pointer' }, onClick: () => this.pickTopic(t) }));
+    });
+
+    people.forEach(pr => {
+      const ts = pr.t.filter(t => pos[t]);
+      if (!ts.length) return;
+      const mx = ts.reduce((s, t) => s + pos[t].x, 0) / ts.length;
+      const my = ts.reduce((s, t) => s + pos[t].y, 0) / ts.length;
+      const h = this.hash(pr.id);
+      const jx = ((h % 37) - 18) * 1.5, jy = (((h >> 5) % 37) - 18) * 1.5;
+      const x = cx + (mx - cx) * 0.78 + jx, y = cy + (my - cy) * 0.78 + jy;
+      const isSel = this.state.sel === pr.id;
+      const starred = this.state.short.includes(pr.id);
+      const lit = isSel || (active.length > 0 && active.every(t => pr.t.includes(t)));
+      ts.forEach(t => edges.push(el('line', {
+        key: 'e' + pr.id + t, x1: x, y1: y, x2: pos[t].x, y2: pos[t].y,
+        stroke: lit ? 'var(--color-accent-2-400)' : 'var(--color-neutral-300)',
+        strokeWidth: lit ? 1.2 : 0.6
+      })));
+      nodes.push(el('circle', {
+        key: 'n' + pr.id, cx: x, cy: y, r: isSel ? 7 : starred ? 5.5 : 4,
+        fill: isSel ? 'var(--color-accent-2)' : starred ? 'var(--color-accent-600)' : 'var(--color-text)',
+        opacity: lit || !active.length ? 1 : 0.28,
+        style: { cursor: 'pointer' },
+        onClick: () => this.setState({ tab: 'people', sel: pr.id })
+      }, el('title', null, pr.n + ' — ' + pr.a)));
+    });
+
+    return el('svg', { viewBox: '0 0 ' + W + ' ' + H, width: '100%', role: 'img', 'aria-label': 'Participants arranged by shared topics', style: { display: 'block', height: 'auto' } },
+      el('g', { key: 'edges' }, edges), el('g', { key: 'nodes' }, nodes), el('g', { key: 'labels' }, labels));
+  }
+
+  renderVals() {
+    const all = this.people();
+    const tab = this.state.tab || this.props.defaultView || 'people';
+    const q = this.state.q.trim().toLowerCase();
+    const active = this.state.tags, langs = this.state.langs;
+
+    const counts = {};
+    all.forEach(p => p.t.forEach(t => { counts[t] = (counts[t] || 0) + 1; }));
+    const topics = Object.keys(counts).sort((a, b) => counts[b] - counts[a] || a.localeCompare(b));
+    const topicChips = topics.map(t => ({
+      label: t + ' ' + counts[t],
+      cls: active.includes(t) ? 'tag tag-accent' : 'tag tag-outline',
+      onClick: () => this.toggleTag(t)
+    }));
+
+    const lcounts = {};
+    all.forEach(p => (p.co || []).forEach(l => { lcounts[l] = (lcounts[l] || 0) + 1; }));
+    const langChips = Object.keys(lcounts).filter(l => lcounts[l] >= 3).sort((a, b) => lcounts[b] - lcounts[a]).map(l => ({
+      label: l, cls: langs.includes(l) ? 'tag tag-accent-2' : 'tag tag-neutral',
+      onClick: () => this.toggleLang(l)
+    }));
+
+    const hay = p => [p.n, p.a, p.c, p.i, p.s, p.m].concat(p.t, p.co || []).join(' ').toLowerCase();
+    const filtered = all.filter(p => (!q || hay(p).includes(q))
+      && active.every(t => p.t.includes(t))
+      && langs.every(l => (p.co || []).includes(l)));
+
+    const items = filtered.map(p => ({
+      id: p.id, title: p.n,
+      kicker: p.a + ' · ' + p.c,
+      body: (p.i || p.s || p.m || '').slice(0, 190) + ((p.i || p.s || p.m || '').length > 190 ? '…' : ''),
+      meta: (p.co || []).length ? (p.co || []).slice(0, 5).join(' · ') : 'No languages listed',
+      tags: p.t.map(t => ({ label: t, cls: active.includes(t) ? 'tag tag-accent' : 'tag tag-neutral' })),
+      hasPhoto: !!this.photoOf(p),
+      noPhoto: !this.photoOf(p),
+      photo: this.photoOf(p),
+      initials: this.initialsOf(p.n),
+      selected: this.state.sel === p.id,
+      starCls: this.state.short.includes(p.id) ? 'tag tag-accent-2' : 'tag tag-outline',
+      starLabel: this.state.short.includes(p.id) ? 'On my list' : 'Add',
+      onClick: () => this.setState({ sel: p.id }),
+      onStar: (e) => { e.stopPropagation(); this.toggleShort(p.id); }
+    }));
+
+    const sel = this.state.sel ? this.find(this.state.sel) : null;
+    let detailMatches = [];
+    if (sel) {
+      detailMatches = all.filter(p => p.id !== sel.id).map(p => {
+        const st = this.shared(sel.t, p.t), sl = this.shared(sel.co || [], p.co || []);
+        return { p, st, sl, score: st.length * 2 + sl.length };
+      }).filter(x => x.st.length > 0).sort((a, b) => b.score - a.score).slice(0, 6).map(x => ({
+        title: x.p.n,
+        sub: x.p.a + ' — ' + x.st.join(', ') + (x.sl.length ? ' · ' + x.sl.slice(0, 3).join('/') : ''),
+        score: x.st.length + ' topics',
+        onClick: () => this.setState({ sel: x.p.id })
+      }));
+    }
+
+    const plan = this.state.short.map(id => this.find(id)).filter(Boolean).map(p => ({
+      title: p.n, onClick: () => this.setState({ tab: 'people', sel: p.id }), onRemove: () => this.toggleShort(p.id)
+    }));
+
+    return {
+      datelineRight: all.length ? all.length + ' introductions · slides ' + (this.src().slidesRead || '') : 'loading the deck…',
+      footerNote: 'Static site. People load from data.js, regenerated from the self-introduction deck; nothing is stored server-side.',
+      onPeople: tab === 'people', onProjects: tab === 'projects', onGraph: tab === 'graph',
+      goPeople: () => this.setState({ tab: 'people' }),
+      goProjects: () => this.setState({ tab: 'projects' }),
+      goGraph: () => this.setState({ tab: 'graph' }),
+      tabPeopleCls: tab === 'people' ? 'btn' : 'btn btn-ghost',
+      tabProjectsCls: tab === 'projects' ? 'btn' : 'btn btn-ghost',
+      tabGraphCls: tab === 'graph' ? 'btn' : 'btn btn-ghost',
+      serendipityOn: this.props.showSerendipity !== false,
+      onShuffle: this.shuffle,
+      q: this.state.q,
+      onQuery: e => this.setState({ q: e.target.value }),
+      topicChips, langChips,
+      hasFilters: active.length > 0 || langs.length > 0 || q.length > 0,
+      onClear: () => this.setState({ tags: [], langs: [], q: '' }),
+      countLabel: items.length + ' of ' + all.length + ' people' + (active.length ? ' · ' + active.join(' + ') : '') + (langs.length ? ' · ' + langs.join(' + ') : ''),
+      items, isEmpty: all.length > 0 && items.length === 0,
+      hasDetail: !!sel, noDetail: !sel,
+      detailHasPhoto: !!(sel && this.photoOf(sel)),
+      detailPhoto: sel ? this.photoOf(sel) : '',
+      detailTitle: sel ? sel.n : '',
+      detailKicker: sel ? sel.a + ' · ' + sel.c : '',
+      detailTags: sel ? sel.t.map(t => ({ label: t, cls: active.includes(t) ? 'tag tag-accent' : 'tag tag-neutral' })) : [],
+      hasInterests: !!(sel && sel.i), detailInterests: sel ? sel.i : '',
+      hasSkills: !!(sel && sel.s), detailSkills: sel ? sel.s : '',
+      hasCoding: !!(sel && (sel.co || []).length), detailCoding: sel ? (sel.co || []).join(', ') : '',
+      hasMessage: !!(sel && sel.m), detailMessage: sel ? sel.m : '',
+      detailMatches,
+      detailStarCls: sel && this.state.short.includes(sel.id) ? 'btn btn-secondary' : 'btn btn-primary',
+      detailStarLabel: sel && this.state.short.includes(sel.id) ? 'Remove from my list' : 'Add to my list',
+      onStarDetail: () => sel && this.toggleShort(sel.id),
+      planLabel: 'People I want to find (' + this.state.short.length + ')',
+      plan, planEmpty: this.state.short.length === 0, planFull: this.state.short.length > 0,
+      copyLabel: this.state.copied ? 'Link copied' : 'Copy a link to this list',
+      onCopyPlan: this.copyPlan,
+      topTopics: topics.slice(0, 8).map(t => ({ label: t, count: counts[t], onClick: () => this.pickTopic(t) })),
+      graph: all.length ? this.buildGraph(all, topics, active) : null
+    };
+  }
+}
+</script>
+</body>
+</html>

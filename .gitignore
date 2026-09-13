@@ -1,0 +1,5 @@
+.DS_Store
+
+# Source decks are large binaries kept out of the repo (GitHub caps files at 100 MB).
+data/*.pptx
+data/*.pdf

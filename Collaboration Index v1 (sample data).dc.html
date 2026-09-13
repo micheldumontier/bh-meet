@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/broadsheet-4a69f9fc-4fa4-48eb-9071-6d3938a6cd9f/styles.css">
+<script src="_ds/broadsheet-4a69f9fc-4fa4-48eb-9071-6d3938a6cd9f/_ds_bundle.js"></script>
+<style>
+  body { margin: 0; }
+  a { color: var(--color-accent); }
+  a:hover { color: var(--color-accent-700); }
+</style>
+</helmet>
+<div style="max-width:1240px;margin:0 auto;padding:var(--space-6) var(--space-6) var(--space-8)">
+
+  <header style="margin-bottom:var(--space-6)">
+    <div style="height:3px;background:var(--color-text)"></div>
+    <div style="display:flex;flex-wrap:wrap;gap:var(--space-3);align-items:baseline;padding:6px 0">
+      <span style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase">BioHackathon Japan</span>
+      <span style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent)">Collaboration Index</span>
+      <span style="margin-left:auto;font-size:11px;letter-spacing:0.06em" class="text-muted">Sample data — awaiting the introduction and pitch decks</span>
+    </div>
+    <div style="height:1px;background:var(--color-text)"></div>
+
+    <h1 style="font-size:clamp(38px,6vw,64px);margin:var(--space-4) 0 var(--space-2);max-width:16ch">Find your people. Find your project.</h1>
+    <p style="max-width:56ch;font-size:17px" class="text-muted">Every person introduction and every project pitch, indexed by what they work on. Search, filter by topic, and see who overlaps with what.</p>
+  </header>
+
+  <div style="display:flex;flex-wrap:wrap;gap:var(--space-3);align-items:flex-end;margin-bottom:var(--space-4)">
+    <div class="field" style="flex:1 1 260px">
+      <label for="bh-q">Search names, projects, tools, organisms</label>
+      <input id="bh-q" class="input" type="search" placeholder="e.g. SPARQL, nanopore, Kyoto" value="{{ q }}" onChange="{{ onQuery }}">
+    </div>
+    <div class="seg" role="group" aria-label="View">
+      <label class="seg-opt"><input type="radio" name="bh-view" checked="{{ isProjects }}" onChange="{{ showProjects }}">Projects</label>
+      <label class="seg-opt"><input type="radio" name="bh-view" checked="{{ isPeople }}" onChange="{{ showPeople }}">People</label>
+    </div>
+    <sc-if value="{{ serendipityOn }}" hint-placeholder-val="{{ true }}">
+      <button class="btn btn-secondary" onClick="{{ onShuffle }}">Surprise me</button>
+    </sc-if>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:var(--space-6)">
+    <sc-for list="{{ tagChips }}" as="t" hint-placeholder-count="10">
+      <button class="{{ t.cls }}" style="cursor:pointer;border:1px solid var(--color-divider);font:inherit;font-size:11px;padding:3px 10px;border-radius:1.5px" onClick="{{ t.onClick }}">{{ t.label }}</button>
+    </sc-for>
+    <sc-if value="{{ hasFilters }}" hint-placeholder-val="{{ false }}">
+      <button class="btn btn-ghost" style="font-size:12px" onClick="{{ onClear }}">Clear</button>
+    </sc-if>
+  </div>
+
+  <div style="display:grid;gap:var(--space-8);grid-template-columns:repeat(auto-fit,minmax(320px,1fr));align-items:start">
+
+    <section>
+      <h6 style="margin-bottom:var(--space-3)">{{ countLabel }}</h6>
+      <div style="display:flex;flex-direction:column;gap:var(--space-2)">
+        <sc-for list="{{ items }}" as="it" hint-placeholder-count="6">
+          <article class="card" style="cursor:pointer;gap:var(--space-2)" onClick="{{ it.onClick }}">
+            <sc-if value="{{ it.selected }}" hint-placeholder-val="{{ false }}">
+              <div style="height:3px;width:44px;background:var(--color-accent-2)"></div>
+            </sc-if>
+            <div style="display:flex;gap:var(--space-3);align-items:flex-start">
+              <div style="flex:1">
+                <div class="card-kicker">{{ it.kicker }}</div>
+                <div class="card-title" style="margin-top:3px">{{ it.title }}</div>
+              </div>
+              <button class="{{ it.starCls }}" style="font-size:11px;padding:3px 10px;cursor:pointer;font-family:inherit" onClick="{{ it.onStar }}" aria-label="{{ it.starLabel }}">{{ it.starLabel }}</button>
+            </div>
+            <p class="card-body">{{ it.body }}</p>
+            <div style="display:flex;flex-wrap:wrap;gap:5px">
+              <sc-for list="{{ it.tags }}" as="tg" hint-placeholder-count="3">
+                <span class="{{ tg.cls }}">{{ tg.label }}</span>
+              </sc-for>
+            </div>
+            <div class="card-meta">{{ it.meta }}</div>
+          </article>
+        </sc-for>
+        <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
+          <p class="text-muted">Nothing matches that yet. Try fewer topics.</p>
+        </sc-if>
+      </div>
+    </section>
+
+    <aside style="position:sticky;top:var(--space-4)">
+      <sc-if value="{{ hasDetail }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <div style="height:2px;background:var(--color-text);margin-bottom:var(--space-2)"></div>
+          <div class="card-kicker">{{ detailKicker }}</div>
+          <h2 style="margin-top:var(--space-1)">{{ detailTitle }}</h2>
+          <p style="font-size:16px">{{ detailBody }}</p>
+
+          <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:var(--space-4)">
+            <sc-for list="{{ detailTags }}" as="tg" hint-placeholder-count="4">
+              <span class="{{ tg.cls }}">{{ tg.label }}</span>
+            </sc-for>
+          </div>
+
+          <h6>{{ needsLabel }}</h6>
+          <ul style="margin:0 0 var(--space-6);padding-left:1.1em;font-size:14px">
+            <sc-for list="{{ detailNeeds }}" as="n" hint-placeholder-count="3">
+              <li style="margin-bottom:4px">{{ n.text }}</li>
+            </sc-for>
+          </ul>
+
+          <sc-if value="{{ hasOwn }}" hint-placeholder-val="{{ false }}">
+            <div style="margin-bottom:var(--space-6)">
+              <h6>{{ ownLabel }}</h6>
+              <button style="display:flex;gap:var(--space-3);align-items:baseline;background:none;border:0;padding:0;text-align:left;cursor:pointer;font:inherit;color:inherit" onClick="{{ onOwnClick }}">
+                <span>
+                  <span style="font-family:var(--font-heading);font-weight:600">{{ ownTitle }}</span>
+                  <span class="text-muted" style="display:block;font-size:12px">{{ ownSub }}</span>
+                </span>
+              </button>
+            </div>
+          </sc-if>
+
+          <h6>{{ matchLabel }}</h6>
+          <div style="display:flex;flex-direction:column;gap:var(--space-2);margin-bottom:var(--space-6)">
+            <sc-for list="{{ detailMatches }}" as="m" hint-placeholder-count="4">
+              <button style="display:flex;gap:var(--space-3);align-items:baseline;background:none;border:0;border-bottom:1px solid var(--color-divider);padding:0 0 8px;text-align:left;cursor:pointer;font:inherit;color:inherit" onClick="{{ m.onClick }}">
+                <span style="flex:1">
+                  <span style="font-family:var(--font-heading);font-weight:600">{{ m.title }}</span>
+                  <span class="text-muted" style="display:block;font-size:12px">{{ m.sub }}</span>
+                </span>
+                <sc-if value="{{ scoresOn }}" hint-placeholder-val="{{ true }}">
+                  <span style="font-size:12px;color:var(--color-accent-700)">{{ m.score }}</span>
+                </sc-if>
+              </button>
+            </sc-for>
+          </div>
+
+          <button class="{{ detailStarCls }}" onClick="{{ onStarDetail }}">{{ detailStarLabel }}</button>
+        </div>
+      </sc-if>
+      <sc-if value="{{ noDetail }}" hint-placeholder-val="{{ true }}">
+        <p class="text-muted" style="max-width:38ch">Pick a card to see the full pitch, the roles still open, and who overlaps with it.</p>
+      </sc-if>
+
+      <div style="margin-top:var(--space-8)">
+        <div style="height:2px;background:var(--color-text);margin-bottom:var(--space-2)"></div>
+        <h6>{{ planLabel }}</h6>
+        <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:var(--space-3)">
+          <sc-for list="{{ plan }}" as="p" hint-placeholder-count="0">
+            <div style="display:flex;gap:var(--space-2);align-items:baseline;font-size:14px">
+              <button style="flex:1;text-align:left;background:none;border:0;padding:0;cursor:pointer;font:inherit;color:inherit" onClick="{{ p.onClick }}">{{ p.title }}</button>
+              <button class="btn btn-ghost" style="font-size:12px" onClick="{{ p.onRemove }}">Remove</button>
+            </div>
+          </sc-for>
+        </div>
+        <sc-if value="{{ planEmpty }}" hint-placeholder-val="{{ true }}">
+          <p class="text-muted" style="font-size:13px">Star anything to build a shortlist. It is kept in this browser.</p>
+        </sc-if>
+        <sc-if value="{{ planFull }}" hint-placeholder-val="{{ false }}">
+          <button class="btn btn-secondary" onClick="{{ onCopyPlan }}">{{ copyLabel }}</button>
+        </sc-if>
+      </div>
+    </aside>
+  </div>
+
+  <footer style="margin-top:var(--space-8);padding-top:var(--space-3);border-top:1px solid var(--color-divider);font-size:12px" class="text-muted">
+    Built to run as a static site. People and projects load from one JSON file in the repository; organisers regenerate it from the introduction and pitch decks.
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;defaultView&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;projects&quot;,&quot;people&quot;],&quot;default&quot;:&quot;projects&quot;,&quot;tsType&quot;:&quot;'projects' | 'people'&quot;},&quot;showSerendipity&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showMatchScores&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { view: null, q: '', tags: [], sel: null, short: [], copied: false };
+
+  projects = [
+    { id: 'p1', title: 'One query across the life-science RDF cloud', lead: 'Kenta Mori', affil: 'DBCLS', room: 'Hall A',
+      pitch: 'Federated SPARQL over UniProt, PDBj and TogoID endpoints, with a query builder that does not assume you already know the schema.',
+      tags: ['RDF/SPARQL', 'Ontologies', 'FAIR/Metadata', 'Visualisation'],
+      needs: ['Someone who has run a federated endpoint in production', 'Front-end help for the query builder', 'A test set of real biologist questions'] },
+    { id: 'p2', title: 'Nanopore basecalling on a laptop', lead: 'Sofia Almeida', affil: 'EMBL-EBI', room: 'Hall A',
+      pitch: 'Quantised basecalling models that finish an amplicon run without a GPU, aimed at field and teaching use.',
+      tags: ['Nanopore', 'Rust', 'Workflows'],
+      needs: ['Rust or C++ for the inference loop', 'Benchmark data from a MinION run', 'Someone to write the teaching notebook'] },
+    { id: 'p3', title: 'Reading the Japanese-language literature', lead: 'Aya Nakagawa', affil: 'NIG',
+      pitch: 'A retrieval pipeline over Japanese clinical and agricultural papers that are absent from English-only indexes, with entity links to standard vocabularies.',
+      tags: ['LLM/NLP', 'Japanese text', 'Ontologies', 'Clinical data'], room: 'Room 2',
+      needs: ['Native Japanese reader for evaluation', 'Anyone with NER experience', 'Access to a licensed corpus'] },
+    { id: 'p4', title: 'Single-cell atlas, one workflow', lead: 'Ravi Deshmukh', affil: 'Osaka University', room: 'Room 2',
+      pitch: 'A Galaxy and Nextflow pair that produce byte-identical single-cell results, so a published atlas can be re-run five years later.',
+      tags: ['Single-cell', 'Workflows', 'Containers', 'Python'],
+      needs: ['Nextflow maintainer', 'Container build expertise', 'A published dataset to reproduce'] },
+    { id: 'p5', title: 'Glycan structures that machines can read', lead: 'Hiroshi Tanabe', affil: 'Soka University', room: 'Room 3',
+      pitch: 'Bringing GlyTouCan identifiers into the wider RDF graph so glycan data stops living on its own island.',
+      tags: ['Glycomics', 'RDF/SPARQL', 'FAIR/Metadata'],
+      needs: ['Ontology modelling', 'A chemist to check the structure mapping', 'Someone to write the SPARQL examples'] },
+    { id: 'p6', title: 'Metagenomes from the Seto Inland Sea', lead: 'Marie Lefevre', affil: 'Univ. of Tokyo', room: 'Hall B',
+      pitch: 'Assembling and annotating a two-year marine sampling series, and publishing it with enough metadata to be reusable.',
+      tags: ['Metagenomics', 'FAIR/Metadata', 'Cloud', 'Workflows'],
+      needs: ['Assembly tuning', 'MIxS metadata wrangling', 'Cloud credits and someone who knows how to spend them'] },
+    { id: 'p7', title: 'An agent that writes your data-management plan', lead: 'Yuki Shimada', affil: 'RIKEN', room: 'Room 3',
+      pitch: 'A small model fine-tuned on funder templates that drafts a plan from a project description and flags the parts a human must decide.',
+      tags: ['LLM/NLP', 'FAIR/Metadata', 'Python'],
+      needs: ['Evaluation rubric', 'Examples of real approved plans', 'Someone to argue about what should stay human'] },
+    { id: 'p8', title: 'Structure prediction triage', lead: 'Daniel Okoye', affil: 'PDBj', room: 'Hall B',
+      pitch: 'A viewer that puts predicted and experimental structures side by side and makes the confidence bands honest at a glance.',
+      tags: ['Structural biology', 'Visualisation', 'Python'],
+      needs: ['WebGL or Mol* experience', 'A structural biologist to define the triage rules', 'Design help on the confidence legend'] },
+    { id: 'p9', title: 'Plant genome portal for smaller crops', lead: 'Chen Wei', affil: 'NARO', room: 'Room 4',
+      pitch: 'One browsable portal for the orphan crop genomes that never got a dedicated database, built on existing open components.',
+      tags: ['Plant genomes', 'Visualisation', 'FAIR/Metadata'],
+      needs: ['JBrowse configuration', 'Curation of five genomes', 'Someone who has deployed a portal and kept it alive'] },
+    { id: 'p10', title: 'Provenance you can actually trace', lead: 'Elena Rossi', affil: 'ELIXIR Italy', room: 'Room 4',
+      pitch: 'Capturing workflow provenance as RO-Crate at run time, not as an afterthought, for three common pipeline engines.',
+      tags: ['Workflows', 'FAIR/Metadata', 'Containers', 'RDF/SPARQL'],
+      needs: ['Snakemake internals', 'RO-Crate spec knowledge', 'A pipeline to instrument'] }
+  ];
+
+  people = [
+    { id: 'h1', name: 'Kenta Mori', affil: 'DBCLS, Mishima', tags: ['RDF/SPARQL', 'Ontologies', 'FAIR/Metadata'], looking: 'People who have hit the limits of federated queries', blurb: 'Maintains a life-science SPARQL endpoint. Ninth biohackathon; mostly interested in whether anyone outside the RDF crowd can use it.' },
+    { id: 'h2', name: 'Sofia Almeida', affil: 'EMBL-EBI', tags: ['Nanopore', 'Rust', 'Workflows'], looking: 'A systems programmer and a spare MinION', blurb: 'Works on sequence compression. Brought a laptop with no GPU on purpose.' },
+    { id: 'h3', name: 'Aya Nakagawa', affil: 'National Institute of Genetics', tags: ['LLM/NLP', 'Japanese text', 'Clinical data'], looking: 'NLP people who are not afraid of Japanese tokenisation', blurb: 'Text mining on clinical records. Has a list of things English-trained models get wrong.' },
+    { id: 'h4', name: 'Ravi Deshmukh', affil: 'Osaka University', tags: ['Single-cell', 'Workflows', 'Python'], looking: 'A reproducibility sceptic to break the pipeline', blurb: 'Single-cell analysis, mostly immune repertoires. Spends more time on containers than on biology.' },
+    { id: 'h5', name: 'Hiroshi Tanabe', affil: 'Soka University', tags: ['Glycomics', 'Ontologies', 'RDF/SPARQL'], looking: 'Anyone modelling chemical structures in RDF', blurb: 'Glycoinformatics since before it had a name.' },
+    { id: 'h6', name: 'Marie Lefevre', affil: 'University of Tokyo', tags: ['Metagenomics', 'Cloud', 'FAIR/Metadata'], looking: 'Help getting two years of samples out of a hard drive and into a repository', blurb: 'Marine microbial ecology. Sails more than she codes.' },
+    { id: 'h7', name: 'Yuki Shimada', affil: 'RIKEN', tags: ['LLM/NLP', 'Python', 'FAIR/Metadata'], looking: 'Someone with strong opinions about evaluation', blurb: 'Builds small models for administrative text. Sceptical of demos.' },
+    { id: 'h8', name: 'Daniel Okoye', affil: 'PDBj', tags: ['Structural biology', 'Visualisation'], looking: 'A front-end developer who likes molecules', blurb: 'Curates deposited structures. Wants the confidence bands to stop being decorative.' },
+    { id: 'h9', name: 'Chen Wei', affil: 'NARO', tags: ['Plant genomes', 'Visualisation', 'Cloud'], looking: 'A JBrowse expert', blurb: 'Crop genomics, mainly buckwheat and millet.' },
+    { id: 'h10', name: 'Elena Rossi', affil: 'ELIXIR Italy', tags: ['Workflows', 'Containers', 'FAIR/Metadata'], looking: 'A pipeline maintainer willing to be instrumented', blurb: 'Works on research object standards. Will explain RO-Crate to anyone who stands still.' },
+    { id: 'h11', name: 'Takumi Ishii', affil: 'Keio University', tags: ['Rust', 'Containers', 'Nanopore'], looking: 'Something low-level to optimise', blurb: 'Rewrites things in Rust. First biohackathon.' },
+    { id: 'h12', name: 'Priya Menon', affil: 'NCBS Bangalore', tags: ['Single-cell', 'Visualisation', 'Python'], looking: 'A dataset that needs a better figure', blurb: 'Data visualisation for genomics. Draws before she codes.' },
+    { id: 'h13', name: 'Johan Berg', affil: 'ELIXIR Sweden', tags: ['Ontologies', 'FAIR/Metadata', 'Clinical data'], looking: 'Ontology work with a real user waiting at the end', blurb: 'Terminology services. Allergic to bespoke vocabularies.' },
+    { id: 'h14', name: 'Mei Fujiwara', affil: 'Kyoto University', tags: ['Metagenomics', 'Workflows', 'Python'], looking: 'Assembly benchmarking partners', blurb: 'Environmental genomics. Has too many MAGs and not enough names for them.' },
+    { id: 'h15', name: 'Oliver Grant', affil: 'University of Melbourne', tags: ['Structural biology', 'Glycomics', 'Python'], looking: 'Structure people who care about sugars', blurb: 'Simulates glycoproteins. Argues that everything is glycosylated.' },
+    { id: 'h16', name: 'Nao Kurihara', affil: 'Tohoku University', tags: ['Japanese text', 'Clinical data', 'LLM/NLP'], looking: 'A project where Japanese-language data is the point', blurb: 'Medical informatics. Reads the papers nobody else can.' }
+  ];
+
+  componentDidMount() {
+    let short = [];
+    try {
+      const m = (location.hash || '').match(/plan=([^&]+)/);
+      if (m) short = decodeURIComponent(m[1]).split(',').filter(Boolean);
+      else short = JSON.parse(localStorage.getItem('bh-shortlist') || '[]');
+    } catch (e) { short = []; }
+    if (short.length) this.setState({ short });
+  }
+
+  find(id) { return this.projects.find(p => p.id === id) || this.people.find(p => p.id === id); }
+  label(o) { return o.title || o.name; }
+
+  toggleShort = (id) => {
+    this.setState(s => {
+      const short = s.short.includes(id) ? s.short.filter(x => x !== id) : s.short.concat(id);
+      try { localStorage.setItem('bh-shortlist', JSON.stringify(short)); } catch (e) {}
+      return { short, copied: false };
+    });
+  };
+
+  toggleTag = (t) => this.setState(s => ({ tags: s.tags.includes(t) ? s.tags.filter(x => x !== t) : s.tags.concat(t) }));
+
+  shuffle = () => {
+    const pool = (this.state.view || this.props.defaultView || 'projects') === 'projects' ? this.projects : this.people;
+    const pick = pool[Math.floor(Math.random() * pool.length)];
+    this.setState({ sel: pick.id, q: '', tags: [] });
+  };
+
+  copyPlan = () => {
+    const url = location.origin + location.pathname + '#plan=' + encodeURIComponent(this.state.short.join(','));
+    try { history.replaceState(null, '', '#plan=' + encodeURIComponent(this.state.short.join(','))); } catch (e) {}
+    if (navigator.clipboard) navigator.clipboard.writeText(url).catch(() => {});
+    this.setState({ copied: true });
+  };
+
+  overlap(a, b) { return a.filter(t => b.includes(t)); }
+
+  renderVals() {
+    const view = this.state.view || this.props.defaultView || 'projects';
+    const isProjects = view === 'projects';
+    const q = this.state.q.trim().toLowerCase();
+    const active = this.state.tags;
+    const base = isProjects ? this.projects : this.people;
+
+    const counts = {};
+    this.projects.concat(this.people).forEach(o => o.tags.forEach(t => { counts[t] = (counts[t] || 0) + 1; }));
+    const tagChips = Object.keys(counts).sort((a, b) => counts[b] - counts[a]).map(t => ({
+      label: t,
+      cls: active.includes(t) ? 'tag tag-accent' : 'tag tag-outline',
+      onClick: () => this.toggleTag(t)
+    }));
+
+    const hay = o => [this.label(o), o.pitch, o.blurb, o.affil, o.lead, o.looking].concat(o.tags, o.needs || []).join(' ').toLowerCase();
+    const items = base
+      .filter(o => (!q || hay(o).includes(q)) && active.every(t => o.tags.includes(t)))
+      .map(o => ({
+        id: o.id,
+        kicker: isProjects ? (o.lead + ' · ' + o.affil) : o.affil,
+        title: this.label(o),
+        body: o.pitch || o.blurb,
+        meta: isProjects ? (o.needs.length + ' roles open · ' + o.room) : ('Looking for: ' + o.looking),
+        tags: o.tags.map(t => ({ label: t, cls: active.includes(t) ? 'tag tag-accent' : 'tag tag-neutral' })),
+        selected: this.state.sel === o.id,
+        starCls: this.state.short.includes(o.id) ? 'tag tag-accent-2' : 'tag tag-outline',
+        starLabel: this.state.short.includes(o.id) ? 'On my list' : 'Add',
+        onClick: () => this.setState({ sel: o.id }),
+        onStar: (e) => { e.stopPropagation(); this.toggleShort(o.id); }
+      }));
+
+    const sel = this.state.sel ? this.find(this.state.sel) : null;
+    const selIsProject = sel ? !!sel.title : false;
+    let detailMatches = [], detailNeeds = [], own = null;
+    if (sel) {
+      const others = (selIsProject ? this.people : this.projects)
+        .filter(o => (selIsProject ? o.name !== sel.lead : o.lead !== sel.name));
+      detailMatches = others
+        .map(o => ({ o, n: this.overlap(sel.tags, o.tags).length, shared: this.overlap(sel.tags, o.tags) }))
+        .filter(x => x.n > 0)
+        .sort((a, b) => b.n - a.n)
+        .slice(0, 5)
+        .map(x => ({
+          title: this.label(x.o),
+          sub: (selIsProject ? x.o.affil + ' — ' : x.o.lead + ' — ') + x.shared.join(', '),
+          score: x.n + ' shared',
+          onClick: () => this.setState({ sel: x.o.id, view: selIsProject ? 'people' : 'projects' })
+        }));
+      detailNeeds = (selIsProject ? sel.needs : [sel.looking]).map(t => ({ text: t }));
+      own = selIsProject
+        ? this.people.find(p => p.name === sel.lead)
+        : this.projects.find(p => p.lead === sel.name);
+    }
+
+    const plan = this.state.short.map(id => this.find(id)).filter(Boolean).map(o => ({
+      title: this.label(o),
+      onClick: () => this.setState({ sel: o.id, view: o.title ? 'projects' : 'people' }),
+      onRemove: () => this.toggleShort(o.id)
+    }));
+
+    return {
+      q: this.state.q,
+      onQuery: e => this.setState({ q: e.target.value }),
+      isProjects, isPeople: !isProjects,
+      showProjects: () => this.setState({ view: 'projects', sel: null }),
+      showPeople: () => this.setState({ view: 'people', sel: null }),
+      serendipityOn: this.props.showSerendipity !== false,
+      scoresOn: this.props.showMatchScores !== false,
+      onShuffle: this.shuffle,
+      tagChips,
+      hasFilters: active.length > 0 || q.length > 0,
+      onClear: () => this.setState({ tags: [], q: '' }),
+      countLabel: items.length + (isProjects ? ' projects' : ' people') + (active.length ? ' · ' + active.join(' + ') : ''),
+      items,
+      isEmpty: items.length === 0,
+      hasDetail: !!sel,
+      noDetail: !sel,
+      detailKicker: sel ? (selIsProject ? 'Project · ' + sel.lead + ', ' + sel.affil : 'Participant · ' + sel.affil) : '',
+      detailTitle: sel ? this.label(sel) : '',
+      detailBody: sel ? (sel.pitch || sel.blurb) : '',
+      detailTags: sel ? sel.tags.map(t => ({ label: t, cls: active.includes(t) ? 'tag tag-accent' : 'tag tag-neutral' })) : [],
+      needsLabel: selIsProject ? 'Still open' : 'Looking for',
+      detailNeeds,
+      hasOwn: !!own,
+      ownLabel: selIsProject ? 'Pitched by' : 'Their own pitch',
+      ownTitle: own ? this.label(own) : '',
+      ownSub: own ? (selIsProject ? own.affil : own.room) : '',
+      onOwnClick: () => own && this.setState({ sel: own.id, view: selIsProject ? 'people' : 'projects' }),
+      matchLabel: selIsProject ? 'People who overlap' : 'Projects that overlap',
+      detailMatches,
+      detailStarCls: sel && this.state.short.includes(sel.id) ? 'btn btn-secondary' : 'btn btn-primary',
+      detailStarLabel: sel && this.state.short.includes(sel.id) ? 'Remove from my list' : 'Add to my list',
+      onStarDetail: () => sel && this.toggleShort(sel.id),
+      planLabel: 'My shortlist (' + this.state.short.length + ')',
+      plan,
+      planEmpty: this.state.short.length === 0,
+      planFull: this.state.short.length > 0,
+      copyLabel: this.state.copied ? 'Link copied' : 'Copy a link to my shortlist',
+      onCopyPlan: this.copyPlan
+    };
+  }
+}
+</script>
+</body>
+</html>
