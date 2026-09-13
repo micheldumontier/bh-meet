@@ -2,7 +2,7 @@
 
 A browsable index of BioHackathon 2026 participants — search people by topic,
 language and skill, see who overlaps with you, and build a shortlist of people
-to find at the event. 86 introductions, 84 with portraits.
+to find at the event. 87 introductions, all with portraits.
 
 Live site: https://micheldumontier.github.io/bh-meet/
 
@@ -48,8 +48,11 @@ portraits can be regenerated without touching `data.js`.
 
 The deck defines the roster: a person appears here only if they have a slide in
 the current export. An earlier read of the Google deck contributed 24 people who
-are absent from it, and they were dropped rather than carried forward — the
-export is the more recent download.
+were absent from it, and they were dropped rather than carried forward.
+
+Each new export is diffed against the previous one — people added, people gone,
+and whose slide text changed — and only the affected entries are re-curated. The
+rest of `data.js` is left alone.
 
 Ids are name slugs, **not** slide numbers. The deck is reordered and renumbered
 between exports — a person on slide 20 in one export is on slide 26 in the
@@ -58,9 +61,12 @@ the wrong person.
 
 ## Regenerating from the deck
 
-Put the exported deck at `data/BH26-people.pptx`, then:
+Drop the exported deck anywhere in `data/`, then:
 
     python3 scripts/extract-deck.py
+
+It reads the most recent `data/*.pptx` and prints which one it picked; pass
+`--deck data/some-export.pptx` to choose explicitly.
 
 That writes `photos/`, `photos.json`, and `data/people.json` — the raw text of
 every slide, one record per person. It needs [ImageMagick][im] (`magick`) for
@@ -83,8 +89,8 @@ files. The script never writes `data.js`.
 
 ## Source deck
 
-The deck lives in `data/` and is git-ignored — it is ~128 MB, over GitHub's
-100 MB per-file limit. Keep a local copy there to regenerate.
+Decks live in `data/` and are git-ignored — each is 100+ MB, over GitHub's
+100 MB per-file limit. Keep the latest export there to regenerate.
 
 Source deck: https://docs.google.com/presentation/d/1UWasNu6Wa_zCRhuWErF0cu2-uHpxwVBOU_6bNarQe1c/edit
 

@@ -189,15 +189,26 @@ def crop_resize(src_bytes, rect, dest):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--deck", default="data/BH26-people.pptx")
+    ap.add_argument("--deck", help="default: the most recent data/*.pptx")
     ap.add_argument("--out", default="data/people.json")
     ap.add_argument("--photos", default="photos")
     ap.add_argument("--no-photos", action="store_true")
     args = ap.parse_args()
 
-    deck = Path(args.deck)
-    if not deck.exists():
-        sys.exit(f"{deck} not found. The deck is git-ignored; export it there first.")
+    # Exports arrive with whatever name the organisers gave them, so default to
+    # the newest one rather than a fixed filename -- and say which was picked.
+    if args.deck:
+        deck = Path(args.deck)
+        if not deck.exists():
+            sys.exit(f"{deck} not found.")
+    else:
+        decks = sorted(Path("data").glob("*.pptx"), key=lambda p: p.stat().st_mtime)
+        if not decks:
+            sys.exit("No data/*.pptx found. The deck is git-ignored; export it there first.")
+        deck = decks[-1]
+        if len(decks) > 1:
+            print(f"{len(decks)} decks in data/; using the most recent")
+    print(f"reading {deck}")
     if not args.no_photos and not shutil.which("magick"):
         sys.exit("ImageMagick ('magick') not found. Install it, or pass --no-photos.")
 

@@ -5,6 +5,14 @@ branch: main
 date: 2026-09-13T00:00:00Z
 
 ### Updated in this project
+- Processed the v2 deck (`data/bh26-people-v2.pptx`, 92 slides): 87 people, all
+  with portraits. Adds Ran WEI; nobody dropped; 27 people had edited their
+  slides, of which 21 changed the curated text.
+- `scripts/extract-deck.py` now defaults to the most recent `data/*.pptx` and
+  prints which it chose, since exports arrive under arbitrary names.
+- Added the GitHub mark to the masthead, and fixed a dangling "slides " in the
+  dateline left by the BH_SOURCE change.
+- Published to GitHub Pages: https://micheldumontier.github.io/bh-meet/
 - Added a README and an MIT license; committed the project to GitHub.
 - Processed `data/BH26-people.pptx` (90 slides) with the new `scripts/extract-deck.py`:
   86 people and 84 portraits, up from 74 people and none.
@@ -31,9 +39,9 @@ date: 2026-09-13T00:00:00Z
 
 ## Notes
 Source deck (link-shared copy): https://docs.google.com/presentation/d/1UWasNu6Wa_zCRhuWErF0cu2-uHpxwVBOU_6bNarQe1c/edit
-The pptx export in `data/` has 90 slides; the live Google deck has 117, but the
-export is the more recent download and is treated as authoritative for who is
-attending. The 24 people only in the older read were dropped (their curated text
+The v2 export has 92 slides (slide 84 template, 85 divider, 92 blank); the live
+Google deck has 117, but the export is the more recent download and is treated
+as authoritative for who is attending. The 24 people only in the older read were dropped (their curated text
 is recoverable from commit 747b203 if the deck turns out to be incomplete).
 Slide 84 is the template, slide 85 a section divider, slides 81-82 carry no image.
 `data.js` is curated by hand from `data/people.json`; the script never writes it.
