@@ -277,6 +277,9 @@
           <label for="bh-q">Search names, institutes, tools, organisms, languages</label>
           <input id="bh-q" class="input" type="search" placeholder="e.g. SPARQL, glycan, Rust, Thailand" value="{{ q }}" onChange="{{ onQuery }}">
         </div>
+        <sc-if value="{{ hasMine }}" hint-placeholder-val="{{ true }}">
+          <button class="{{ mineCls }} chip" style="cursor:pointer;font:inherit;font-size:11px;padding:3px 10px;border-radius:1.5px" onClick="{{ onToggleMine }}">{{ mineLabel }}</button>
+        </sc-if>
         <sc-if value="{{ hasFilters }}" hint-placeholder-val="{{ false }}">
           <button class="btn btn-secondary" onClick="{{ onClear }}">Clear filters</button>
         </sc-if>
@@ -479,7 +482,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;defaultView&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;people&quot;,&quot;projects&quot;,&quot;graph&quot;],&quot;default&quot;:&quot;people&quot;,&quot;tsType&quot;:&quot;'people' | 'projects' | 'graph'&quot;,&quot;section&quot;:&quot;Behaviour&quot;},&quot;showSerendipity&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behaviour&quot;}}">
 class Component extends DCLogic {
-  state = { tab: null, q: '', tags: [], langs: [], sel: null, short: [], copied: false };
+  state = { tab: null, q: '', tags: [], langs: [], sel: null, short: [], copied: false, onlyShort: false };
 
   photoOf(p) {
     const m = this.state.photos || (typeof window !== 'undefined' && window.BH_PHOTOS) || {};
@@ -506,10 +509,14 @@ class Component extends DCLogic {
 
   find(id) { return this.people().find(p => p.id === id); }
 
+  toggleMine = () => this.setState(s => ({ onlyShort: !s.onlyShort }));
+
   toggleShort = (id) => this.setState(s => {
     const short = s.short.includes(id) ? s.short.filter(x => x !== id) : s.short.concat(id);
     try { localStorage.setItem('bh26-shortlist', JSON.stringify(short)); } catch (e) {}
-    return { short, copied: false };
+    // Emptying the list while filtered by it would leave an empty view and no
+    // obvious way back.
+    return { short, copied: false, onlyShort: short.length ? s.onlyShort : false };
   });
 
   toggleTag = (t) => this.setState(s => ({ tags: s.tags.includes(t) ? s.tags.filter(x => x !== t) : s.tags.concat(t) }));
@@ -647,9 +654,11 @@ class Component extends DCLogic {
     }));
 
     const hay = p => [p.n, p.a, p.c, p.i, p.s, p.m].concat(p.t, p.co || []).join(' ').toLowerCase();
+    const onlyShort = this.state.onlyShort && this.state.short.length > 0;
     const filtered = all.filter(p => (!q || hay(p).includes(q))
       && active.every(t => p.t.includes(t))
-      && langs.every(l => (p.co || []).includes(l)));
+      && langs.every(l => (p.co || []).includes(l))
+      && (!onlyShort || this.state.short.includes(p.id)));
 
     const items = filtered.map(p => ({
       id: p.id, title: p.n,
@@ -703,9 +712,14 @@ class Component extends DCLogic {
       q: this.state.q,
       onQuery: e => this.setState({ q: e.target.value }),
       topicChips, langChips,
-      hasFilters: active.length > 0 || langs.length > 0 || q.length > 0,
-      onClear: () => this.setState({ tags: [], langs: [], q: '' }),
-      countLabel: items.length + ' of ' + all.length + ' people' + (active.length ? ' · ' + active.join(' + ') : '') + (langs.length ? ' · ' + langs.join(' + ') : ''),
+      hasFilters: active.length > 0 || langs.length > 0 || q.length > 0 || onlyShort,
+      onClear: () => this.setState({ tags: [], langs: [], q: '', onlyShort: false }),
+      countLabel: items.length + ' of ' + all.length + ' people' + (onlyShort ? ' · on my list' : '') + (active.length ? ' · ' + active.join(' + ') : '') + (langs.length ? ' · ' + langs.join(' + ') : ''),
+      // Only offered once there is something on the list to filter to.
+      hasMine: this.state.short.length > 0,
+      mineLabel: 'My list ' + this.state.short.length,
+      mineCls: onlyShort ? 'tag tag-accent-2' : 'tag tag-outline',
+      onToggleMine: this.toggleMine,
       items, isEmpty: all.length > 0 && items.length === 0,
       hasDetail: !!sel, noDetail: !sel,
       onBackToList: this.backToList,
