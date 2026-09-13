@@ -277,9 +277,6 @@
           <label for="bh-q">Search names, institutes, tools, organisms, languages</label>
           <input id="bh-q" class="input" type="search" placeholder="e.g. SPARQL, glycan, Rust, Thailand" value="{{ q }}" onChange="{{ onQuery }}">
         </div>
-        <sc-if value="{{ hasMine }}" hint-placeholder-val="{{ true }}">
-          <button class="{{ mineCls }} chip" style="cursor:pointer;font:inherit;font-size:11px;padding:3px 10px;border-radius:1.5px" onClick="{{ onToggleMine }}">{{ mineLabel }}</button>
-        </sc-if>
         <sc-if value="{{ hasFilters }}" hint-placeholder-val="{{ false }}">
           <button class="btn btn-secondary" onClick="{{ onClear }}">Clear filters</button>
         </sc-if>
@@ -307,7 +304,12 @@
 
       <div style="display:grid;gap:var(--space-8);grid-template-columns:repeat(auto-fit,minmax(min(330px,100%),1fr));align-items:start">
         <section>
-          <h6 style="margin-bottom:var(--space-3)">{{ countLabel }}</h6>
+          <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);align-items:baseline;margin-bottom:var(--space-3)">
+            <h6 style="margin:0">{{ countLabel }}</h6>
+            <sc-if value="{{ hasMine }}" hint-placeholder-val="{{ true }}">
+              <button class="{{ mineCls }} chip" style="cursor:pointer;font:inherit;font-size:11px;padding:3px 10px;border-radius:1.5px" onClick="{{ onToggleMine }}">{{ mineLabel }}</button>
+            </sc-if>
+          </div>
           <div style="display:flex;flex-direction:column;gap:var(--space-2)">
             <sc-for list="{{ items }}" as="it" hint-placeholder-count="8">
               <article class="card" style="cursor:pointer" onClick="{{ it.onClick }}">
@@ -714,10 +716,10 @@ class Component extends DCLogic {
       topicChips, langChips,
       hasFilters: active.length > 0 || langs.length > 0 || q.length > 0 || onlyShort,
       onClear: () => this.setState({ tags: [], langs: [], q: '', onlyShort: false }),
-      countLabel: items.length + ' of ' + all.length + ' people' + (onlyShort ? ' · on my list' : '') + (active.length ? ' · ' + active.join(' + ') : '') + (langs.length ? ' · ' + langs.join(' + ') : ''),
+      countLabel: items.length + ' of ' + all.length + ' people' + (active.length ? ' · ' + active.join(' + ') : '') + (langs.length ? ' · ' + langs.join(' + ') : ''),
       // Only offered once there is something on the list to filter to.
       hasMine: this.state.short.length > 0,
-      mineLabel: 'My list ' + this.state.short.length,
+      mineLabel: this.state.short.length + ' on my list',
       mineCls: onlyShort ? 'tag tag-accent-2' : 'tag tag-outline',
       onToggleMine: this.toggleMine,
       items, isEmpty: all.length > 0 && items.length === 0,
