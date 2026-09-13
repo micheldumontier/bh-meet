@@ -147,19 +147,74 @@
     overflow-y: auto;
     overscroll-behavior: contain;
     padding-right: var(--space-2);
+    /* Scroll without a visible bar. */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
-  /* Below the grid's two-column threshold the pane sits under the list, where
-     pinning it and clipping it to the viewport would only get in the way. */
+  .detail-pane::-webkit-scrollbar { width: 0; height: 0; }
+
+  .ico { width: 13px; height: 13px; vertical-align: -2px; }
+
+  /* Only meaningful when the pane sits below the list, i.e. on phones. */
+  .to-list { display: none; }
+
+  /* Filters: a disclosure on phones, always-open and unlabelled above that.
+     Forcing it open needs both overrides — older engines hide the children with
+     display, current Chrome hides the whole slot with content-visibility on
+     ::details-content, and beating only one of them leaves the chips invisible. */
+  .filters > summary {
+    display: none;
+  }
+  .filters > .filters-body {
+    display: block;
+  }
+  .filters::details-content {
+    content-visibility: visible;
+    display: block;
+  }
+
+  /* --- phones ------------------------------------------------------------ */
   @media (max-width: 800px) {
+    /* One column: the pane sits under the list, so pinning and clipping it
+       would only get in the way. */
     .detail-pane {
       position: static;
       max-height: none;
       overflow: visible;
       padding-right: 0;
+      scroll-margin-top: var(--space-3);
+    }
+    /* !important because the element carries the padding inline. */
+    .page {
+      padding-left: var(--space-3) !important;
+      padding-right: var(--space-3) !important;
+    }
+    /* The CTA is pushed right by margin-left:auto on wide screens; on a phone
+       that strands it on its own line. */
+    .cta-shuffle {
+      margin-left: 0 !important;
+      flex: 1 0 100%;
+    }
+    .filters > summary {
+      display: list-item;
+      cursor: pointer;
+      font-size: 12px;
+      margin-bottom: var(--space-3);
+      color: var(--color-accent-700);
+    }
+    .filters:not([open]) > .filters-body {
+      display: none;
+    }
+    .filters:not([open])::details-content {
+      content-visibility: hidden;
+    }
+    .to-list { display: inline-block; }
+    /* Bigger tap targets, fewer rows. */
+    .chip {
+      font-size: 12px !important;
+      padding: 6px 11px !important;
     }
   }
-
-  .ico { width: 13px; height: 13px; vertical-align: -2px; }
 </style>
 
 </helmet>
@@ -177,7 +232,7 @@
   </symbol>
 </svg>
 
-<div style="max-width:1280px;margin:0 auto;padding:var(--space-6) var(--space-6) var(--space-8)">
+<div class="page" style="max-width:1280px;margin:0 auto;padding:var(--space-6) var(--space-6) var(--space-8)">
 
   <header style="margin-bottom:var(--space-6)">
     <div style="height:3px;background:var(--color-text)"></div>
@@ -211,7 +266,7 @@
       <sc-if value="{{ onGraph }}" hint-placeholder-val="{{ false }}"><div style="height:3px;background:var(--color-accent-2)"></div></sc-if>
     </div>
     <sc-if value="{{ serendipityOn }}" hint-placeholder-val="{{ true }}">
-      <button class="btn btn-ghost" style="margin-left:auto" onClick="{{ onShuffle }}">Introduce me to someone</button>
+      <button class="btn btn-ghost cta-shuffle" style="margin-left:auto" onClick="{{ onShuffle }}">Introduce me to someone</button>
     </sc-if>
   </nav>
 
@@ -227,19 +282,27 @@
         </sc-if>
       </div>
 
-      <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:var(--space-2)">
-        <sc-for list="{{ topicChips }}" as="t" hint-placeholder-count="12">
-          <button class="{{ t.cls }}" style="cursor:pointer;font:inherit;font-size:11px;padding:3px 10px;border-radius:1.5px" onClick="{{ t.onClick }}">{{ t.label }}</button>
-        </sc-for>
-      </div>
-      <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:var(--space-6);align-items:baseline">
-        <span style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;margin-right:6px" class="text-muted">Speaks</span>
-        <sc-for list="{{ langChips }}" as="l" hint-placeholder-count="8">
-          <button class="{{ l.cls }}" style="cursor:pointer;font:inherit;font-size:11px;padding:3px 10px;border-radius:1.5px" onClick="{{ l.onClick }}">{{ l.label }}</button>
-        </sc-for>
-      </div>
+      <!-- Forty chips is ten rows on a phone, pushing every person below the
+           fold. Collapsed behind a summary on small screens; the CSS keeps it
+           permanently open, summary hidden, on anything wider. -->
+      <details class="filters">
+        <summary>Filter by topic or language</summary>
+        <div class="filters-body">
+          <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:var(--space-2)">
+            <sc-for list="{{ topicChips }}" as="t" hint-placeholder-count="12">
+              <button class="{{ t.cls }} chip" style="cursor:pointer;font:inherit;font-size:11px;padding:3px 10px;border-radius:1.5px" onClick="{{ t.onClick }}">{{ t.label }}</button>
+            </sc-for>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:var(--space-6);align-items:baseline">
+            <span style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;margin-right:6px" class="text-muted">Speaks</span>
+            <sc-for list="{{ langChips }}" as="l" hint-placeholder-count="8">
+              <button class="{{ l.cls }} chip" style="cursor:pointer;font:inherit;font-size:11px;padding:3px 10px;border-radius:1.5px" onClick="{{ l.onClick }}">{{ l.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+      </details>
 
-      <div style="display:grid;gap:var(--space-8);grid-template-columns:repeat(auto-fit,minmax(330px,1fr));align-items:start">
+      <div style="display:grid;gap:var(--space-8);grid-template-columns:repeat(auto-fit,minmax(min(330px,100%),1fr));align-items:start">
         <section>
           <h6 style="margin-bottom:var(--space-3)">{{ countLabel }}</h6>
           <div style="display:flex;flex-direction:column;gap:var(--space-2)">
@@ -278,9 +341,10 @@
           </div>
         </section>
 
-        <aside class="detail-pane">
+        <aside id="detail" class="detail-pane">
           <sc-if value="{{ hasDetail }}" hint-placeholder-val="{{ false }}">
             <div>
+              <button class="btn btn-ghost to-list" style="padding:0;margin-bottom:var(--space-2);font-size:12px" onClick="{{ onBackToList }}">← Back to the list</button>
               <div style="height:2px;background:var(--color-text);margin-bottom:var(--space-2)"></div>
               <sc-if value="{{ detailHasPhoto }}" hint-placeholder-val="{{ false }}">
                 <figure class="cmyk" style="width:180px;aspect-ratio:4/5;margin-bottom:var(--space-3)">
@@ -457,6 +521,33 @@ class Component extends DCLogic {
     const unseen = pool.filter(p => p.id !== this.state.sel);
     const pick = unseen[Math.floor(Math.random() * unseen.length)];
     this.setState({ tab: 'people', sel: pick.id, q: '', tags: [], langs: [] });
+    this.revealDetail();
+  };
+
+  // On phones the detail pane sits below the whole list, so selecting a person
+  // without moving the viewport looks like nothing happened.
+  revealDetail = () => {
+    if (typeof window === 'undefined') return;
+    if (!window.matchMedia('(max-width: 800px)').matches) return;
+    // Remember the reading position so "back to the list" can restore it
+    // exactly, rather than dumping the reader at the top.
+    this.listScrollY = window.scrollY;
+    setTimeout(() => {
+      const el = document.getElementById('detail');
+      // Instant, not smooth: the pane is below every card, so a smooth scroll
+      // here animates tens of thousands of pixels and never arrives.
+      if (el) el.scrollIntoView({ behavior: 'auto', block: 'start' });
+    }, 80);
+  };
+
+  backToList = () => {
+    if (typeof window === 'undefined') return;
+    window.scrollTo({ top: this.listScrollY || 0, behavior: 'auto' });
+  };
+
+  select = (id, tab) => {
+    this.setState(tab ? { tab, sel: id } : { sel: id });
+    this.revealDetail();
   };
 
   copyPlan = () => {
@@ -523,7 +614,7 @@ class Component extends DCLogic {
         fill: isSel ? 'var(--color-accent-2)' : starred ? 'var(--color-accent-600)' : 'var(--color-text)',
         opacity: lit || !active.length ? 1 : 0.28,
         style: { cursor: 'pointer' },
-        onClick: () => this.setState({ tab: 'people', sel: pr.id })
+        onClick: () => this.select(pr.id, 'people')
       }, el('title', null, pr.n + ' — ' + pr.a)));
     });
 
@@ -571,7 +662,7 @@ class Component extends DCLogic {
       selected: this.state.sel === p.id,
       starCls: this.state.short.includes(p.id) ? 'tag tag-accent-2' : 'tag tag-outline',
       starLabel: this.state.short.includes(p.id) ? 'On my list' : 'Add',
-      onClick: () => this.setState({ sel: p.id }),
+      onClick: () => this.select(p.id),
       onStar: (e) => { e.stopPropagation(); this.toggleShort(p.id); }
     }));
 
@@ -585,12 +676,12 @@ class Component extends DCLogic {
         title: x.p.n,
         sub: x.p.a + ' — ' + x.st.join(', ') + (x.sl.length ? ' · ' + x.sl.slice(0, 3).join('/') : ''),
         score: x.st.length + ' topics',
-        onClick: () => this.setState({ sel: x.p.id })
+        onClick: () => this.select(x.p.id)
       }));
     }
 
     const plan = this.state.short.map(id => this.find(id)).filter(Boolean).map(p => ({
-      title: p.n, onClick: () => this.setState({ tab: 'people', sel: p.id }), onRemove: () => this.toggleShort(p.id)
+      title: p.n, onClick: () => this.select(p.id, 'people'), onRemove: () => this.toggleShort(p.id)
     }));
 
     return {
@@ -615,6 +706,7 @@ class Component extends DCLogic {
       countLabel: items.length + ' of ' + all.length + ' people' + (active.length ? ' · ' + active.join(' + ') : '') + (langs.length ? ' · ' + langs.join(' + ') : ''),
       items, isEmpty: all.length > 0 && items.length === 0,
       hasDetail: !!sel, noDetail: !sel,
+      onBackToList: this.backToList,
       // The person's IRI in people.jsonld — the same identifier the RDF uses.
       detailJsonld: sel ? 'people.jsonld#' + sel.id : '',
       detailHasPhoto: !!(sel && this.photoOf(sel)),
