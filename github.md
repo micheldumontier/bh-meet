@@ -5,6 +5,15 @@ branch: main
 date: 2026-09-13T00:00:00Z
 
 ### Updated in this project
+- Processed the v3 people deck (93 slides): 90 people, all with portraits. Adds
+  Keitaro Takaoki, Dawn Chen and Ashanti Robinson; nobody dropped; 38 slides
+  edited; the deck was reordered so 83 people changed slide number.
+- Those three were exactly the unlinkable "guests" on project slides, so the
+  projects deck now resolves 156 of 158 names (only Suecharo and Jaemoon Shin
+  remain unlinked).
+- Fixed ~14 curated messages that had drifted from the deck entirely: they came
+  from the original Google-deck read and were never re-checked, because the
+  export-to-export diff only flags slides that changed between exports.
 - Added the projects deck: `scripts/extract-projects.py` + curated `projects.js`,
   30 hacking groups, 153 of 158 participant names resolved to people.
 - Projects tab is real now: section filters, group cards with clickable team

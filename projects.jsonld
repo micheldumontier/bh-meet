@@ -278,6 +278,13 @@
     },
     {
      "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#ashanti-robinson"
+     }
+    },
+    {
+     "@type": "Role",
      "roleName": "interested",
      "member": {
       "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#evan-bolton"
@@ -288,14 +295,6 @@
      "roleName": "interested",
      "member": {
       "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#daniel-puthawala"
-     }
-    },
-    {
-     "@type": "Role",
-     "roleName": "team",
-     "member": {
-      "@type": "Person",
-      "name": "Ashanti"
      }
     }
    ],
@@ -1090,6 +1089,13 @@
      "@type": "Role",
      "roleName": "team",
      "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#dawn-chen"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
       "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#kazumichi-fujiwara"
      }
     },
@@ -1126,14 +1132,6 @@
      "roleName": "team",
      "member": {
       "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#toshiaki-katayama"
-     }
-    },
-    {
-     "@type": "Role",
-     "roleName": "team",
-     "member": {
-      "@type": "Person",
-      "name": "Dawn Chen"
      }
     }
    ],
@@ -1692,6 +1690,13 @@
      "@type": "Role",
      "roleName": "team",
      "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#keitaro-takaoki"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
       "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#haruma-abe"
      }
     },
@@ -1700,14 +1705,6 @@
      "roleName": "team",
      "member": {
       "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#teppei-okazaki"
-     }
-    },
-    {
-     "@type": "Role",
-     "roleName": "team",
-     "member": {
-      "@type": "Person",
-      "name": "Keitaro"
      }
     }
    ],

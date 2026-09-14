@@ -3,7 +3,7 @@
 A browsable index of BioHackathon 2026 participants — search people by topic,
 language and skill, see who overlaps with you, and build a shortlist of people
 to find at the event, and browse the 30 hacking groups they signed up to.
-87 introductions, all with portraits; 73 of those people are on a group.
+90 introductions, all with portraits; 76 of those people are on a group.
 
 Live site: https://micheldumontier.github.io/bh-meet/
 
@@ -62,6 +62,12 @@ were absent from it, and they were dropped rather than carried forward.
 Each new export is diffed against the previous one — people added, people gone,
 and whose slide text changed — and only the affected entries are re-curated. The
 rest of `data.js` is left alone.
+
+That diff only catches changes *between exports*, so entries curated before the
+first `.pptx` arrived could sit stale indefinitely. A second check compares each
+curated field against the current slide and reports the ones that share almost
+nothing; that is how a dozen entries describing the wrong hobby, the wrong city
+and the wrong employer were found and fixed.
 
 Ids are name slugs, **not** slide numbers. The deck is reordered and renumbered
 between exports — a person on slide 20 in one export is on slide 26 in the
@@ -123,7 +129,7 @@ resolved from Wikidata property P297 (`vocab/countries.json`; regenerate rather
 than hand-edit). Topics are a local vocabulary and are **not** yet mapped to
 EDAM. Affiliations are plain strings, not ROR IDs. Every person node has room
 for an ORCID via an optional `o` field on the `data.js` record — no slide in the
-deck carries one, so all 87 are currently empty, and none are guessed from names.
+deck carries one, so all 90 are currently empty, and none are guessed from names.
 
 **Licensing.** Data is CC0-1.0, code is MIT. CC0 does not waive privacy or
 publicity rights over what remains personal data about identifiable people —
@@ -142,8 +148,7 @@ Names on the project slides are written however people felt like writing them �
 first names, surnames, initials, reversed order, nicknames, typos — so each is
 resolved against `people.jsonld` and reported with the rule that matched.
 Anything ambiguous or unmatched is left for a human rather than guessed; of 158
-names, 153 resolved and the remaining five are people with no introduction
-slide.
+names, 156 resolve and the last two are people with no introduction slide.
 
 ## Source decks
 

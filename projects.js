@@ -24,8 +24,8 @@ window.BH_PROJECTS = [
   { id: 'rdf-extraction-engine', n: 'RDF Data Extraction and Engine Implementation', sec: 'Knowledge graphs and AI', ch: null,
     d: 'Designing a consistent extraction process for human glycan data out of a sparsely documented knowledge base, and a dual-engine RDF back end.',
     aims: ['Design the RDF extraction strategy', 'Pair Virtuoso and QLever, for inferencing and for query speed', 'Use Jena ARQ algebra traversal for query inspection, policy enforcement and rewriting'],
-    lead: [], team: ['miguel-mazumder', 'rajat-kumar-mondal'],
-    interested: ['evan-bolton', 'daniel-puthawala'], guests: ['Ashanti'] },
+    lead: [], team: ['miguel-mazumder', 'rajat-kumar-mondal', 'ashanti-robinson'],
+    interested: ['evan-bolton', 'daniel-puthawala'], guests: [] },
 
   { id: 'osiris-mcp', n: 'OSIRIS MCP', sec: 'Knowledge graphs and AI', ch: null,
     d: 'Exploring MCP as a way to reach research information in OSIRIS securely, and whether reports and summaries can be written straight out of that data.',
@@ -91,8 +91,8 @@ window.BH_PROJECTS = [
   { id: 'hla-pangenome', n: 'Creating HLA pangenome graphs using Asian genomics data', sec: 'Biomedical', ch: null,
     d: 'Combining genomics data from Asian populations with pangenome tools such as pggb and minigraph-cactus to build HLA graphs, using the NIG supercomputer and publicly available data.',
     aims: ['Gather the genomics data', 'Build pangenome graphs for each population', 'Benchmark and compare'],
-    lead: [], team: ['hassan-sibroe-abdulla-daanaa', 'kazumichi-fujiwara', 'robert-hoehndorf', 'shin-ichiro-tago', 'yosuke-kawai', 'apiwat-sangphukieo', 'toshiaki-katayama'],
-    interested: [], guests: ['Dawn Chen'] },
+    lead: [], team: ['hassan-sibroe-abdulla-daanaa', 'dawn-chen', 'kazumichi-fujiwara', 'robert-hoehndorf', 'shin-ichiro-tago', 'yosuke-kawai', 'apiwat-sangphukieo', 'toshiaki-katayama'],
+    interested: [], guests: [] },
 
   { id: 'patient-trajectories', n: 'Patient Trajectory Matching over Temporal Knowledge Graphs', sec: 'Biomedical', ch: null,
     d: 'Clinical trajectories are how diagnoses, treatments, procedures and measurements unfold over time. An open trajectory query engine would find patients whose histories satisfy a temporal pattern, then widen the search through explicitly permitted semantic and temporal relaxations, showing the evidence behind every result.',
@@ -145,8 +145,8 @@ window.BH_PROJECTS = [
   { id: 'fatigue-and-fear', n: 'When Fatigue Reveals Fear', sec: 'Others', ch: null,
     d: 'When landing on both feet, do people considered recovered still shift away from the injured side, does fatigue amplify that shift and destabilise the trunk and pelvis, and does fatigue make fear of movement legible in the body? The hypothesis: conscious control masks psychological state at rest, and fatigue removes the mask.',
     aims: ['Show with open data that readiness to return to sport is a psychological state as much as a mechanical one', 'Test whether axial stability under fatigue tracks psychological readiness as closely as knee function does'],
-    lead: [], team: ['haruma-abe', 'teppei-okazaki'],
-    interested: [], guests: ['Keitaro'] },
+    lead: [], team: ['keitaro-takaoki', 'haruma-abe', 'teppei-okazaki'],
+    interested: [], guests: [] },
 
   { id: 'marpolbase', n: 'Enhancement of MarpolBase', sec: 'Others', ch: null,
     d: 'MarpolBase is the genome database for the liverwort Marchantia polymorpha — an attractive model plant for evolutionary and developmental biology, and for database people too, with stable gene IDs and over 500 papers linked to more than 1,200 genes.',

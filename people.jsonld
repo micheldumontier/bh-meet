@@ -45,7 +45,7 @@
    "@type": "Person",
    "name": "Haruma Abe",
    "identifier": "haruma-abe",
-   "description": "Master's student researching the relationship between racehorse injuries and pedigree, here to learn more from the life-science field and pick up techniques to apply to it.",
+   "description": "Master's student in computer science: detecting injury patterns in racehorses, and proposing a \"pedigree distance\" for them. Interested in racehorse body analysis and pose estimation, and in AI and databases.",
    "affiliation": {
     "@type": "Organization",
     "name": "Tokyo City University",
@@ -80,7 +80,7 @@
     {
      "@type": "PropertyValue",
      "name": "skills",
-     "value": "Statistical analysis"
+     "value": "Statistical analysis in Python"
     },
     {
      "@type": "PropertyValue",
@@ -124,6 +124,10 @@
     {
      "@type": "ComputerLanguage",
      "name": "GCP"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Claude Code"
     }
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
@@ -258,10 +262,10 @@
    "@type": "Person",
    "name": "Hidemasa Bono",
    "identifier": "hidemasa-bono",
-   "description": "Professor of bioinformatics and genome informatics at Hiroshima University and specially appointed professor at DBCLS. Initiator of TogoTV, RefEx and FANTOM, PI for the BioDX centre of innovation (COI-NEXT), and deputy director of the HU Genome Editing Innovation Center. Works on data-driven genome breeding, the data analysis environment for genome editing, and gene function analysis.",
+   "description": "Professor of bioinformatics and genome informatics at Hiroshima University and a member of DBCLS since 2007. Initiator of TogoTV, RefEx and FANTOM, PI for the BioDX centre of innovation (COI-NEXT), and deputy director of the HU Genome Editing Innovation Center. Works on data-driven genome breeding, the data analysis environment for genome editing, and gene function analysis.",
    "affiliation": {
     "@type": "Organization",
-    "name": "Hiroshima University",
+    "name": "Hiroshima University / DBCLS",
     "address": {
      "@type": "PostalAddress",
      "addressCountry": {
@@ -371,6 +375,70 @@
    ]
   },
   {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#dawn-chen",
+   "@type": "Person",
+   "name": "Dawn Chen",
+   "identifier": "dawn-chen",
+   "description": "By day, develops sequencing, CRISPR and RNA-based tools and builds AI models for genomics and generative sequence design. By night, project lead for BioVault, on privacy-preserving data sharing and open-source genomic analysis tools — with the aim of putting genetic testing and precision medicine within everyone's reach.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Broad Institute of MIT and Harvard",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q30",
+      "@type": "Country",
+      "name": "USA",
+      "identifier": "US"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#genomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#machine-learning",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#clinical",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#cloud-hpc",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#variants",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "R"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "C++"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "JavaScript"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Claude"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/dawn-chen.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#hla-pangenome"
+   ],
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Amphibious: ask about anything wetlab and any sequencing assay. Building software and data visualisation; genome engineering, clinical genetics, population genetics; federated data analysis and privacy-enhancing technologies."
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Likes science fiction, and organic chemistry — used to do total synthesis."
+    }
+   ]
+  },
+  {
    "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#jiandong-chen",
    "@type": "Person",
    "name": "Jiandong Chen",
@@ -378,7 +446,7 @@
    "description": "Single-cell RNA-seq analysis (2020–2024), cap analysis of mRNA (2023–2024), and since 2025 developing workflows for combined long-read WGS and methylation analysis, and methods for analysing the structure of variable number tandem repeat regions.",
    "affiliation": {
     "@type": "Organization",
-    "name": "Kyushu University",
+    "name": "Nagasaki Lab, Kyushu University",
     "address": {
      "@type": "PostalAddress",
      "addressCountry": {
@@ -421,7 +489,7 @@
     {
      "@type": "PropertyValue",
      "name": "message",
-     "value": "From 温州 — though the oranges produced there taste different."
+     "value": "From 温州 — though the oranges produced there taste different. Sourer."
     }
    ]
   },
@@ -476,12 +544,12 @@
     {
      "@type": "PropertyValue",
      "name": "skills",
-     "value": "RDF, SPARQL, JavaScript, Python, LLMs"
+     "value": "RDF, SPARQL, JavaScript, Python"
     },
     {
      "@type": "PropertyValue",
      "name": "message",
-     "value": "Prefectures I have lived in: Ibaraki, Tokyo, Aichi, Chiba, Ibaraki again."
+     "value": "I live near Chiba."
     }
    ]
   },
@@ -562,7 +630,15 @@
     },
     {
      "@type": "ComputerLanguage",
+     "name": "Rust"
+    },
+    {
+     "@type": "ComputerLanguage",
      "name": "agentic coding"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Claude"
     }
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
@@ -644,7 +720,7 @@
    "@type": "Person",
    "name": "Núria Fàbrega",
    "identifier": "nuria-fabrega",
-   "description": "BSc in chemistry, MSc in bioinformatics, now a second-year PhD student developing methods to identify compatible public transcriptomics experiments for data reuse through their metadata. Interested in everything that improves reuse: LLMs and knowledge graphs for metadata quality, and extraction and standardisation of entities from free text.",
+   "description": "BSc in chemistry, MSc in bioinformatics, now a second-year PhD student in NLP for biomedicine, working on data reuse by identifying public transcriptomics experiments that are compatible for joint analysis. Interested in everything that improves reuse: LLMs and knowledge graphs for metadata quality, curation, and extraction and standardisation of entities from free text.",
    "affiliation": {
     "@type": "Organization",
     "name": "University of Edinburgh",
@@ -749,7 +825,7 @@
     {
      "@type": "PropertyValue",
      "name": "message",
-     "value": "A lightning strike directly hit our institute and caused a power outage; the recovery work last week was quite tough. My photo was taken this summer when I climbed Mt. Rishiri in Hokkaido, wearing a BioHackathon tenugui."
+     "value": "Would like to work on making genome submission easy with AI agents and MCP. Had tai-meshi three times in Matsuyama two years ago."
     }
    ]
   },
@@ -813,7 +889,7 @@
    "@type": "Person",
    "name": "Toyofumi Fujiwara",
    "identifier": "toyofumi-fujiwara",
-   "description": "AI-based diagnostic support tools — DiseaseSearch, PanelSearch, CaseSharing. Enhancing interoperability between Japanese and international disease resources: NanbyoData, NANDO, Mondo Japanese.",
+   "description": "AI-based diagnostic support tools: DiseaseSearch, PanelSearch, CaseSharing, and ZebraSeek coming soon. Enhancing interoperability between Japanese and international disease resources through NanbyoData, NANDO and Mondo Japanese.",
    "affiliation": {
     "@type": "Organization",
     "name": "DBCLS",
@@ -853,7 +929,7 @@
     {
      "@type": "PropertyValue",
      "name": "message",
-     "value": "We will be developing a diagnostic support tool using LLMs, so if you are interested, look for this doll — ZebraSeek-kun."
+     "value": "We will be developing a diagnostic support tool using LLMs, so if you're interested, look for the doll — except I forgot the doll this year."
     }
    ]
   },
@@ -988,7 +1064,7 @@
    "@type": "Person",
    "name": "Robert Hoehndorf",
    "identifier": "robert-hoehndorf",
-   "description": "Neuro-symbolic AI and protein function prediction. Phenotype-based variant prioritisation and phenotype ontologies. Causality and causal knowledge graphs. Tools: AberOWL2, mOWL, PhysioMap.",
+   "description": "Neuro-symbolic AI and protein function prediction. Phenotype-based variant prioritisation and phenotype ontologies. Causality and causal knowledge graphs. Tools: AberOWL2, mOWL, PhysioMap, DeepGO.",
    "affiliation": {
     "@type": "Organization",
     "name": "KAUST",
@@ -1041,7 +1117,7 @@
     {
      "@type": "PropertyValue",
      "name": "message",
-     "value": "I developed an interest in birding in recent years. I observed a shoebill stork last month. Please join me for a birding expedition around the hackathon venue."
+     "value": "Reproduced my research group as agents in Gastown. Loves hiking — Kumano Kodo after the BioHackathon — kitesurfing, fishing and foraging."
     }
    ]
   },
@@ -1149,7 +1225,7 @@
     {
      "@type": "PropertyValue",
      "name": "message",
-     "value": "I am visiting Japan while my wife is taking care of our two-year-old daughter alone. So I have to fill two empty suitcases before I fly back to Germany. Looking for recommendations."
+     "value": "Looking for recommendations about Hello Kitty and Tomica."
     }
    ]
   },
@@ -1332,10 +1408,10 @@
    "@type": "Person",
    "name": "Mayumi Kamada",
    "identifier": "mayumi-kamada",
-   "description": "Genome assembly of Bacillus subtilis natto; clinical genome analysis, especially cancer; the MGeND disease variant database; molecular dynamics on K and Fugaku. Now at Kitasato University School of Frontier Engineering and, since 2025, cross-appointed at the Institute for Protein Research, Osaka University, on a data platform for drug discovery. Interests: standardisation and integration of clinical genome data, and classification and interpretation of variants.",
+   "description": "Genome assembly of Bacillus subtilis natto; clinical genome analysis, especially cancer; the MGeND disease variant database; molecular dynamics on K and Fugaku. Now at Kitasato University School of Frontier Engineering and, since 2025, cross-appointed at the Institute for Protein Research, The University of Osaka, on a data platform for drug discovery. Interests: standardisation and integration of clinical genome data, and classification and interpretation of variants.",
    "affiliation": {
     "@type": "Organization",
-    "name": "Kitasato University",
+    "name": "Kitasato University / The University of Osaka",
     "address": {
      "@type": "PostalAddress",
      "addressCountry": {
@@ -1394,10 +1470,10 @@
    "@type": "Person",
    "name": "Alex Kanitz",
    "identifier": "alex-kanitz",
-   "description": "Open standards-based data analytics platforms with data and compute federation, AI support, tokenization — BioHackCloud, ELIXIR On Cloud, UniVerse Platform. Previously bioinformatics tool and workflow development, and before that RNA biology.",
+   "description": "Open standards-based data analytics platforms with data and compute federation, AI support, trusted research environments and tokenisation: ELIXIR On-Cloud, BioHackCloud, and the Pacific Analytics Platform (currently down, moving from Australia to Europe). Previously bioinformatics tool and workflow development, mostly transcriptomics, and experimental molecular biology in the distant past.",
    "affiliation": {
     "@type": "Organization",
-    "name": "University of Basel / Pacific Analytics Consulting",
+    "name": "University of Basel / Swiss Institute of Bioinformatics",
     "address": {
      "@type": "PostalAddress",
      "addressCountry": {
@@ -1423,12 +1499,12 @@
     {
      "@type": "PropertyValue",
      "name": "skills",
-     "value": "Web dev, GA4GH APIs, workflows, a bit of RO-Crate, a bit of DevOps"
+     "value": "Web dev, workflows, GA4GH, RO-Crates, DevOps, bits of this and that"
     },
     {
      "@type": "PropertyValue",
      "name": "message",
-     "value": "Since January 2025 I get up very early, because I started a job in one country while still living in another. Thanks to Manabu-san, last week I helped carry my first 神輿."
+     "value": "A bit disappointed that the opening workshop is not in a beer garden, as the Google Maps link implied. Greetings from the Taipei mountains."
     }
    ]
   },
@@ -1461,10 +1537,6 @@
     {
      "@type": "ComputerLanguage",
      "name": "R"
-    },
-    {
-     "@type": "ComputerLanguage",
-     "name": "Claude"
     }
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
@@ -1546,10 +1618,10 @@
    "@type": "Person",
    "name": "Yosuke Kawai",
    "identifier": "yosuke-kawai",
-   "description": "Molecular evolution, population genetics, human evolution, medical genomics, MGeND. Projects: pangenome graph focusing on structural variation — published the Japan-Saudi Pangenome with Robert, Maxat and Toshiaki — and an immunogenetics database; hosting IHIW19.",
+   "description": "Human population genomics and evolution, long-read sequencing, pangenomes and structural variation, genomic medicine and clinical variant resources. Projects: pangenomics, federated variant curation, and a variant database. Recruiting postdocs and graduate students through SOKENDAI in genomics, bioinformatics and population genetics.",
    "affiliation": {
     "@type": "Organization",
-    "name": "National Institute of Global Health Medicine",
+    "name": "National Institute of Genetics, Mishima / BSI / JIHS",
     "address": {
      "@type": "PostalAddress",
      "addressCountry": {
@@ -1697,7 +1769,7 @@
     {
      "@type": "PropertyValue",
      "name": "message",
-     "value": "Since the Covid19 pandemic, I've spent more time cooking. Octopus eggs."
+     "value": "I visited South Africa for the Biocuration Conference."
     }
    ]
   },
@@ -1745,7 +1817,7 @@
     {
      "@type": "PropertyValue",
      "name": "message",
-     "value": "Back at BioHackathon after seven or eight years away. The bike died on Awaji-shima on the way to BH26, and was resurrected the next day."
+     "value": "Came back to BioHackathon last year after seven or eight years away. The bike died on Awaji-shima on the way to BH26, and was resurrected the next day."
     }
    ]
   },
@@ -1905,7 +1977,7 @@
     {
      "@type": "PropertyValue",
      "name": "message",
-     "value": "I co-founded a startup that provides open source software for institutes to manage their research. I am still collecting Goshuin."
+     "value": "I built an Ema display at home."
     }
    ]
   },
@@ -1995,12 +2067,12 @@
     {
      "@type": "PropertyValue",
      "name": "skills",
-     "value": "Combinatorial optimization, mathematical thinking, exploring IGV and VCF files, applying machine learning to research, interested in quantum computing applications. BioHackathon idea: an AI-assisted genomic atlas of Japanese citrus — what makes mikan, iyokan, orange and hassaku different?"
+     "value": "Bioinformatics and genome data analysis, combinatorial optimization and graph methods, quantum computing. BioHackathon idea: explore Japanese citrus genomes with AI — compare mikan, iyokan, orange and others at the genome level."
     },
     {
      "@type": "PropertyValue",
      "name": "message",
-     "value": "3rd-year PhD student from Okinawa, MSc in mathematics (representation theory). Excited to finally explore Mie."
+     "value": "Collaborative researcher at Kyushu University, from Okinawa. Second BioHackathon, and excited to visit Ehime for the first time."
     }
    ]
   },
@@ -2050,7 +2122,7 @@
     {
      "@type": "PropertyValue",
      "name": "message",
-     "value": "PhD in science, March 2026. Hobbies are choir and travel."
+     "value": "PhD in science, March 2026. Turned thirty yesterday. Has sung in choirs for over ten years, currently a mixed chorus in Fukuoka, and travels."
     }
    ]
   },
@@ -2381,7 +2453,7 @@
     {
      "@type": "PropertyValue",
      "name": "message",
-     "value": "First-generation graduate, first time in Japan and first time at BioHackathon. Wants to collaboratively develop a unified data resource against AMR and infectious disease. New to the semantic web and finds it super complex. Big fan of tempura and rice crackers."
+     "value": "First-generation graduate, first time in Japan and first time at BioHackathon. Wants to collaboratively develop a unified data resource to combat AMR and infectious disease. New to the semantic web and finds it super complex. Big fan of tempura and rice crackers."
     }
    ]
   },
@@ -2448,7 +2520,7 @@
    "@type": "Person",
    "name": "Hina Motoyoshi",
    "identifier": "hina-motoyoshi",
-   "description": "MSc in life science from Rikkyo on the intracellular localisation of chloroplast proteins. Platform engineer at OPTiM from 2023, joined Trinet in December 2025, and now works with DBCLS on operational improvements. Lately interested in AI guidelines, guardrails and coding frameworks.",
+   "description": "MSc in life science from Rikkyo on the intracellular localisation of chloroplast proteins. Platform engineer from 2023, joined Trinet in December 2025, and now works with DBCLS on operational improvements. Lately interested in AI guidelines, guardrails and coding frameworks.",
    "affiliation": {
     "@type": "Organization",
     "name": "Trinet Corporation",
@@ -2587,14 +2659,6 @@
     },
     {
      "@type": "ComputerLanguage",
-     "name": "Java"
-    },
-    {
-     "@type": "ComputerLanguage",
-     "name": "Perl"
-    },
-    {
-     "@type": "ComputerLanguage",
      "name": "Shell"
     },
     {
@@ -2608,6 +2672,10 @@
     {
      "@type": "ComputerLanguage",
      "name": "PHP"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "agentic coding"
     }
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
@@ -2624,7 +2692,7 @@
     {
      "@type": "PropertyValue",
      "name": "message",
-     "value": "Welcome: post-doctoral fellow position available."
+     "value": "Post-doctoral and student positions available."
     }
    ]
   },
@@ -2670,12 +2738,12 @@
     {
      "@type": "PropertyValue",
      "name": "skills",
-     "value": "Databases; NGS analysis and gene expression analysis"
+     "value": "Databases; NGS and gene expression analysis; biodiversity informatics and DNA barcoding"
     },
     {
      "@type": "PropertyValue",
      "name": "message",
-     "value": "Biodiversity information standards (TDWG) member — GBIF, BOLD, Catalogue of Life. I brought a net to catch insects."
+     "value": "Member of the biodiversity information standards body TDWG — GBIF, BOLD, Catalogue of Life. Andra is running this year's bioblitz project on iNaturalist. Loves butterflies and beetles, and visited a haiku bar last night."
     }
    ]
   },
@@ -2739,7 +2807,7 @@
     {
      "@type": "PropertyValue",
      "name": "message",
-     "value": "I am learning my 11th (human) language."
+     "value": "My goal is to swim over 1,000 km this year."
     }
    ]
   },
@@ -2844,7 +2912,7 @@
    "@type": "Person",
    "name": "Pitiporn Noisagul (Sam)",
    "identifier": "pitiporn-noisagul",
-   "description": "From microbiology to bioinformatics and systems biology. Genome study of cancer, pathogens and plants. Recently learned human pangenome graph analysis and is calling structural variants from the graph for diagnosis and prognosis. Microbiome analysis — 16S rRNA and shotgun metagenomics.",
+   "description": "From microbiology to bioinformatics and systems biology. Omics study of non-communicable disease, cancer, parasites and Drosophila. Recently learned human pangenome graph analysis and is calling structural variants from the graph for diagnosis and prognosis. Implementing a federated data-sharing framework on FAIR principles within DHARA, the Diabetes Health Analytics and Multi-Omics Research Alliance in Thailand.",
    "affiliation": {
     "@type": "Organization",
     "name": "CMUTEAM, Chiang Mai University",
@@ -2893,7 +2961,7 @@
     {
      "@type": "PropertyValue",
      "name": "message",
-     "value": "I recently learned to fall asleep with the TV on or a podcast playing. Many thanks to DBCLS and the other Japanese teams for helping organize MedHackathon Asia 2025 in Thailand."
+     "value": "We accomplished a new ultra-secret quest yesterday. Feeling like I'm losing my coding skills after agentic AI."
     }
    ]
   },
@@ -3101,7 +3169,7 @@
    "@type": "Person",
    "name": "Yoko Okabeppu",
    "identifier": "yoko-okabeppu",
-   "description": "RDF for geological data at a deep sea research institute; RDF engineer in bioinformatics since 2011, primarily microbial databases. Founded her own company in 2019. Microbial culture media database; data management of microbial pathway data.",
+   "description": "Database engineer at the Deep Sea Research Institute (2004–2008), investigating RDF for geological data, then an RDF database engineer in bioinformatics since 2011, mostly building microbial databases. Founded her own company in 2019, a microbial culture media database in 2020, and microbial pathway data management since 2023.",
    "affiliation": {
     "@type": "Organization",
     "name": "OKBP inc.",
@@ -3145,7 +3213,7 @@
     {
      "@type": "PropertyValue",
      "name": "skills",
-     "value": "SPARQL and SQL query tuning; designing RDF models"
+     "value": "SPARQL and SQL query tuning, designing RDF models, QLever against Virtuoso, microbial metabolism"
     },
     {
      "@type": "PropertyValue",
@@ -3159,7 +3227,7 @@
    "@type": "Person",
    "name": "Teppei Okazaki",
    "identifier": "teppei-okazaki",
-   "description": "Master's student in computer science, implementing a rare-disease database for a RAG system, and previously built a chatbot with a startup. Interested in AI-related systems and products, and in prompt engineering.",
+   "description": "Master's student in computer science, implementing a biomedical literature summarisation system with RAG. Interning at an AI startup, mostly improving AI output and user experience. Interested in AI-related systems and products, and prompt engineering.",
    "affiliation": {
     "@type": "Organization",
     "name": "Tokyo City University",
@@ -3189,6 +3257,10 @@
     {
      "@type": "ComputerLanguage",
      "name": "C#"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Codex"
     }
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
@@ -3201,12 +3273,12 @@
     {
      "@type": "PropertyValue",
      "name": "skills",
-     "value": "Python (LangChain, LangGraph, a little Flet for UI), prompt engineering, SPARQL (newbie)"
+     "value": "LLM engineering; data processing in Python"
     },
     {
      "@type": "PropertyValue",
      "name": "message",
-     "value": "Used to play video games professionally."
+     "value": "I used to make money by playing video games."
     }
    ]
   },
@@ -3378,6 +3450,53 @@
    ]
   },
   {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#ashanti-robinson",
+   "@type": "Person",
+   "name": "Ashanti Robinson",
+   "identifier": "ashanti-robinson",
+   "description": "Master's in food science on glycolytic enzymes from infant-associated gut microbiota, then analytical chemist and small-time data wrangler at a food tech startup in San Francisco. Now works remotely with the Kinoshita lab managing structured data for the Human Glycome Atlas knowledge base. Here to learn about the semantic web and RDF tooling, and to see what the BioHackathon community is curious about.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Soka University",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#glycomics",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#microbiology",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#rdf-sparql",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/ashanti-robinson.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#rdf-extraction-engine"
+   ],
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Glycobiology — protein chemistry and enzymology"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "Occasionally sings for fun, and has just started knitting and crocheting — thoroughly addicted."
+    }
+   ]
+  },
+  {
    "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#nuria-queralt-rosinach",
    "@type": "Person",
    "name": "Núria Queralt Rosinach",
@@ -3433,7 +3552,7 @@
     {
      "@type": "PropertyValue",
      "name": "message",
-     "value": "My first BH was in 2015 — my 10th anniversary. I ran my first half marathon this April. Started learning Italian, German and Dutch. I like dragonflies, ladybugs and butterflies."
+     "value": "Full eclipse."
     }
    ]
   },
@@ -3484,7 +3603,7 @@
    "@type": "Person",
    "name": "Rutharra (Ruth)",
    "identifier": "rutharra",
-   "description": "Master of genome analytics and a BSc in genomics and bioinformatics from Monash. Variant scientist at NCCS Singapore and biocurator for the VWD VCEP at ClinGen, working on research and clinical variant analysis.",
+   "description": "Master of genome analytics and a BSc in genomics and bioinformatics from Monash. Variant scientist at NCCS Singapore and biocurator for the VWD VCEP at ClinGen.",
    "affiliation": {
     "@type": "Organization",
     "name": "National Cancer Centre",
@@ -3564,7 +3683,7 @@
    "@type": "Person",
    "name": "Apiwat Sangphukieo",
    "identifier": "apiwat-sangphukieo",
-   "description": "Bioinformatician across functional genomics of bacterial genomes, protein structure modelling, untargeted metabolomics pipelines, NGS data processing and GWAS. Interested in blood-based early cancer detection and host-pathogen interaction. Now developing a standard omics platform as a national core facility — genome depository, imputation server, polygenic risk score prediction.",
+   "description": "A bioinformatician across many kinds of project: functional genomics of bacterial genomes, protein structure modelling, mass-spectrometry pipelines for untargeted metabolomics, NGS processing, genome-wide association analysis. Interested in cancer research — blood-based early detection, genetic susceptibility, and host-pathogen interaction in cancer progression.",
    "affiliation": {
     "@type": "Organization",
     "name": "Chiang Mai University",
@@ -3665,7 +3784,7 @@
     {
      "@type": "PropertyValue",
      "name": "message",
-     "value": "Arriving Monday noon. Third visit to Mie; last time, in 2023, took in the seven shrines of Ise Jingu."
+     "value": "Has visited Ehime many times — sightseeing, the Ohenro pilgrimage, and business trips."
     }
    ]
   },
@@ -3674,7 +3793,7 @@
    "@type": "Person",
    "name": "Nattawet Sriwichai (Golf)",
    "identifier": "nattawet-sriwichai",
-   "description": "Transcriptional regulatory networks of protein coding and miRNA genes in cassava, the MeTRN database, large-scale cassava transcriptomics, microbiome analysis of microbial fuel cells. Now HPC systems administrator at the Faculty of Medicine, CMU, and research omics data catalog.",
+   "description": "Center for Agricultural Systems Biology at KMUTT: transcriptional regulatory networks of protein-coding and miRNA genes in cassava, the MeTRN database, large-scale cassava transcriptomics, and microbiome analysis of microbial fuel cells. Now HPC systems administrator at the Faculty of Medicine, CMU, working on the Thai Omics Catalog and an omics data support platform.",
    "affiliation": {
     "@type": "Organization",
     "name": "Chiang Mai University",
@@ -4068,6 +4187,67 @@
    ]
   },
   {
+   "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#keitaro-takaoki",
+   "@type": "Person",
+   "name": "Keitaro Takaoki",
+   "identifier": "keitaro-takaoki",
+   "description": "Master's student in computer science, interested in sport — football especially — and in how data and AI can be used to understand human behaviour and performance. Interests: AI and data science, and sports analytics.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Tokyo City University",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": {
+      "@id": "http://www.wikidata.org/entity/Q17",
+      "@type": "Country",
+      "name": "Japan",
+      "identifier": "JP"
+     }
+    }
+   },
+   "knowsAbout": [
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#machine-learning",
+    "https://micheldumontier.github.io/bh-meet/topics.jsonld#llm-ai",
+    {
+     "@type": "ComputerLanguage",
+     "name": "Python"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "C"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "R"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Claude Code"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "Codex"
+    }
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "image": "https://micheldumontier.github.io/bh-meet/photos/keitaro-takaoki.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#fatigue-and-fear"
+   ],
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "skills",
+     "value": "Data analysis and processing; LLMs and reinforcement learning"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "message",
+     "value": "I like football!!"
+    }
+   ]
+  },
+  {
    "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#terue-takatsuki",
    "@type": "Person",
    "name": "Terue Takatsuki",
@@ -4181,7 +4361,7 @@
     {
      "@type": "PropertyValue",
      "name": "message",
-     "value": "When I was in elementary school, I lived near the Biohackathon venue."
+     "value": "Whenever I visit Ehime I make sure to eat jakoten. I arrived last night and have already had it three times. You should try it."
     }
    ]
   },
@@ -4238,7 +4418,7 @@
    "description": "MarpolBase, the Marchantia (liverwort) genome database for a new-generation model plant, and the move from genome database to knowledge base. Genome submission to DDBJ: DFAST for annotation and submission, GGS for unannotated genomes, MARKit for taxonomic marker genes, and an AI agent for submission — file conversion, validation and metadata curation.",
    "affiliation": {
     "@type": "Organization",
-    "name": "CSRS, RIKEN / DDBJ, NIG",
+    "name": "CSRS, RIKEN / BSI (DDBJ), NIG",
     "address": {
      "@type": "PostalAddress",
      "addressCountry": {
@@ -4322,7 +4502,7 @@
     {
      "@type": "PropertyValue",
      "name": "message",
-     "value": "Here to learn: says the life-science and bioinformatics background is thin and the programming skills archaic, and expects not to follow most of what is discussed."
+     "value": "Says he cannot understand most of the bioinformatics discussed here, and is present to learn."
     }
    ]
   },
@@ -4370,7 +4550,7 @@
     {
      "@type": "PropertyValue",
      "name": "message",
-     "value": "Training for a first marathon. Reads and writes fiction. 日本語OK, puhun suomea."
+     "value": "Training for a first marathon, and played a first chess tournament. Reads and writes fiction. 日本語OK, puhun suomea."
     }
    ]
   },
@@ -4430,10 +4610,10 @@
    "@type": "Person",
    "name": "Ran WEI",
    "identifier": "ran-wei",
-   "description": "Rare variant analysis using large-scale short-read sequencing data, with a focus on autism-related genetic variation. Cohort-scale genome assembly and pangenome construction for population genomics research. Gut microbiome research focusing on associations with host phenotypes and human genetic variation.",
+   "description": "Rare variant analysis using short-read sequencing data, with a focus on autism-related genetic variation. Cohort-scale genome assembly and pangenome construction for population genomics research. Gut microbiome research on associations with host phenotypes and human genetic variation.",
    "affiliation": {
     "@type": "Organization",
-    "name": "JIHS",
+    "name": "Japan Institute for Health Security (JIHS)",
     "address": {
      "@type": "PostalAddress",
      "addressCountry": {
@@ -4464,6 +4644,14 @@
     },
     {
      "@type": "ComputerLanguage",
+     "name": "Ruby"
+    },
+    {
+     "@type": "ComputerLanguage",
+     "name": "ChatGPT"
+    },
+    {
+     "@type": "ComputerLanguage",
      "name": "Claude"
     }
    ],
@@ -4473,12 +4661,12 @@
     {
      "@type": "PropertyValue",
      "name": "skills",
-     "value": "Rare variant analysis; genome assembly; pangenome graph construction and analysis; short-read and long-read sequencing data analysis; gut microbiome and metagenomic analysis; population-scale genomic data analysis"
+     "value": "Genome assembly; pangenome graph construction and analysis; short-read and long-read sequencing data analysis; gut microbiome and metagenomic analysis; population-scale genomic data analysis"
     },
     {
      "@type": "PropertyValue",
      "name": "message",
-     "value": "My son said he will be very happy to be left alone for a week. No gift is needed, just go."
+     "value": "My son said he will be very happy to be left alone for a week. No souvenir needed, just go."
     }
    ]
   },
@@ -4656,7 +4844,7 @@
     {
      "@type": "PropertyValue",
      "name": "skills",
-     "value": "Anything related to LLM, RDF, OWL, ShEx, SPARQL, and MCP. Current interest is data quality and MCP for DBs."
+     "value": "Anything to do with LLMs, RDF, OWL, ShEx, SPARQL and MCP. Current interest is managing data quality and MCP for databases. Plans: making RDF data more reliable, connectable and interpretable, and extracting database accession numbers from the literature."
     },
     {
      "@type": "PropertyValue",
@@ -4709,7 +4897,7 @@
     {
      "@type": "PropertyValue",
      "name": "message",
-     "value": "I like running, so I want to run around the hotel during this event at least once."
+     "value": "Mostly vibe coding with Codex lately, which has me doubting my own programming skills. Tips for AI-agent coding welcome."
     }
    ]
   },
@@ -4718,7 +4906,7 @@
    "@type": "Person",
    "name": "Akiyasu C. Yoshizawa",
    "identifier": "akiyasu-c-yoshizawa",
-   "description": "Once an experimental biophysicist in membrane biology, then bioinformatics — comparative genomics of eukaryotic intracellular transport, and assembling in-house sequence databases. Now one of the developers of jPOST, a proteome raw data repository, and MB-POST, a metabolome repository in the Shin-MassBank project, mainly developing analysis and statistical methods and preparing metadata.",
+   "description": "Once an experimental biophysicist in membrane biology, then bioinformatics at Kyoto University and AIST — comparative genomics of eukaryotic intracellular transport, and assembling in-house sequence databases. Mass spectrometry at the University of Tokushima and Shimadzu. Now one of the developers of jPOST, a proteome raw data repository, and MB-POST, a metabolome repository in the Shin-MassBank project, mainly developing analysis and statistical methods and preparing metadata.",
    "affiliation": {
     "@type": "Organization",
     "name": "Niigata University",
@@ -4752,12 +4940,12 @@
     {
      "@type": "PropertyValue",
      "name": "skills",
-     "value": "Bioinformatics and sequence analysis, mass spectrometry for proteomics, metadata construction, biological databases"
+     "value": "Bioinformatics and sequence analysis, mass spectrometry for proteomics, metadata construction mainly in mass-spec fields, biological databases"
     },
     {
      "@type": "PropertyValue",
      "name": "message",
-     "value": "It has been an incredibly long time since the last BioHackathon."
+     "value": "It has been an incredibly long time — seven years, in fact — since the last BioHackathon."
     }
    ]
   }

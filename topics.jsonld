@@ -67,21 +67,21 @@
    "@type": "Concept",
    "prefLabel": "Clinical",
    "inScheme": "https://micheldumontier.github.io/bh-meet/topics.jsonld",
-   "dcterms:extent": 22
+   "dcterms:extent": 23
   },
   {
    "@id": "https://micheldumontier.github.io/bh-meet/topics.jsonld#cloud-hpc",
    "@type": "Concept",
    "prefLabel": "Cloud/HPC",
    "inScheme": "https://micheldumontier.github.io/bh-meet/topics.jsonld",
-   "dcterms:extent": 12
+   "dcterms:extent": 13
   },
   {
    "@id": "https://micheldumontier.github.io/bh-meet/topics.jsonld#databases",
    "@type": "Concept",
    "prefLabel": "Databases",
    "inScheme": "https://micheldumontier.github.io/bh-meet/topics.jsonld",
-   "dcterms:extent": 34
+   "dcterms:extent": 35
   },
   {
    "@id": "https://micheldumontier.github.io/bh-meet/topics.jsonld#fair-standards",
@@ -95,14 +95,14 @@
    "@type": "Concept",
    "prefLabel": "Genomics",
    "inScheme": "https://micheldumontier.github.io/bh-meet/topics.jsonld",
-   "dcterms:extent": 32
+   "dcterms:extent": 33
   },
   {
    "@id": "https://micheldumontier.github.io/bh-meet/topics.jsonld#glycomics",
    "@type": "Concept",
    "prefLabel": "Glycomics",
    "inScheme": "https://micheldumontier.github.io/bh-meet/topics.jsonld",
-   "dcterms:extent": 8
+   "dcterms:extent": 9
   },
   {
    "@id": "https://micheldumontier.github.io/bh-meet/topics.jsonld#knowledge-graphs",
@@ -116,14 +116,14 @@
    "@type": "Concept",
    "prefLabel": "LLM/AI",
    "inScheme": "https://micheldumontier.github.io/bh-meet/topics.jsonld",
-   "dcterms:extent": 30
+   "dcterms:extent": 31
   },
   {
    "@id": "https://micheldumontier.github.io/bh-meet/topics.jsonld#machine-learning",
    "@type": "Concept",
    "prefLabel": "Machine learning",
    "inScheme": "https://micheldumontier.github.io/bh-meet/topics.jsonld",
-   "dcterms:extent": 18
+   "dcterms:extent": 20
   },
   {
    "@id": "https://micheldumontier.github.io/bh-meet/topics.jsonld#metabolomics",
@@ -137,7 +137,7 @@
    "@type": "Concept",
    "prefLabel": "Microbiology",
    "inScheme": "https://micheldumontier.github.io/bh-meet/topics.jsonld",
-   "dcterms:extent": 11
+   "dcterms:extent": 12
   },
   {
    "@id": "https://micheldumontier.github.io/bh-meet/topics.jsonld#ontologies",
@@ -179,7 +179,7 @@
    "@type": "Concept",
    "prefLabel": "RDF/SPARQL",
    "inScheme": "https://micheldumontier.github.io/bh-meet/topics.jsonld",
-   "dcterms:extent": 23
+   "dcterms:extent": 24
   },
   {
    "@id": "https://micheldumontier.github.io/bh-meet/topics.jsonld#rare-disease",
@@ -207,7 +207,7 @@
    "@type": "Concept",
    "prefLabel": "Variants",
    "inScheme": "https://micheldumontier.github.io/bh-meet/topics.jsonld",
-   "dcterms:extent": 18
+   "dcterms:extent": 19
   },
   {
    "@id": "https://micheldumontier.github.io/bh-meet/topics.jsonld#visualisation",
