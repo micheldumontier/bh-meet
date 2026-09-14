@@ -161,6 +161,10 @@
 
   /* The card title is the card's keyboard handle: a real button that looks
      like the text it replaced. */
+  /* The graph needs width to stay legible, so let it pan on a narrow screen
+     rather than shrinking every label to nothing. */
+  .graph-scroll { overflow-x: auto; overscroll-behavior-x: contain; }
+
   .card-title-btn {
     display: block; width: 100%;
     background: none; border: 0; padding: 0;
@@ -474,7 +478,7 @@
 
   <sc-if value="{{ onGraph }}" hint-placeholder-val="{{ false }}">
     <div>
-      <p class="text-muted" style="max-width:58ch;margin-bottom:var(--space-4)">Each small mark is a person, pulled toward the topics they wrote on their slide. People sitting between two topics are the ones worth a conversation. Click a topic to filter the list; click a person to open them.</p>
+      <p class="text-muted" style="max-width:58ch;margin-bottom:var(--space-4)">Each mark is a person, placed between the topics they wrote on their slide. Topics next to each other on the ring are ones people tend to hold together, so whoever sits between two clusters is worth a conversation. Click a topic to filter the list, or a person to open them and draw their links.</p>
       {{ graph }}
       <p class="text-muted" style="font-size:12px;margin-top:var(--space-2)">Once pitches exist, stated interest in a project will draw as a second, heavier kind of edge.</p>
     </div>
@@ -610,66 +614,183 @@ class Component extends DCLogic {
   shared(a, b) { return a.filter(x => b.includes(x)); }
   hash(s) { let h = 0; for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0; return h; }
 
-  buildGraph(people, topics, active) {
-    const W = 1200, H = 660, cx = W / 2, cy = H / 2;
-    // An ellipse, not a circle: it fills the wide column and, more importantly,
-    // spreads the crowded top and bottom arcs horizontally so their labels clear.
-    const RX = 430, RY = 235;
+  // Order the ring so neighbouring topics are ones people actually hold
+  // together. Ordering by frequency put Genomics beside Web dev, which sent
+  // every edge across the middle and made position mean nothing.
+  seriateTopics(people, topics) {
+    const pair = (a, b) => (a < b ? a + '\u0000' + b : b + '\u0000' + a);
+    const co = {};
+    people.forEach(p => {
+      const ts = p.t;
+      for (let i = 0; i < ts.length; i++)
+        for (let j = i + 1; j < ts.length; j++) {
+          const k = pair(ts[i], ts[j]);
+          co[k] = (co[k] || 0) + 1;
+        }
+    });
+    const sim = (a, b) => co[pair(a, b)] || 0;
+    const left = topics.slice(), out = [left.shift()];
+    while (left.length) {
+      const last = out[out.length - 1];
+      let best = 0;
+      // Ties fall back on the incoming order, which is by count, so the same
+      // roster always lays out the same way.
+      for (let i = 1; i < left.length; i++) {
+        if (sim(last, left[i]) > sim(last, left[best])) best = i;
+      }
+      out.push(left.splice(best, 1)[0]);
+    }
+
+    // Greedy strands whatever is left over in a weak tail, and never closes the
+    // ring. This is a max-weight Hamiltonian cycle, so finish with the standard
+    // 2-opt improvement: on the current roster it lifts total adjacency from
+    // 59 (frequency order) to 108 (greedy) to 124.
+    const n = out.length;
+    for (let pass = 0; pass < 40; pass++) {
+      let improved = false;
+      for (let i = 0; i < n; i++) {
+        for (let k = i + 2; k < n - (i === 0 ? 1 : 0); k++) {
+          const a = out[i], b = out[(i + 1) % n], c = out[k], d = out[(k + 1) % n];
+          if (sim(a, c) + sim(b, d) > sim(a, b) + sim(c, d)) {
+            for (let lo = i + 1, hi = k; lo < hi; lo++, hi--) {
+              const t = out[lo]; out[lo] = out[hi]; out[hi] = t;
+            }
+            improved = true;
+          }
+        }
+      }
+      if (!improved) break;
+    }
+    return out;
+  }
+
+  // Seeded at the centroid of a person's topics -- position carries meaning --
+  // then relaxed only enough that nobody hides underneath anybody else. The old
+  // version offset each dot by a hash of its id, so overlaps were pure luck.
+  graphLayout(people, topics) {
+    const W = 1200, H = 700, cx = W / 2, cy = H / 2, RX = 430, RY = 250;
+    const key = people.length + '|' + topics.join('|');
+    if (this.layoutCache && this.layoutCache.key === key) return this.layoutCache;
+
+    const ring = this.seriateTopics(people, topics);
     const pos = {};
-    topics.forEach((t, i) => {
-      const a = (i / topics.length) * Math.PI * 2 - Math.PI / 2;
+    ring.forEach((t, i) => {
+      const a = (i / ring.length) * Math.PI * 2 - Math.PI / 2;
       pos[t] = { x: cx + Math.cos(a) * RX, y: cy + Math.sin(a) * RY, a, i };
     });
+
+    const pts = people.filter(p => p.t.some(t => pos[t])).map(p => {
+      const ts = p.t.filter(t => pos[t]);
+      const mx = ts.reduce((s, t) => s + pos[t].x, 0) / ts.length;
+      const my = ts.reduce((s, t) => s + pos[t].y, 0) / ts.length;
+      const h = this.hash(p.id);
+      // A whisper of jitter, only to break exact ties between people with an
+      // identical topic set. The relaxation below does the real separating.
+      return {
+        id: p.id, ts,
+        x: cx + (mx - cx) * 0.82 + ((h % 7) - 3),
+        y: cy + (my - cy) * 0.82 + (((h >> 4) % 7) - 3)
+      };
+    });
+
+    const SEP = 15, CLEAR = 30, IN_X = RX - 55, IN_Y = RY - 45;
+    for (let iter = 0; iter < 120; iter++) {
+      for (let i = 0; i < pts.length; i++) {
+        const a = pts[i];
+        for (let j = i + 1; j < pts.length; j++) {
+          const b = pts[j];
+          let dx = b.x - a.x, dy = b.y - a.y;
+          let d = Math.hypot(dx, dy);
+          if (d >= SEP) continue;
+          if (d < 0.01) { dx = (i % 2 ? 0.5 : -0.5); dy = 0.5; d = 0.7; }
+          const push = (SEP - d) / d * 0.5;
+          a.x -= dx * push; a.y -= dy * push;
+          b.x += dx * push; b.y += dy * push;
+        }
+        // Keep the crowd off the topic dots and their labels.
+        for (let k = 0; k < ring.length; k++) {
+          const p = pos[ring[k]];
+          const dx = a.x - p.x, dy = a.y - p.y, d = Math.hypot(dx, dy);
+          if (d < CLEAR && d > 0.01) {
+            const push = (CLEAR - d) / d;
+            a.x += dx * push; a.y += dy * push;
+          }
+        }
+        // And inside the ring, so nobody drifts out across a label.
+        const ex = (a.x - cx) / IN_X, ey = (a.y - cy) / IN_Y, e = Math.hypot(ex, ey);
+        if (e > 1) { a.x = cx + (a.x - cx) / e; a.y = cy + (a.y - cy) / e; }
+      }
+    }
+
+    const byId = {};
+    pts.forEach(p => { byId[p.id] = p; });
+    this.layoutCache = { key, W, H, ring, pos, byId };
+    return this.layoutCache;
+  }
+
+  buildGraph(people, topics, active) {
+    const L = this.graphLayout(people, topics);
+    const W = L.W, H = L.H, ring = L.ring, pos = L.pos, byId = L.byId;
     const el = React.createElement;
     const edges = [], nodes = [], labels = [];
 
-    topics.forEach(t => {
+    ring.forEach(t => {
       const p = pos[t], on = active.includes(t);
       const cos = Math.cos(p.a), sin = Math.sin(p.a);
-      // Near-vertical labels get pushed further out and sit above/below their dot,
-      // otherwise neighbours on the top and bottom arcs overlap.
+      // Near-vertical labels get pushed further out and sit above or below
+      // their dot, otherwise neighbours on the top and bottom arcs collide.
       const vertical = Math.abs(cos) < 0.32;
-      // Alternate rows on the top and bottom arcs so neighbours never share a baseline.
-      const row = p.i % 2 ? 34 : 14;
-      const gap = vertical ? row : 14;
+      const gap = vertical ? (p.i % 2 ? 34 : 14) : 14;
       const lx = p.x + cos * gap, ly = p.y + sin * (vertical ? gap : gap * 0.6);
       labels.push(el('text', {
-        key: 'lt' + t, x: lx, y: ly, fill: on ? 'var(--color-accent-2-700)' : 'var(--color-text)',
+        key: 'lt' + t, x: lx, y: ly,
+        fill: on ? 'var(--color-accent-2-700)' : 'var(--color-text)',
         fontSize: 13, fontFamily: 'var(--font-heading)', fontWeight: 600,
         textAnchor: vertical ? 'middle' : (cos > 0 ? 'start' : 'end'),
         dominantBaseline: vertical ? (sin > 0 ? 'hanging' : 'auto') : 'middle',
         style: { cursor: 'pointer' }, onClick: () => this.pickTopic(t)
       }, t));
-      labels.push(el('circle', { key: 'ct' + t, cx: p.x, cy: p.y, r: on ? 6 : 4, fill: on ? 'var(--color-accent-2)' : 'var(--color-accent)', style: { cursor: 'pointer' }, onClick: () => this.pickTopic(t) }));
+      labels.push(el('circle', {
+        key: 'ct' + t, cx: p.x, cy: p.y, r: on ? 6 : 4,
+        fill: on ? 'var(--color-accent-2)' : 'var(--color-accent)',
+        style: { cursor: 'pointer' }, onClick: () => this.pickTopic(t)
+      }, el('title', null, t)));
     });
 
     people.forEach(pr => {
-      const ts = pr.t.filter(t => pos[t]);
-      if (!ts.length) return;
-      const mx = ts.reduce((s, t) => s + pos[t].x, 0) / ts.length;
-      const my = ts.reduce((s, t) => s + pos[t].y, 0) / ts.length;
-      const h = this.hash(pr.id);
-      const jx = ((h % 37) - 18) * 1.5, jy = (((h >> 5) % 37) - 18) * 1.5;
-      const x = cx + (mx - cx) * 0.78 + jx, y = cy + (my - cy) * 0.78 + jy;
+      const a = byId[pr.id];
+      if (!a) return;
       const isSel = this.state.sel === pr.id;
       const starred = this.state.short.includes(pr.id);
       const lit = isSel || (active.length > 0 && active.every(t => pr.t.includes(t)));
-      ts.forEach(t => edges.push(el('line', {
-        key: 'e' + pr.id + t, x1: x, y1: y, x2: pos[t].x, y2: pos[t].y,
-        stroke: lit ? 'var(--color-accent-2-400)' : 'var(--color-neutral-300)',
-        strokeWidth: lit ? 1.2 : 0.6
-      })));
+      // 350 faint lines is a hairball that hides the clustering it is meant to
+      // show. Edges are drawn only for whoever is actually in question: the
+      // selected person, or the people a topic filter kept.
+      if (lit) {
+        a.ts.forEach(t => edges.push(el('line', {
+          key: 'e' + pr.id + t, x1: a.x, y1: a.y, x2: pos[t].x, y2: pos[t].y,
+          stroke: 'var(--color-accent-2-400)', strokeWidth: 1.2
+        })));
+      }
       nodes.push(el('circle', {
-        key: 'n' + pr.id, cx: x, cy: y, r: isSel ? 7 : starred ? 5.5 : 4,
+        key: 'n' + pr.id, cx: a.x, cy: a.y, r: isSel ? 7 : starred ? 5.5 : 4,
         fill: isSel ? 'var(--color-accent-2)' : starred ? 'var(--color-accent-600)' : 'var(--color-text)',
-        opacity: lit || !active.length ? 1 : 0.28,
+        opacity: lit || !active.length ? 1 : 0.22,
         style: { cursor: 'pointer' },
         onClick: () => this.select(pr.id, 'people')
-      }, el('title', null, pr.n + ' — ' + pr.a)));
+      }, el('title', null, pr.n + ' \u2014 ' + pr.a + ' \u2014 ' + pr.t.join(', '))));
     });
 
-    return el('svg', { viewBox: '0 0 ' + W + ' ' + H, width: '100%', role: 'img', 'aria-label': 'Participants arranged by shared topics', style: { display: 'block', height: 'auto' } },
-      el('g', { key: 'edges' }, edges), el('g', { key: 'nodes' }, nodes), el('g', { key: 'labels' }, labels));
+    return el('div', { className: 'graph-scroll' },
+      el('svg', {
+        viewBox: '0 0 ' + W + ' ' + H, width: '100%', role: 'img',
+        'aria-label': 'Participants placed between the topics they share: '
+          + people.length + ' people around ' + ring.length + ' topics.',
+        style: { display: 'block', height: 'auto', minWidth: '780px' }
+      },
+        el('g', { key: 'edges' }, edges),
+        el('g', { key: 'nodes' }, nodes),
+        el('g', { key: 'labels' }, labels)));
   }
 
   renderVals() {

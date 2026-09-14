@@ -32,7 +32,7 @@
    "@type": "Dataset",
    "name": "BH26 Collaboration Index — participants",
    "license": "http://creativecommons.org/publicdomain/zero/1.0/",
-   "dateModified": "2026-09-13",
+   "dateModified": "2026-09-14",
    "wasDerivedFrom": "https://docs.google.com/presentation/d/1UWasNu6Wa_zCRhuWErF0cu2-uHpxwVBOU_6bNarQe1c/edit",
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset"
   },
