@@ -205,9 +205,19 @@ def main():
         decks = sorted(Path("data").glob("*.pptx"), key=lambda p: p.stat().st_mtime)
         if not decks:
             sys.exit("No data/*.pptx found. The deck is git-ignored; export it there first.")
-        deck = decks[-1]
+        # data/ now holds more than one kind of deck. Taking the newest outright
+        # would happily read the projects deck as if it were people.
+        named = [p for p in decks if re.search(r"people|introduc", p.name, re.I)]
+        if named:
+            deck = named[-1]
+        else:
+            deck = decks[-1]
+            others = [p for p in decks if re.search(r"group|project|hack", p.name, re.I)]
+            if others and deck in others:
+                sys.exit(f"{deck.name} looks like a projects deck, not a people deck.\n"
+                         "Pass --deck explicitly, or use scripts/extract-projects.py.")
         if len(decks) > 1:
-            print(f"{len(decks)} decks in data/; using the most recent")
+            print(f"{len(decks)} decks in data/; picked the newest people deck")
     print(f"reading {deck}")
     if not args.no_photos and not shutil.which("magick"):
         sys.exit("ImageMagick ('magick') not found. Install it, or pass --no-photos.")

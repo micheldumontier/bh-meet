@@ -1,0 +1,2128 @@
+{
+ "@context": {
+  "@vocab": "https://schema.org/",
+  "schema": "https://schema.org/",
+  "prov": "http://www.w3.org/ns/prov#",
+  "member": {
+   "@id": "schema:member"
+  },
+  "isPartOf": {
+   "@id": "schema:isPartOf",
+   "@type": "@id"
+  },
+  "wasDerivedFrom": {
+   "@id": "prov:wasDerivedFrom",
+   "@type": "@id"
+  },
+  "license": {
+   "@id": "schema:license",
+   "@type": "@id"
+  }
+ },
+ "@graph": [
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/projects.jsonld",
+   "@type": "Dataset",
+   "name": "BH26 Collaboration Index — hacking groups",
+   "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+   "dateModified": "2026-09-14",
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset"
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/projects.jsonld#togomcp",
+   "@type": "ResearchProject",
+   "name": "TogoMCP",
+   "identifier": "togomcp",
+   "description": "Extending and enhancing TogoMCP, the BH25 product that gives AI agents access to life-science databases.",
+   "keywords": [
+    "Knowledge graphs and AI"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "member": [
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#akira-kinjo"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#kozo-nishida"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#shuichi-kawashima"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#yuki-moriya"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#takatomo-fujisawa"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#priscilla-joanne"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#julia-koblitz"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#yasunori-yamamoto"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#daniel-puthawala"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#mayumi-kamada"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#susumu-goto"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#nuria-queralt-rosinach"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#naoya-yoshikuwa"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#claude-nanjo"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#toyofumi-fujiwara"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#yasuhiro-tanizawa"
+     }
+    }
+   ],
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Examine and refine MIE files"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Find use cases and workflows, then turn them into skills"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Work out how to write good SPARQL examples"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Add new databases to TogoMCP"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "slackChannel",
+     "value": "#togomcp"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/projects.jsonld#biosample-curation",
+   "@type": "ResearchProject",
+   "name": "LLM-assisted data curation of the BioSample database",
+   "identifier": "biosample-curation",
+   "description": "DBCLS's pipeline uses LLMs to map freely-written biological sample metadata to ontology terms, and has already mapped about 4 million BioSample records.",
+   "keywords": [
+    "Knowledge graphs and AI"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "member": [
+    {
+     "@type": "Role",
+     "roleName": "lead",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#shuya-ikeda"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#tazro-ohta-and-macoto-ohta"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#kozo-nishida"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#nuria-fabrega"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@type": "Person",
+      "name": "Suecharo"
+     }
+    }
+   ],
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Discuss best practice for LLM-assisted database curation"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Categorise the main causes of pipeline error"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Establish the provenance and completeness of the mappings"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Build a visualisation of what the BioSample data actually contains"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/projects.jsonld#rdf-extraction-engine",
+   "@type": "ResearchProject",
+   "name": "RDF Data Extraction and Engine Implementation",
+   "identifier": "rdf-extraction-engine",
+   "description": "Designing a consistent extraction process for human glycan data out of a sparsely documented knowledge base, and a dual-engine RDF back end.",
+   "keywords": [
+    "Knowledge graphs and AI"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "member": [
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#miguel-mazumder"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#rajat-kumar-mondal"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#evan-bolton"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#daniel-puthawala"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@type": "Person",
+      "name": "Ashanti"
+     }
+    }
+   ],
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Design the RDF extraction strategy"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Pair Virtuoso and QLever, for inferencing and for query speed"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Use Jena ARQ algebra traversal for query inspection, policy enforcement and rewriting"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/projects.jsonld#osiris-mcp",
+   "@type": "ResearchProject",
+   "name": "OSIRIS MCP",
+   "identifier": "osiris-mcp",
+   "description": "Exploring MCP as a way to reach research information in OSIRIS securely, and whether reports and summaries can be written straight out of that data.",
+   "keywords": [
+    "Knowledge graphs and AI"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "member": [
+    {
+     "@type": "Role",
+     "roleName": "lead",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#julia-koblitz"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#akira-kinjo"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#priscilla-joanne"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#naoya-yoshikuwa"
+     }
+    }
+   ],
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Try MCP against the OSIRIS research information system"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Generate simple research reports and summaries from the data"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Compare notes on MCP limitations, concerns and best practice"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/projects.jsonld#variant-rdf-trials",
+   "@type": "ResearchProject",
+   "name": "Variant annotation in RDF for clinical trials matching",
+   "identifier": "variant-rdf-trials",
+   "description": "A follow-up to BH25 and BH23: connecting GA4GH VRS variants to ClinicalTrials.gov inclusion criteria, for matching patients to precision oncology trials.",
+   "keywords": [
+    "Knowledge graphs and AI"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "member": [
+    {
+     "@type": "Role",
+     "roleName": "lead",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#nuria-queralt-rosinach"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "lead",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#daniel-puthawala"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#orion-buske"
+     }
+    }
+   ],
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Develop an RDF model for GA4GH VRS v2"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Integrate VRS 2 and Cat-VRS as the variant-RDF-to-trials layer"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/projects.jsonld#clinical-graph-rag",
+   "@type": "ResearchProject",
+   "name": "Clinical Graph RAG",
+   "identifier": "clinical-graph-rag",
+   "description": "Using a logical model graph to work out which classes of data answer a clinical question, then querying the underlying sources through that graph.",
+   "keywords": [
+    "Knowledge graphs and AI"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "member": [
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#claude-nanjo"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#nuria-queralt-rosinach"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#orion-buske"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#toyofumi-fujiwara"
+     }
+    }
+   ],
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Use the Clinical Element Model and its object-oriented representation, COOL, as the logical model"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/projects.jsonld#bioruby",
+   "@type": "ResearchProject",
+   "name": "BioRuby and Ruby for Bioinformatics",
+   "identifier": "bioruby",
+   "description": "BioRuby is an open-source bioinformatics library for Ruby. Parts of the codebase are twenty years old and want modernising, with AI coding agents doing some of the work.",
+   "keywords": [
+    "Technology"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "member": [
+    {
+     "@type": "Role",
+     "roleName": "lead",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#naohisa-goto"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#kozo-nishida"
+     }
+    }
+   ],
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Improve code, tests and documentation using AI coding agents"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Adopt modern Ruby standards: rbs type annotations, simplecov, GitHub Actions"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Discuss what shape a library should take to suit both AI and people"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Look into recent Ruby bioinformatics tools such as togows-cli and dratools"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "slackChannel",
+     "value": "#ruby"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/projects.jsonld#academic-wasteland",
+   "@type": "ResearchProject",
+   "name": "The Academic Wasteland",
+   "identifier": "academic-wasteland",
+   "description": "Stand up at least three academic \"gastowns\" and do something useful in them — pangenome analysis, or a diagnosis, prognosis and treatment model.",
+   "keywords": [
+    "Technology"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "member": [
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#alex-kanitz"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#michel-dumontier"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#robert-hoehndorf"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#daniel-puthawala"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#toshiaki-katayama"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#priscilla-joanne"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#manabu-ishii"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#orion-buske"
+     }
+    }
+   ],
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Define the principles, standards and technologies"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Evaluate dolt, beads, wasteland and other gastown technologies"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Work through web of trust, credentials, reputation, provenance, resource allocation, governance, accountability, federation and reproducibility"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "slackChannel",
+     "value": "#academic-wasteland"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/projects.jsonld#zebraseek",
+   "@type": "ResearchProject",
+   "name": "ZebraSeek: AI workflow for rare disease",
+   "identifier": "zebraseek",
+   "description": "A candidate-level ensemble for rare disease diagnosis — PubCaseFinder, GestaltMatcher, semantic search and a direct LLM — ranked by an LLM and then verified against the literature, returning a top five with explanations.",
+   "keywords": [
+    "Biomedical"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "member": [
+    {
+     "@type": "Role",
+     "roleName": "lead",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#naoya-yoshikuwa"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#toyofumi-fujiwara"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#orion-buske"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#tzung-chien-hsieh"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#hiroyuki-mishima"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#hirokazu-chiba"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#teppei-okazaki"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#atsuko-yamaguchi"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#susumu-goto"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#nuria-queralt-rosinach"
+     }
+    }
+   ],
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Revise the draft paper and submit to BioHackrXiv"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Improve the method: versions, prompts, normalisation, scoring rules"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Update from 74 patients to 368 with the latest dataset"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "slackChannel",
+     "value": "#zebraseek"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/projects.jsonld#expertboard",
+   "@type": "ResearchProject",
+   "name": "ExpertBoard: Pan-Asian Variant Review Network",
+   "identifier": "expertboard",
+   "description": "A regional framework for coordinating variant annotation, prioritisation and curation, and for sharing expert reviews across Asia. AI gathers the evidence; experts make the call. Carries forward results from MedHackathon Asia 2026 in Singapore.",
+   "keywords": [
+    "Biomedical"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "member": [
+    {
+     "@type": "Role",
+     "roleName": "lead",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#rutharra"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "lead",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#francis-tablizo"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "lead",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#toyofumi-fujiwara"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "lead",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#shoichiro-takahashi"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "lead",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#yuko-kitano"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#hiroki-muroda"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#ruka-kobayashi"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#hina-motoyoshi"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#mkkm-chipo-ruhwode"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#mayumi-kamada"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#orion-buske"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#tzung-chien-hsieh"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#shuichi-kawashima"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#yosuke-kawai"
+     }
+    }
+   ],
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Use AI to collect evidence and classify against the ACMG 2015 guidelines on human-curated demo data"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Review the ExpertBoard demo and agree next steps"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Standardise and harmonise variant analysis pipelines"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Share evidence, descriptions and classifications to reduce the VUS burden in Asia"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Revise the draft perspective for the RDODJ special topic"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "slackChannel",
+     "value": "#expertboard"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/projects.jsonld#nando-medgen",
+   "@type": "ResearchProject",
+   "name": "Connecting NANDO with MedGen",
+   "identifier": "nando-medgen",
+   "description": "Linking Japanese rare and intractable disease information to international biomedical resources, by identifier and then by label.",
+   "keywords": [
+    "Biomedical"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "member": [
+    {
+     "@type": "Role",
+     "roleName": "lead",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#terue-takatsuki"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#evan-bolton"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#toyofumi-fujiwara"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#masae-hosoda"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#nuria-queralt-rosinach"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@type": "Person",
+      "name": "Jaemoon Shin"
+     }
+    }
+   ],
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Explore existing links between NANDO and external disease resources"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Identify MedGen IDs through linked identifiers and generate candidate mappings"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Use LLMs to compare disease labels and synonyms where identifiers do not resolve"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Classify the results into matches, ambiguous cases and non-matches"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/projects.jsonld#mondo-gestaltmatcher",
+   "@type": "ResearchProject",
+   "name": "Integrate MONDO into GestaltMatcher",
+   "identifier": "mondo-gestaltmatcher",
+   "description": "GestaltMatcher works internally on OMIM IDs and phenotypic series. Adding MONDO would let it characterise syndrome subgroups precisely and interoperate with PubCaseFinder and ZebraSeek.",
+   "keywords": [
+    "Biomedical"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "member": [
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#hiroyuki-mishima"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#tzung-chien-hsieh"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#toyofumi-fujiwara"
+     }
+    }
+   ],
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Convert the international MONDO from OWL to OBO (done)"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Implement the extensions in the GestaltMatcher gallery metadata"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Discuss simple algorithms for distance between syndrome names in MONDO"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Update the NGPsuite GUI for a MONDO-aware GestaltMatcher"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/projects.jsonld#mikan-genome",
+   "@type": "ResearchProject",
+   "name": "Mikan Genome Project: exploring Japanese citrus with AI",
+   "identifier": "mikan-genome",
+   "description": "Public PacBio HiFi data now covers 18 citrus cultivars including Satsuma mandarin, Iyokan, Hassaku, Hyuganatsu, Ponkan and orange, and 2026 resources make haplotype-resolved, allele-level work possible. Can that data support a Japanese citrus pangenome that explains what makes each variety different?",
+   "keywords": [
+    "Biomedical"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "member": [
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#shuto-machida"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#toshiaki-katayama"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#mayumi-kamada"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#ryo-nozu"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#yuki-moriya"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#hidemasa-bono"
+     }
+    }
+   ],
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Build a haplotype-aware, Japanese citrus-focused pangenome from public HiFi data"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Bring in experience with pangenomes and allele phasing — ideas and interpretation especially welcome"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Run the large analyses on the OASIS HPC system at Kyushu University MIB"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/projects.jsonld#hla-pangenome",
+   "@type": "ResearchProject",
+   "name": "Creating HLA pangenome graphs using Asian genomics data",
+   "identifier": "hla-pangenome",
+   "description": "Combining genomics data from Asian populations with pangenome tools such as pggb and minigraph-cactus to build HLA graphs, using the NIG supercomputer and publicly available data.",
+   "keywords": [
+    "Biomedical"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "member": [
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#hassan-sibroe-abdulla-daanaa"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#kazumichi-fujiwara"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#robert-hoehndorf"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#shin-ichiro-tago"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#yosuke-kawai"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#apiwat-sangphukieo"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#toshiaki-katayama"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@type": "Person",
+      "name": "Dawn Chen"
+     }
+    }
+   ],
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Gather the genomics data"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Build pangenome graphs for each population"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Benchmark and compare"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/projects.jsonld#patient-trajectories",
+   "@type": "ResearchProject",
+   "name": "Patient Trajectory Matching over Temporal Knowledge Graphs",
+   "identifier": "patient-trajectories",
+   "description": "Clinical trajectories are how diagnoses, treatments, procedures and measurements unfold over time. An open trajectory query engine would find patients whose histories satisfy a temporal pattern, then widen the search through explicitly permitted semantic and temporal relaxations, showing the evidence behind every result.",
+   "keywords": [
+    "Biomedical"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "member": [
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#michel-dumontier"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#orion-buske"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#robert-hoehndorf"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#chang-sun"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#anggi"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#claude-nanjo"
+     }
+    }
+   ],
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Develop a theory of what a temporal knowledge graph actually is"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Extend SULO for temporal knowledge representation"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Specify a compact, flexible query language and implement indexed exact and fuzzy retrieval"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Demo against MIMIC-IV: acute-care episodes involving medication exposure and later changes in kidney function"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/projects.jsonld#proteome-reanalysis",
+   "@type": "ResearchProject",
+   "name": "Proteome data re-analysis and visualization",
+   "identifier": "proteome-reanalysis",
+   "description": "Establishing a proteome re-analysis workflow for jPOSTdb and updating its interface, taking jPOST from a repository to a database.",
+   "keywords": [
+    "Multi-omics"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "member": [
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#susumu-goto"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#akiyasu-c-yoshizawa"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#shin-kawano"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#yushi-takahashi"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#satoshi-tanaka"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#yuki-moriya"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#evan-bolton"
+     }
+    }
+   ],
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Design a metaproteome re-analysis workflow and its applications"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Design the system and interface of Mass++ for trans-omics use"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Discuss trans-omics use cases for mass spectrometry data"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/projects.jsonld#mbpost-metabolomicshub",
+   "@type": "ResearchProject",
+   "name": "Data interoperability between MB-POST and MetabolomicsHub",
+   "identifier": "mbpost-metabolomicshub",
+   "description": "Supporting the MetabolomicsHub common data model in the MB-POST repository, following the precedent set in MetaboLights.",
+   "keywords": [
+    "Multi-omics"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "member": [
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#yushi-takahashi"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#akiyasu-c-yoshizawa"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#kozo-nishida"
+     }
+    }
+   ],
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Add mhd support to MB-POST"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Convert MB-POST result CSVs to the HUPO PSI mzTab-M standard, agentically where possible"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Apply the same approach to ISA-Tab results in MetaboLights"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/projects.jsonld#pathways-non-model",
+   "@type": "ResearchProject",
+   "name": "Pathway analysis environment for non-model organisms",
+   "identifier": "pathways-non-model",
+   "description": "Pathways are used for little beyond enrichment analysis. QPX, continuing from BH23, builds new pathways for non-model organisms from public database annotations.",
+   "keywords": [
+    "Multi-omics"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "member": [
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#hidemasa-bono"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#ryo-nozu"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#naoya-oec"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#haruka-tanimoto"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#evan-bolton"
+     }
+    }
+   ],
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Create pathways for non-model organisms using PathLift"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Mine GPML from PMC by text mining"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Analyse and visualise pathway data with Jupyter-AI"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Case studies: hypoxic stress in cultured human cells, and transcriptome-metabolome integration in Symplocarpus renifolius"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "slackChannel",
+     "value": "#pathways"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/projects.jsonld#glycan-edge-cases",
+   "@type": "ResearchProject",
+   "name": "Glycan edge case survey",
+   "identifier": "glycan-edge-cases",
+   "description": "Refining the definition of a glycan by examining the edge cases either side of the glycan / non-glycan divide. A continuation of the BH25 project.",
+   "keywords": [
+    "Multi-omics"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "member": [
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#evan-bolton"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#issaku-yamada"
+     }
+    }
+   ],
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Select optimal examples of the edge cases"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Try AI as a way to assemble a set for human review"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Discuss what glycoinformatics needs in order to handle in-scope and out-of-scope cases"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "slackChannel",
+     "value": "#glycosmos"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/projects.jsonld#jogo-next",
+   "@type": "ResearchProject",
+   "name": "From JoGo 1.0 to JoGo-Next",
+   "identifier": "jogo-next",
+   "description": "Developing JoGo into JoGo-Next: how haplotype diversity data should be collected and shared, and what a haplotype database needs to hold.",
+   "keywords": [
+    "Others"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "member": [
+    {
+     "@type": "Role",
+     "roleName": "lead",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#masao-nagasaki-contact-nagasaki-csml-org"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#pitiporn-noisagul"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#apiwat-sangphukieo"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#anggi"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#shuto-machida"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#jiandong-chen"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#taichi-matsubara"
+     }
+    }
+   ],
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Discuss the tools and frameworks needed for sharing haplotype data"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Share the roadmap from JoGo 1.0 to JoGo-Next"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Develop a Haplotype Analysis Toolkit, along the lines of GATK"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Decide which complex genomic regions belong in the haplotype database"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "slackChannel",
+     "value": "#haplotype"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/projects.jsonld#fruit-fly-cell-types",
+   "@type": "ResearchProject",
+   "name": "Let fruit fly do novel cell type detection",
+   "identifier": "fruit-fly-cell-types",
+   "description": "The whole-brain fly connectome has been published as MaleCNS v1.0. Flies lose interest in a smell after repeated exposure — so turn single-cell transcriptome profiles into smells, let a simulated fly experience as many as possible, and see whether it stays calm for a known cell type and reacts to a novel one.",
+   "keywords": [
+    "Others"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "member": [
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#jiandong-chen"
+     }
+    }
+   ],
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Encode single-cell transcriptome profiles as olfactory stimuli"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Train the in-silico fly brain on known cell types"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Test whether novelty shows up as excitation"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/projects.jsonld#db-id-extraction",
+   "@type": "ResearchProject",
+   "name": "DB ID extraction and linking",
+   "identifier": "db-id-extraction",
+   "description": "An open, reproducible, regularly updated pipeline that extracts references to data entities — INSDC accessions, SRA experiment IDs and the like — from the full text of PMC Open Access, and links them back to the publications, creating an incentive to register data in public databases.",
+   "keywords": [
+    "Others"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "member": [
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#yasunori-yamamoto"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#vijay-venkatesh"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#takatomo-fujisawa"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#evan-bolton"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#kozo-nishida"
+     }
+    }
+   ],
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Develop the pipeline to extract IDs and link them to publications"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Try LLMs for classifying how each ID is used in the literature"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Build a web page showing the outcome"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/projects.jsonld#fatigue-and-fear",
+   "@type": "ResearchProject",
+   "name": "When Fatigue Reveals Fear",
+   "identifier": "fatigue-and-fear",
+   "description": "When landing on both feet, do people considered recovered still shift away from the injured side, does fatigue amplify that shift and destabilise the trunk and pelvis, and does fatigue make fear of movement legible in the body? The hypothesis: conscious control masks psychological state at rest, and fatigue removes the mask.",
+   "keywords": [
+    "Others"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "member": [
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#haruma-abe"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#teppei-okazaki"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@type": "Person",
+      "name": "Keitaro"
+     }
+    }
+   ],
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Show with open data that readiness to return to sport is a psychological state as much as a mechanical one"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Test whether axial stability under fatigue tracks psychological readiness as closely as knee function does"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/projects.jsonld#marpolbase",
+   "@type": "ResearchProject",
+   "name": "Enhancement of MarpolBase",
+   "identifier": "marpolbase",
+   "description": "MarpolBase is the genome database for the liverwort Marchantia polymorpha — an attractive model plant for evolutionary and developmental biology, and for database people too, with stable gene IDs and over 500 papers linked to more than 1,200 genes.",
+   "keywords": [
+    "Others"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "member": [
+    {
+     "@type": "Role",
+     "roleName": "lead",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#yasuhiro-tanizawa"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#takatomo-fujisawa"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#tazro-ohta-and-macoto-ohta"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#evan-bolton"
+     }
+    }
+   ],
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Connect gene annotation out to reactions, pathways and chemical compounds"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Develop RDF for gene annotation, expression data and literature links"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Distribute through the RDF Portal and TogoID"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Add an AI-friendly interface and an MCP server"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/projects.jsonld#rdf-config-intermine",
+   "@type": "ResearchProject",
+   "name": "RDF-config + InterMine",
+   "identifier": "rdf-config-intermine",
+   "description": "RDF-config is DBCLS's manual curation of public data into a standard RDF form for the RDF Portal, covering 64 datasets. Its sources are described in YAML, so assembling the right parts means generating a new YAML file.",
+   "keywords": [
+    "Others"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "member": [
+    {
+     "@type": "Role",
+     "roleName": "lead",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#gos-micklem"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#toshiaki-katayama"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#shuichi-kawashima"
+     }
+    }
+   ],
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Work out how to assemble RDF-config sources into InterMine"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Generate the YAML that describes the combination"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/projects.jsonld#bacterial-metabolic-traits",
+   "@type": "ResearchProject",
+   "name": "Predicting bacterial metabolic traits from genomes using AI",
+   "identifier": "bacterial-metabolic-traits",
+   "description": "Predicting the metabolic traits of bacteria — the electron donors and acceptors they use for energy metabolism, and their energy metabolism pathways — from genome annotation, and checking AI curation against manual curation.",
+   "keywords": [
+    "Others"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "member": [
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#shuichi-kawashima"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#yoko-okabeppu"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#takeru-nakazato"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#risa-otsuka"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#julia-koblitz"
+     }
+    }
+   ],
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Review research papers with AI and extract the data"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Compare AI curation with manual curation"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Annotate predicted proteins with KofamScan and convert the results to RDF"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Predict metabolic traits through MCP and visualise on phylogenetic trees"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/projects.jsonld#ai-survey-2026",
+   "@type": "ResearchProject",
+   "name": "AI survey 2026",
+   "identifier": "ai-survey-2026",
+   "description": "AI use is growing fast, so what does the next generation of bioinformaticians need to learn? Continuing the BH25 survey, which found most participants using AI every day.",
+   "keywords": [
+    "Others"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "member": [
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#apiwat-sangphukieo"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#nattawet-sriwichai"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#pitiporn-noisagul"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#evan-bolton"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#anggi"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#claude-nanjo"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#susumu-goto"
+     }
+    }
+   ],
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Develop the questionnaire"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Survey BH26 participants"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Recommend the basic skills bioinformaticians should train for"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/projects.jsonld#bpwiki",
+   "@type": "ResearchProject",
+   "name": "BPwiki: BioHackathon Project Wiki",
+   "identifier": "bpwiki",
+   "description": "An AI-generated wiki over past BioHackathon projects, showing how they connect and develop over time through shared data, tools, topics and people, with a web interface for human review and comment feeding back into revision.",
+   "keywords": [
+    "Others"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "member": [
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#yui-asano"
+     }
+    }
+   ],
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Generate the wiki from source data"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Build the web interface and review loop"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Keep an update log of AI revisions"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/projects.jsonld#omics-catalog",
+   "@type": "ResearchProject",
+   "name": "Omics Catalog Platform",
+   "identifier": "omics-catalog",
+   "description": "Part of the Omics Data Analysis Platform project: scalable data cataloguing with standardised metadata schemas, deployed and hosted by the university.",
+   "keywords": [
+    "Others"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "member": [
+    {
+     "@type": "Role",
+     "roleName": "lead",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#nattawet-sriwichai"
+     }
+    }
+   ],
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Establish scalable data cataloguing"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Standardise the metadata schemas"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Deploy university-hosted"
+    }
+   ]
+  },
+  {
+   "@id": "https://micheldumontier.github.io/bh-meet/projects.jsonld#dhara",
+   "@type": "ResearchProject",
+   "name": "Implementing Federated Data Sharing in Thailand (DHARA)",
+   "identifier": "dhara",
+   "description": "A proof-of-concept federated data-sharing framework for clinical and genomic data across study sites in Thailand. Still exploring what works in practice — experience with similar federated platforms or standards is very welcome.",
+   "keywords": [
+    "Others"
+   ],
+   "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
+   "member": [
+    {
+     "@type": "Role",
+     "roleName": "lead",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#pitiporn-noisagul"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "team",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#nattawet-sriwichai"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#shoichiro-takahashi"
+     }
+    },
+    {
+     "@type": "Role",
+     "roleName": "interested",
+     "member": {
+      "@id": "https://micheldumontier.github.io/bh-meet/people.jsonld#claude-nanjo"
+     }
+    }
+   ],
+   "additionalProperty": [
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Explore GA4GH standards, particularly Phenopackets for clinical data and VRS for variants"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Evaluate whether they support FAIR, interoperable sharing within the network"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Identify the practical challenges, limitations and gaps"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "aim",
+     "value": "Use the pilot to choose standards and architecture for deployment"
+    },
+    {
+     "@type": "PropertyValue",
+     "name": "slackChannel",
+     "value": "#dhara"
+    }
+   ]
+  }
+ ]
+}

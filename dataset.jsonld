@@ -29,7 +29,7 @@
  ],
  "name": "BH26 Collaboration Index",
  "alternateName": "bh-meet",
- "description": "Self-introductions of BioHackathon 2026 participants in Matsuyama, indexed by research topic, programming language and skill. Curated by hand from the event self-introduction slide deck.",
+ "description": "Self-introductions of BioHackathon 2026 participants in Matsuyama, indexed by research topic, programming language and skill, together with the hacking groups they formed. Curated by hand from the event slide decks.",
  "url": "https://micheldumontier.github.io/bh-meet/",
  "license": "http://creativecommons.org/publicdomain/zero/1.0/",
  "creator": {
@@ -78,7 +78,10 @@
   "research interests",
   "skills",
   "personal message",
-  "topic tags"
+  "topic tags",
+  "project name",
+  "project section",
+  "project membership and role"
  ],
  "distribution": [
   {
@@ -92,6 +95,18 @@
    "name": "Topic vocabulary as SKOS",
    "encodingFormat": "application/ld+json",
    "contentUrl": "https://micheldumontier.github.io/bh-meet/topics.jsonld"
+  },
+  {
+   "@type": "DataDownload",
+   "name": "Hacking groups as JSON-LD",
+   "encodingFormat": "application/ld+json",
+   "contentUrl": "https://micheldumontier.github.io/bh-meet/projects.jsonld"
+  },
+  {
+   "@type": "DataDownload",
+   "name": "Hacking groups as the browser loads them",
+   "encodingFormat": "application/javascript",
+   "contentUrl": "https://micheldumontier.github.io/bh-meet/projects.js"
   },
   {
    "@type": "DataDownload",

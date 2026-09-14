@@ -5,6 +5,13 @@ branch: main
 date: 2026-09-13T00:00:00Z
 
 ### Updated in this project
+- Added the projects deck: `scripts/extract-projects.py` + curated `projects.js`,
+  30 hacking groups, 153 of 158 participant names resolved to people.
+- Projects tab is real now: section filters, group cards with clickable team
+  members, and a "Working on" section on each person.
+- `projects.jsonld` uses schema.org ResearchProject + the Role pattern for
+  lead/team/interested. Graph is now ~4,460 triples.
+- `data/projects.json` is git-ignored: one slide carries a live wiki password.
 - Processed the v2 deck (`data/bh26-people-v2.pptx`, 92 slides): 87 people, all
   with portraits. Adds Ran WEI; nobody dropped; 27 people had edited their
   slides, of which 21 changed the curated text.
@@ -35,7 +42,8 @@ date: 2026-09-13T00:00:00Z
 | --- | --- |
 | Collaboration Index.dc.html | data.js, photos.json |
 | Collaboration Index v1 (sample data).dc.html | earlier draft on invented sample data |
-| photos/, photos.json | scripts/extract-deck.py, from data/BH26-people.pptx |
+| photos/, photos.json | scripts/extract-deck.py, from the people deck |
+| projects.js | scripts/extract-projects.py, from "BH26 Hacking groups.pptx" |
 
 ## Notes
 Source deck (link-shared copy): https://docs.google.com/presentation/d/1UWasNu6Wa_zCRhuWErF0cu2-uHpxwVBOU_6bNarQe1c/edit

@@ -2,7 +2,8 @@
 
 A browsable index of BioHackathon 2026 participants — search people by topic,
 language and skill, see who overlaps with you, and build a shortlist of people
-to find at the event. 87 introductions, all with portraits.
+to find at the event, and browse the 30 hacking groups they signed up to.
+87 introductions, all with portraits; 73 of those people are on a group.
 
 Live site: https://micheldumontier.github.io/bh-meet/
 
@@ -27,10 +28,12 @@ looked at. `#plan=<ids>` restores a shared shortlist.
     index.html                  the app (a copy of Collaboration Index.dc.html)
     support.js                  runtime the page loads
     data.js                     the participants
+    projects.js                 the hacking groups
     photos.json                 id -> portrait path, read by the app
     photos/                     portraits, 480x480 JPEG
     _ds/                        Broadsheet design system (stylesheet + bundle)
-    scripts/extract-deck.py     pulls people and portraits out of the deck
+    scripts/extract-deck.py     pulls people and portraits out of the people deck
+    scripts/extract-projects.py pulls the groups out of the projects deck
     scripts/build-jsonld.mjs    generates the JSON-LD from data.js
     data/                       source deck and raw extract (both git-ignored)
 
@@ -102,6 +105,7 @@ by `node scripts/build-jsonld.mjs`. Do not edit the JSON-LD by hand.
 | --- | --- |
 | `people.jsonld` | one `schema.org/Person` per participant, with `knowsAbout` linking to topic concepts and `ComputerLanguage` nodes |
 | `topics.jsonld` | the 25 topic tags as a SKOS `ConceptScheme` |
+| `projects.jsonld` | one `schema.org/ResearchProject` per group; membership uses the `Role` pattern so lead, team and interested stay distinguishable |
 | `dataset.jsonld` | `schema.org/Dataset` + DCAT descriptor: license, version, provenance, distributions |
 
 The dataset descriptor is also inlined into `index.html` as `application/ld+json`
@@ -125,11 +129,28 @@ deck carries one, so all 87 are currently empty, and none are guessed from names
 publicity rights over what remains personal data about identifiable people —
 see [LICENSE-DATA](LICENSE-DATA).
 
-## Source deck
+## The groups
 
-Decks live in `data/` and are git-ignored — each is 100+ MB, over GitHub's
-100 MB per-file limit. Keep the latest export there to regenerate. Ask the
-event organisers for the current export.
+`projects.js` defines `window.BH_PROJECTS`, one object per hacking group: `n`
+name, `sec` section, `ch` Slack channel, `d` summary, `aims`, and `lead`,
+`team` and `interested` as participant ids from `data.js`. `guests` holds people
+named on a slide who wrote no introduction, so there is nobody to link them to.
+
+    python3 scripts/extract-projects.py
+
+Names on the project slides are written however people felt like writing them —
+first names, surnames, initials, reversed order, nicknames, typos — so each is
+resolved against `people.jsonld` and reported with the rule that matched.
+Anything ambiguous or unmatched is left for a human rather than guessed; of 158
+names, 153 resolved and the remaining five are people with no introduction
+slide.
+
+## Source decks
+
+Decks live in `data/` and are git-ignored — the people deck is over GitHub's
+100 MB per-file limit. `data/` now holds more than one kind of deck, so each
+script picks the one it understands by filename and prints which it chose. Ask
+the event organisers for the current exports.
 
 ## Publishing
 

@@ -131,6 +131,7 @@
 <link rel="stylesheet" href="_ds/broadsheet-4a69f9fc-4fa4-48eb-9071-6d3938a6cd9f/styles.css">
 <script src="_ds/broadsheet-4a69f9fc-4fa4-48eb-9071-6d3938a6cd9f/_ds_bundle.js"></script>
 <script src="data.js"></script>
+<script src="projects.js"></script>
 <style>
   body { margin: 0; }
   a { color: var(--color-accent); }
@@ -265,7 +266,7 @@
     <div style="height:1px;background:var(--color-text)"></div>
 
     <h1 style="font-size:clamp(36px,5.4vw,60px);margin:var(--space-4) 0 var(--space-2);max-width:20ch">Who else is in the room?</h1>
-    <p style="max-width:60ch;font-size:17px" class="text-muted">Everyone's self-introduction slide, indexed by what they actually work on. Day 0 is for finding people. Pitches land tomorrow.</p>
+    <p style="max-width:60ch;font-size:17px" class="text-muted">Everyone's self-introduction slide, indexed by what they actually work on — and the hacking groups they signed up to.</p>
   </header>
 
   <nav style="display:flex;flex-wrap:wrap;gap:var(--space-4);align-items:baseline;margin-bottom:var(--space-4)">
@@ -414,6 +415,18 @@
                 </div>
               </sc-if>
 
+              <sc-if value="{{ hasProjects }}" hint-placeholder-val="{{ false }}">
+                <h3 class="label">Working on</h3>
+                <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:var(--space-4)">
+                  <sc-for list="{{ detailProjects }}" as="dp" hint-placeholder-count="2">
+                    <button style="display:block;width:100%;background:none;border:0;border-bottom:1px solid var(--color-divider);padding:0 0 6px;text-align:left;cursor:pointer;font:inherit;color:inherit" onClick="{{ dp.onClick }}">
+                      <span style="font-family:var(--font-heading);font-weight:600">{{ dp.name }}</span>
+                      <span class="text-muted" style="display:block;font-size:12px">{{ dp.role }}</span>
+                    </button>
+                  </sc-for>
+                </div>
+              </sc-if>
+
               <h3 class="label">Closest overlap</h3>
               <div style="display:flex;flex-direction:column;gap:var(--space-2);margin-bottom:var(--space-6)">
                 <sc-for list="{{ detailMatches }}" as="m" hint-placeholder-count="5">
@@ -460,19 +473,68 @@
   </sc-if>
 
   <sc-if value="{{ onProjects }}" hint-placeholder-val="{{ false }}">
-    <div style="max-width:64ch">
-      <h2>The pitch session is tomorrow</h2>
-      <p style="font-size:17px">Project pitches happen on day 1. When the pitch deck exists, each project lands here with its own card: the pitch, the roles it is still missing, and the people whose introductions already match it.</p>
-      <p style="font-size:17px">Until then, the useful move is the other direction — find someone whose work overlaps yours and turn that into a pitch.</p>
-      <h3 class="label" style="margin-top:var(--space-6)">Topics with the most people behind them</h3>
-      <ol style="font-size:15px;padding-left:1.4em">
-        <sc-for list="{{ topTopics }}" as="t" hint-placeholder-count="6">
-          <li style="margin-bottom:4px">
-            <button style="background:none;border:0;padding:0;cursor:pointer;font:inherit;color:var(--color-accent-700)" onClick="{{ t.onClick }}">{{ t.label }}</button>
-            <span class="text-muted"> — {{ t.count }} people</span>
-          </li>
+    <div>
+      <p class="text-muted" style="max-width:62ch;margin-bottom:var(--space-3)">The hacking groups, as written on the projects deck. Names link to the person's introduction; people listed as interested rather than committed are shown separately. Click a section to filter.</p>
+
+      <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:var(--space-3)">
+        <sc-for list="{{ sectionChips }}" as="sc" hint-placeholder-count="5">
+          <button class="{{ sc.cls }} chip" style="cursor:pointer;font:inherit;font-size:11px;padding:3px 10px;border-radius:1.5px" onClick="{{ sc.onClick }}">{{ sc.label }}</button>
         </sc-for>
-      </ol>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);align-items:baseline;margin-bottom:var(--space-3)">
+        <h3 class="label" style="margin:0">{{ projectCount }}</h3>
+        <sc-if value="{{ hasMine }}" hint-placeholder-val="{{ true }}">
+          <button class="{{ mineProjCls }} chip" style="cursor:pointer;font:inherit;font-size:11px;padding:3px 10px;border-radius:1.5px" onClick="{{ onToggleMineProjects }}">{{ mineProjLabel }}</button>
+        </sc-if>
+      </div>
+
+      <div style="display:grid;gap:var(--space-4);grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));align-items:start">
+        <sc-for list="{{ projectCards }}" as="pj" hint-placeholder-count="6">
+          <article class="card">
+            <div class="card-kicker">{{ pj.section }}</div>
+            <h3 style="font-size:19px;margin:4px 0 var(--space-2)">{{ pj.name }}</h3>
+            <p style="font-size:15px">{{ pj.summary }}</p>
+
+            <sc-if value="{{ pj.hasAims }}" hint-placeholder-val="{{ true }}">
+              <ul style="font-size:14px;padding-left:1.2em;margin:0 0 var(--space-3)">
+                <sc-for list="{{ pj.aims }}" as="am" hint-placeholder-count="3">
+                  <li style="margin-bottom:3px">{{ am.text }}</li>
+                </sc-for>
+              </ul>
+            </sc-if>
+
+            <h3 class="label" style="font-size:11px;margin-bottom:4px">{{ pj.teamLabel }}</h3>
+            <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:var(--space-2)">
+              <sc-for list="{{ pj.team }}" as="mb" hint-placeholder-count="5">
+                <button class="{{ mb.cls }}" style="cursor:pointer;font:inherit;font-size:11px;padding:3px 8px;border-radius:1.5px" onClick="{{ mb.onClick }}">{{ mb.label }}</button>
+              </sc-for>
+            </div>
+
+            <sc-if value="{{ pj.hasInterested }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;flex-wrap:wrap;gap:5px;align-items:baseline;margin-bottom:var(--space-2)">
+                <span class="text-muted" style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase">Interested</span>
+                <sc-for list="{{ pj.interested }}" as="mb" hint-placeholder-count="3">
+                  <button class="{{ mb.cls }}" style="cursor:pointer;font:inherit;font-size:11px;padding:3px 8px;border-radius:1.5px" onClick="{{ mb.onClick }}">{{ mb.label }}</button>
+                </sc-for>
+              </div>
+            </sc-if>
+
+            <div class="text-muted" style="font-size:12px">
+              <sc-if value="{{ pj.hasChannel }}" hint-placeholder-val="{{ false }}">
+                <span>{{ pj.channel }}</span>
+              </sc-if>
+              <sc-if value="{{ pj.hasGuests }}" hint-placeholder-val="{{ false }}">
+                <span>{{ pj.guests }}</span>
+              </sc-if>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+
+      <sc-if value="{{ noProjects }}" hint-placeholder-val="{{ false }}">
+        <p class="text-muted">No group matches that. Drop the filter.</p>
+      </sc-if>
     </div>
   </sc-if>
 
@@ -480,7 +542,6 @@
     <div>
       <p class="text-muted" style="max-width:58ch;margin-bottom:var(--space-4)">Each mark is a person, placed between the topics they wrote on their slide. Topics next to each other on the ring are ones people tend to hold together, so whoever sits between two clusters is worth a conversation. Click a topic to filter the list, or a person to open them and draw their links.</p>
       {{ graph }}
-      <p class="text-muted" style="font-size:12px;margin-top:var(--space-2)">Once pitches exist, stated interest in a project will draw as a second, heavier kind of edge.</p>
     </div>
   </sc-if>
 
@@ -490,6 +551,7 @@
       Machine-readable:
       <a href="people.jsonld"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-jsonld"/></svg> people</a> ·
       <a href="topics.jsonld"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-jsonld"/></svg> topics</a> ·
+      <a href="projects.jsonld"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-jsonld"/></svg> groups</a> ·
       <a href="dataset.jsonld"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-jsonld"/></svg> dataset</a>
       (JSON-LD, schema.org + SKOS) ·
       data <a href="https://creativecommons.org/publicdomain/zero/1.0/" rel="license noopener" target="_blank">CC0 1.0</a> ·
@@ -502,7 +564,8 @@
 const fold = (s) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 
 class Component extends DCLogic {
-  state = { tab: null, q: '', tags: [], langs: [], sel: null, short: [], copied: false, onlyShort: false };
+  state = { tab: null, q: '', tags: [], langs: [], sel: null, short: [], copied: false,
+            onlyShort: false, section: null, mineProjects: false };
 
   photoOf(p) {
     const m = this.state.photos || (typeof window !== 'undefined' && window.BH_PHOTOS) || {};
@@ -511,6 +574,10 @@ class Component extends DCLogic {
   initialsOf(name) { return name.split(/\s+/).filter(w => /[A-Za-z]/.test(w[0] || '')).slice(0, 2).map(w => w[0].toUpperCase()).join(''); }
 
   people() { return (typeof window !== 'undefined' && window.BH_PEOPLE) || []; }
+  projects() { return (typeof window !== 'undefined' && window.BH_PROJECTS) || []; }
+  projectsOf(id) {
+    return this.projects().filter(p => p.team.includes(id) || p.interested.includes(id));
+  }
   src() { return (typeof window !== 'undefined' && window.BH_SOURCE) || {}; }
 
   componentDidMount() {
@@ -543,6 +610,9 @@ class Component extends DCLogic {
   find(id) { return this.people().find(p => p.id === id); }
 
   toggleMine = () => this.setState(s => ({ onlyShort: !s.onlyShort }));
+
+  pickSection = (sec) => this.setState(s => ({ section: s.section === sec ? null : sec }));
+  toggleMineProjects = () => this.setState(s => ({ mineProjects: !s.mineProjects }));
 
   toggleShort = (id) => this.setState(s => {
     const short = s.short.includes(id) ? s.short.filter(x => x !== id) : s.short.concat(id);
@@ -793,6 +863,79 @@ class Component extends DCLogic {
         el('g', { key: 'labels' }, labels)));
   }
 
+  // The Projects tab. Kept out of renderVals only because that method is
+  // already long; it reads the same state.
+  projectVals(all) {
+    const projects = this.projects();
+    const byId = {};
+    all.forEach(p => { byId[p.id] = p; });
+    const short = this.state.short;
+    const section = this.state.section;
+    const mine = this.state.mineProjects && short.length > 0;
+
+    const sections = [];
+    projects.forEach(p => { if (!sections.includes(p.sec)) sections.push(p.sec); });
+
+    const onList = (p) => short.some(id => p.team.includes(id) || p.interested.includes(id));
+    const shown = projects.filter(p => (!section || p.sec === section) && (!mine || onList(p)));
+
+    // A name chip: links to the person unless they never wrote an introduction.
+    const member = (id) => {
+      const p = byId[id];
+      if (!p) return null;
+      const starred = short.includes(id);
+      return {
+        label: p.n,
+        cls: starred ? 'tag tag-accent-2' : 'tag tag-outline',
+        onClick: () => this.select(id, 'people')
+      };
+    };
+
+    const cards = shown.map(p => {
+      const leads = p.lead.map(member).filter(Boolean);
+      const rest = p.team.filter(id => !p.lead.includes(id)).map(member).filter(Boolean);
+      const team = leads.concat(rest);
+      const guests = p.guests.length
+        ? 'Also: ' + p.guests.join(', ') + ' (no introduction slide)' : '';
+      return {
+        id: p.id,
+        name: p.n,
+        section: p.sec,
+        summary: p.d,
+        aims: (p.aims || []).map((t, i) => ({ key: p.id + i, text: t })),
+        hasAims: !!(p.aims && p.aims.length),
+        // Say who leads only when the deck marked someone in bold.
+        teamLabel: (p.lead.length ? 'Team (lead first)' : 'Team') + ' \u00b7 ' + team.length,
+        team,
+        interested: p.interested.map(member).filter(Boolean),
+        hasInterested: p.interested.length > 0,
+        hasChannel: !!p.ch,
+        channel: p.ch ? '#' + p.ch : '',
+        hasGuests: !!guests,
+        guests
+      };
+    });
+
+    const signedUp = new Set();
+    projects.forEach(p => { p.team.concat(p.interested).forEach(id => signedUp.add(id)); });
+
+    return {
+      projectCards: cards,
+      noProjects: projects.length > 0 && cards.length === 0,
+      projectCount: shown.length === projects.length
+        ? projects.length + ' groups \u00b7 ' + signedUp.size + ' of ' + all.length + ' people signed up'
+        : shown.length + ' of ' + projects.length + ' groups',
+      sectionChips: sections.map(sec => ({
+        label: sec + ' ' + projects.filter(p => p.sec === sec).length,
+        cls: section === sec ? 'tag tag-accent' : 'tag tag-outline',
+        onClick: () => this.pickSection(sec)
+      })),
+      mineProjCls: mine ? 'tag tag-accent-2' : 'tag tag-outline',
+      mineProjLabel: 'with someone on my list',
+      onToggleMineProjects: this.toggleMineProjects
+    };
+  }
+
   renderVals() {
     const all = this.people();
     const tab = this.state.tab || this.props.defaultView || 'people';
@@ -870,7 +1013,7 @@ class Component extends DCLogic {
       datelineRight: all.length
         ? all.length + ' introductions · ' + (this.src().portraits || 0) + ' portraits'
         : 'loading the deck…',
-      footerNote: 'Static site. People load from data.js, regenerated from the self-introduction deck; nothing is stored server-side.',
+      footerNote: 'Static site. People and groups load from data.js and projects.js, curated from the event decks; nothing is stored server-side.',
       onPeople: tab === 'people', onProjects: tab === 'projects', onGraph: tab === 'graph',
       goPeople: () => this.setState({ tab: 'people' }),
       goProjects: () => this.setState({ tab: 'projects' }),
@@ -893,6 +1036,15 @@ class Component extends DCLogic {
       onToggleMine: this.toggleMine,
       items, isEmpty: all.length > 0 && items.length === 0,
       hasDetail: !!sel, noDetail: !sel,
+      detailProjects: sel ? this.projectsOf(sel.id).map(p => ({
+        key: p.id,
+        name: p.n,
+        role: (p.lead.includes(sel.id) ? 'Group lead'
+          : p.interested.includes(sel.id) ? 'Interested' : 'Team')
+          + ' \u00b7 ' + p.sec,
+        onClick: () => this.setState({ tab: 'projects', section: p.sec })
+      })) : [],
+      hasProjects: !!sel && this.projectsOf(sel.id).length > 0,
       onBackToList: this.backToList,
       // The person's IRI in people.jsonld — the same identifier the RDF uses.
       detailJsonld: sel ? 'people.jsonld#' + sel.id : '',
@@ -913,7 +1065,7 @@ class Component extends DCLogic {
       plan, planEmpty: this.state.short.length === 0, planFull: this.state.short.length > 0,
       copyLabel: this.state.copied ? 'Link copied' : 'Copy a link to this list',
       onCopyPlan: this.copyPlan,
-      topTopics: topics.slice(0, 8).map(t => ({ label: t, count: counts[t], onClick: () => this.pickTopic(t) })),
+      ...this.projectVals(all),
       graph: all.length ? this.buildGraph(all, topics, active) : null
     };
   }

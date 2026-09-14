@@ -13,6 +13,10 @@
    "@id": "schema:image",
    "@type": "@id"
   },
+  "memberOf": {
+   "@id": "schema:memberOf",
+   "@type": "@id"
+  },
   "sameAs": {
    "@id": "schema:sameAs",
    "@type": "@id"
@@ -69,6 +73,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/haruma-abe.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#fatigue-and-fear"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -121,6 +128,11 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/anggi.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#patient-trajectories",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#jogo-next",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#ai-survey-2026"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -158,6 +170,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/yui-asano.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#bpwiki"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -215,6 +230,16 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/evan-bolton.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#rdf-extraction-engine",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#nando-medgen",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#proteome-reanalysis",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#pathways-non-model",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#glycan-edge-cases",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#db-id-extraction",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#marpolbase",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#ai-survey-2026"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -263,6 +288,10 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/hidemasa-bono.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#mikan-genome",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#pathways-non-model"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -320,6 +349,14 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/orion-buske.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#variant-rdf-trials",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#clinical-graph-rag",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#academic-wasteland",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#zebraseek",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#expertboard",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#patient-trajectories"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -371,6 +408,10 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/jiandong-chen.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#jogo-next",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#fruit-fly-cell-types"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -428,6 +469,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/hirokazu-chiba.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#zebraseek"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -471,6 +515,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/hassan-sibroe-abdulla-daanaa.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#hla-pangenome"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -520,6 +567,10 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/michel-dumontier.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#academic-wasteland",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#patient-trajectories"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -628,6 +679,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/nuria-fabrega.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#biosample-curation"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -681,6 +735,11 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/takatomo-fujisawa.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#togomcp",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#db-id-extraction",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#marpolbase"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -733,6 +792,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/kazumichi-fujiwara.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#hla-pangenome"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -774,6 +836,14 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/toyofumi-fujiwara.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#togomcp",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#clinical-graph-rag",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#zebraseek",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#expertboard",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#nando-medgen",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#mondo-gestaltmatcher"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -842,6 +912,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/naohisa-goto.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#bioruby"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -891,6 +964,12 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/susumu-goto.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#togomcp",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#zebraseek",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#proteome-reanalysis",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#ai-survey-2026"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -948,6 +1027,11 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/robert-hoehndorf.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#academic-wasteland",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#hla-pangenome",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#patient-trajectories"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -1000,6 +1084,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/masae-hosoda.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#nando-medgen"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -1048,6 +1135,11 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/tzung-chien-hsieh.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#zebraseek",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#expertboard",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#mondo-gestaltmatcher"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -1092,6 +1184,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/shuya-ikeda.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#biosample-curation"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -1164,6 +1259,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/manabu-ishii.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#academic-wasteland"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -1211,6 +1309,11 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/priscilla-joanne.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#togomcp",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#osiris-mcp",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#academic-wasteland"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -1268,6 +1371,11 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/mayumi-kamada.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#togomcp",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#expertboard",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#mikan-genome"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -1308,6 +1416,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/alex-kanitz.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#academic-wasteland"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -1411,6 +1522,12 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/toshiaki-katayama.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#academic-wasteland",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#mikan-genome",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#hla-pangenome",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#rdf-config-intermine"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -1460,6 +1577,10 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/yosuke-kawai.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#expertboard",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#hla-pangenome"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -1513,6 +1634,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/shin-kawano.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#proteome-reanalysis"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -1558,6 +1682,12 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/shuichi-kawashima.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#togomcp",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#expertboard",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#rdf-config-intermine",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#bacterial-metabolic-traits"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -1602,6 +1732,10 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/akira-kinjo.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#togomcp",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#osiris-mcp"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -1647,6 +1781,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/yuko-kitano.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#expertboard"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -1690,6 +1827,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/ruka-kobayashi.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#expertboard"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -1751,6 +1891,11 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/julia-koblitz.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#togomcp",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#osiris-mcp",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#bacterial-metabolic-traits"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -1842,6 +1987,10 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/shuto-machida.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#mikan-genome",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#jogo-next"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -1889,6 +2038,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/taichi-matsubara.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#jogo-next"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -1946,6 +2098,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/miguel-mazumder.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#rdf-extraction-engine"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -1999,6 +2154,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/gos-micklem.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#rdf-config-intermine"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -2098,6 +2256,10 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/hiroyuki-mishima.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#zebraseek",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#mondo-gestaltmatcher"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -2207,6 +2369,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/rajat-kumar-mondal.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#rdf-extraction-engine"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -2260,6 +2425,11 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/yuki-moriya.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#togomcp",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#mikan-genome",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#proteome-reanalysis"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -2311,6 +2481,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/hina-motoyoshi.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#expertboard"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -2367,6 +2540,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/hiroki-muroda.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#expertboard"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -2436,6 +2612,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/masao-nagasaki-contact-nagasaki-csml-org.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#jogo-next"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -2484,6 +2663,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/takeru-nakazato.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#bacterial-metabolic-traits"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -2541,6 +2723,13 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/claude-nanjo.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#togomcp",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#clinical-graph-rag",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#patient-trajectories",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#ai-survey-2026",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#dhara"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -2630,6 +2819,13 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/kozo-nishida.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#togomcp",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#biosample-curation",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#bioruby",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#mbpost-metabolomicshub",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#db-id-extraction"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -2683,6 +2879,11 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/pitiporn-noisagul.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#jogo-next",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#ai-survey-2026",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#dhara"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -2727,6 +2928,10 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/ryo-nozu.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#mikan-genome",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#pathways-non-model"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -2769,6 +2974,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/naoya-oec.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#pathways-non-model"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -2871,6 +3079,10 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/tazro-ohta-and-macoto-ohta.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#biosample-curation",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#marpolbase"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -2926,6 +3138,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/yoko-okabeppu.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#bacterial-metabolic-traits"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -2978,6 +3193,10 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/teppei-okazaki.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#zebraseek",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#fatigue-and-fear"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -3088,6 +3307,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/risa-otsuka.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#bacterial-metabolic-traits"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -3136,6 +3358,12 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/daniel-puthawala.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#togomcp",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#rdf-extraction-engine",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#variant-rdf-trials",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#academic-wasteland"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -3189,6 +3417,13 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/nuria-queralt-rosinach.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#togomcp",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#variant-rdf-trials",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#clinical-graph-rag",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#zebraseek",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#nando-medgen"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -3228,6 +3463,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/mkkm-chipo-ruhwode.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#expertboard"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -3268,6 +3506,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/rutharra.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#expertboard"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -3354,6 +3595,11 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/apiwat-sangphukieo.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#hla-pangenome",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#jogo-next",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#ai-survey-2026"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -3471,6 +3717,11 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/nattawet-sriwichai.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#ai-survey-2026",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#omics-catalog",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#dhara"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -3516,6 +3767,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/chang-sun.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#patient-trajectories"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -3564,6 +3818,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/francis-tablizo.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#expertboard"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -3632,6 +3889,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/shin-ichiro-tago.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#hla-pangenome"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -3725,6 +3985,10 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/shoichiro-takahashi.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#expertboard",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#dhara"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -3786,6 +4050,10 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/yushi-takahashi.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#proteome-reanalysis",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#mbpost-metabolomicshub"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -3834,6 +4102,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/terue-takatsuki.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#nando-medgen"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -3898,6 +4169,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/satoshi-tanaka.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#proteome-reanalysis"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -3940,6 +4214,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/haruka-tanimoto.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#pathways-non-model"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -3993,6 +4270,10 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/yasuhiro-tanizawa.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#togomcp",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#marpolbase"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -4128,6 +4409,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/vijay-venkatesh.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#db-id-extraction"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -4233,6 +4517,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/issaku-yamada.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#glycan-edge-cases"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -4293,6 +4580,9 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/atsuko-yamaguchi.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#zebraseek"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -4358,6 +4648,10 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/yasunori-yamamoto.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#togomcp",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#db-id-extraction"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -4401,6 +4695,11 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/naoya-yoshikuwa.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#togomcp",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#osiris-mcp",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#zebraseek"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",
@@ -4445,6 +4744,10 @@
    ],
    "isPartOf": "https://micheldumontier.github.io/bh-meet/dataset.jsonld#dataset",
    "image": "https://micheldumontier.github.io/bh-meet/photos/akiyasu-c-yoshizawa.jpg",
+   "memberOf": [
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#proteome-reanalysis",
+    "https://micheldumontier.github.io/bh-meet/projects.jsonld#mbpost-metabolomicshub"
+   ],
    "additionalProperty": [
     {
      "@type": "PropertyValue",

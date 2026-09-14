@@ -7,3 +7,7 @@
 data/*.pptx
 data/*.pdf
 data/people.json
+data/projects.json
+
+# Python bytecode from the extraction scripts
+__pycache__/
