@@ -21,7 +21,29 @@ requests are blocked by CORS.
 Any person is linkable: `?person=<slug>`, for example
 [`?person=chang-sun`](https://micheldumontier.github.io/bh-meet/?person=chang-sun).
 Selecting someone pushes a history entry, so Back steps through the people you
-looked at. `#plan=<ids>` restores a shared shortlist.
+looked at. `?group=<slug>` opens one hacking group, `?tab=projects|graph|people`
+opens a tab, and `#plan=<ids>` restores a shared shortlist.
+
+## Sharing into Slack
+
+`p/<slug>.html` and `g/<slug>.html` are share pages: one per person and per
+group, each carrying its own Open Graph tags, so a link pasted into Slack
+unfurls with that person's name, affiliation and portrait rather than a generic
+site card. They redirect a browser straight into the app; unfurl bots read the
+head and never run the script, so they see the card and stop.
+
+They are also the only crawlable surface the site has — the app renders
+everything in JavaScript — so `sitemap.xml` and `robots.txt` point at them.
+
+Group cards link their Slack channel through
+`https://biohackjp.slack.com/app_redirect?channel=<name>`, which resolves by
+name and opens the desktop app when it is installed. Nine of the thirty groups
+record a channel; the rest have none on their slide.
+
+Regenerate both after changing `data.js` or `projects.js`:
+
+    node scripts/build-jsonld.mjs
+    node scripts/build-pages.mjs
 
 ## Layout
 
@@ -35,6 +57,8 @@ looked at. `#plan=<ids>` restores a shared shortlist.
     scripts/extract-deck.py     pulls people and portraits out of the people deck
     scripts/extract-projects.py pulls the groups out of the projects deck
     scripts/build-jsonld.mjs    generates the JSON-LD from data.js
+    scripts/build-pages.mjs     generates the share pages and sitemap
+    p/, g/                      one share page per person and per group
     data/                       source deck and raw extract (both git-ignored)
 
 `Collaboration Index v1 (sample data).dc.html` is an earlier draft built on

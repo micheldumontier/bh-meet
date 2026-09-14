@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://micheldumontier.github.io/bh-meet/sitemap.xml
